@@ -669,6 +669,7 @@ public class MagmaCoreService {
      * @return {@link Thing} that was found.
      * @throws RuntimeException If no or multiple results were found.
      */
+    @SuppressWarnings("unchecked")
     public <T extends Thing> T findByEntityName(final String entityName) {
         final List<Thing> searchResult = findByPredicateIriAndValue(HQDM.ENTITY_NAME, entityName);
 
@@ -688,6 +689,7 @@ public class MagmaCoreService {
      * @param predicate the predicate {@link IRI}
      * @return a List of {@link Thing} that were found.
      */
+    @SuppressWarnings("unchecked")
     public <T extends Thing> List<T> findByPredicateIriOnly(final IRI predicate) {
         return (List<T>) database.findByPredicateIriOnly(predicate);
     }
@@ -700,6 +702,7 @@ public class MagmaCoreService {
      * @param value     The value of the predicate.
      * @return a List of {@link Thing} that were found.
      */
+    @SuppressWarnings("unchecked")
     public <T extends Thing> List<T> findByPredicateIriAndValue(final IRI predicate, final Object value) {
         return (List<T>) database.findByPredicateIriAndValue(predicate, value);
     }
