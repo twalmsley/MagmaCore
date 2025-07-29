@@ -25,8 +25,11 @@ public final class HQDM {
     /** HQDM namespace. */
     public static final IriBase HQDM = new IriBase("hqdm", "https://hqdmtop.github.io/hqdm#");
 
+    /** SKOS namespace. */
+    public static final IriBase SKOS = new IriBase("skos", "http://www.w3.org/2004/02/skos/core#");
+
     /** A human-interpretable name for a particular HQDM entity. */
-    public static final HqdmIri ENTITY_NAME = new HqdmIri(HQDM, "data_EntityName");
+    public static final HqdmIri ENTITY_NAME = new HqdmIri(SKOS, "prefLabel");
 
     // =======================================================================
     // Entities

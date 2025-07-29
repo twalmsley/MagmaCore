@@ -34,6 +34,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_BY_SIGN_VALUE_QUERY = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 
@@ -52,11 +53,11 @@ public class MagmaCoreServiceQueries {
                 ?s ?p ?o.
                 OPTIONAL {
                     ?repBySign hqdm:beginning ?begin.
-                    ?begin hqdm:data_EntityName ?start.
+                    ?begin skos:prefLabel ?start.
                 }
                 OPTIONAL {
                     ?repBySign hqdm:ending ?end.
-                    ?end hqdm:data_EntityName ?finish.
+                    ?end skos:prefLabel ?finish.
                 }
 
             }
@@ -77,6 +78,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_BY_PARTIAL_SIGN_VALUE_CASE_INSENSITIVE_QUERY = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 
@@ -96,11 +98,11 @@ public class MagmaCoreServiceQueries {
                 ?s ?p ?o.
                 OPTIONAL {
                     ?repBySign hqdm:beginning ?begin.
-                    ?begin hqdm:data_EntityName ?start.
+                    ?begin skos:prefLabel ?start.
                 }
                 OPTIONAL {
                     ?repBySign hqdm:ending ?end.
-                    ?end hqdm:data_EntityName ?finish.
+                    ?end skos:prefLabel ?finish.
                 }
 
             }
@@ -116,6 +118,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_PARTICIPANT_DETAILS_QUERY = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
@@ -137,11 +140,11 @@ public class MagmaCoreServiceQueries {
                         ?assoc1 hqdm:member_of_kind ?kind.
                         OPTIONAL {
                             ?assoc1 hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start
+                            ?begin skos:prefLabel ?start
                         }
                         OPTIONAL {
                             ?assoc1 hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish
+                            ?end skos:prefLabel ?finish
                         }
                     }
                 }
@@ -162,11 +165,11 @@ public class MagmaCoreServiceQueries {
                         ?assoc1 hqdm:member_of_kind ?kind.
                         OPTIONAL {
                             ?assoc1 hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start
+                            ?begin skos:prefLabel ?start
                         }
                         OPTIONAL {
                             ?assoc1 hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
@@ -191,6 +194,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_OBJECTS_BY_TYPE_CLASS_AND_SIGN_PATTERN = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             select distinct *
@@ -215,11 +219,11 @@ public class MagmaCoreServiceQueries {
 
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start
+                        ?begin skos:prefLabel ?start
                         }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish
+                        ?end skos:prefLabel ?finish
                         }
 
                     }
@@ -246,11 +250,11 @@ public class MagmaCoreServiceQueries {
 
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start
+                        ?begin skos:prefLabel ?start
                         }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish
+                        ?end skos:prefLabel ?finish
                         }
 
                     }
@@ -276,6 +280,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_OBJECTS_BY_TYPE_AND_SIGN_PATTERN = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             select distinct *
@@ -300,11 +305,11 @@ public class MagmaCoreServiceQueries {
 
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start
+                        ?begin skos:prefLabel ?start
                         }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish
+                        ?end skos:prefLabel ?finish
                         }
 
                     }
@@ -331,11 +336,11 @@ public class MagmaCoreServiceQueries {
 
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start
+                        ?begin skos:prefLabel ?start
                         }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish
+                        ?end skos:prefLabel ?finish
                         }
 
                     }
@@ -353,6 +358,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_BY_KIND_OF_ASSOCIATION = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
             select ?s ?p ?o
             where
@@ -377,7 +383,7 @@ public class MagmaCoreServiceQueries {
                         ?participant hqdm:participant_in ?association;
                             hqdm:member_of_kind ?role;
                             hqdm:temporal_part_of ?s.
-                        ?role hqdm:data_EntityName ?o;
+                        ?role skos:prefLabel ?o;
                             ?p ?o.
                     }
                 }
@@ -409,6 +415,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_ASSOCIATED = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 
             select ?s ?p ?o ?start ?finish
@@ -427,11 +434,11 @@ public class MagmaCoreServiceQueries {
                     FILTER(?s != <%s>)
                     OPTIONAL {
                         ?association hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?association hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                 }
             }
@@ -449,13 +456,13 @@ public class MagmaCoreServiceQueries {
                     FILTER(?s != <%s>)
                     OPTIONAL {
                         ?association hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?association hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
-                    ?role hqdm:data_EntityName ?o;
+                    ?role skos:prefLabel ?o;
                     ?p ?o.
                 }
             }
@@ -478,11 +485,11 @@ public class MagmaCoreServiceQueries {
                     hqdm:temporal_part_of ?sign.
                     OPTIONAL {
                         ?association hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?association hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     ?sign hqdm:value_ ?o;
                         ?p ?o.
@@ -498,6 +505,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_PARTIAL_SIGN_CASE_SENSITIVE = """
                 PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
                 SELECT distinct ?s ?p ?o ?start ?finish
@@ -520,11 +528,11 @@ public class MagmaCoreServiceQueries {
                         ?s ?p ?o.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
@@ -546,17 +554,17 @@ public class MagmaCoreServiceQueries {
                         ?s hqdm:member_of ?class.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
                 UNION
                 {
-                    SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                    SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                     WHERE {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class)
@@ -571,14 +579,14 @@ public class MagmaCoreServiceQueries {
                         ?state hqdm:temporal_part_of ?s.
                         ?s hqdm:member_of ?class.
                         ?s hqdm:member_of_kind ?kind.
-                        ?kind hqdm:data_EntityName ?o.
+                        ?kind skos:prefLabel ?o.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
@@ -592,6 +600,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_PARTIAL_SIGN_CASE_INSENSITIVE = """
                 PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
                 SELECT distinct ?s ?p ?o ?start ?finish
@@ -614,11 +623,11 @@ public class MagmaCoreServiceQueries {
                         ?s ?p ?o.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
@@ -640,17 +649,17 @@ public class MagmaCoreServiceQueries {
                         ?s hqdm:member_of ?class.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
                 UNION
                 {
-                    SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                    SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                     WHERE {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class)
@@ -665,14 +674,14 @@ public class MagmaCoreServiceQueries {
                         ?state hqdm:temporal_part_of ?s.
                         ?s hqdm:member_of ?class.
                         ?s hqdm:member_of_kind ?kind.
-                        ?kind hqdm:data_EntityName ?o.
+                        ?kind skos:prefLabel ?o.
                         OPTIONAL {
                             ?repBySign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?repBySign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
                     }
                 }
@@ -686,6 +695,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_ACTIVITY_AND_PARTIAL_SIGN_CASE_SENSITIVE = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT distinct ?s ?p ?o ?start ?finish
@@ -710,11 +720,11 @@ public class MagmaCoreServiceQueries {
                     ?s ?p ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -738,17 +748,17 @@ public class MagmaCoreServiceQueries {
                     ?topicId hqdm:references ?s.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
@@ -765,14 +775,14 @@ public class MagmaCoreServiceQueries {
                     ?s hqdm:member_of ?class.
                     ?topicId hqdm:references ?s.
                     ?s hqdm:member_of_kind ?kind.
-                    ?kind hqdm:data_EntityName ?o.
+                    ?kind skos:prefLabel ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -785,6 +795,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_ACTIVITY_AND_PARTIAL_SIGN_CASE_INSENSITIVE = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT distinct ?s ?p ?o ?start ?finish
@@ -809,11 +820,11 @@ public class MagmaCoreServiceQueries {
                     ?s ?p ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -837,17 +848,17 @@ public class MagmaCoreServiceQueries {
                     ?topicId hqdm:references ?s.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
@@ -864,14 +875,14 @@ public class MagmaCoreServiceQueries {
                     ?s hqdm:member_of ?class.
                     ?topicId hqdm:references ?s.
                     ?s hqdm:member_of_kind ?kind.
-                    ?kind hqdm:data_EntityName ?o.
+                    ?kind skos:prefLabel ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -884,6 +895,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_COMPOSITION_AND_PARTIAL_SIGN_CASE_SENSITIVE = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT distinct ?s ?p ?o ?start ?finish
@@ -909,11 +921,11 @@ public class MagmaCoreServiceQueries {
                     ?s ?p ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -938,17 +950,17 @@ public class MagmaCoreServiceQueries {
                         hqdm:whole ?topicId.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
@@ -966,14 +978,14 @@ public class MagmaCoreServiceQueries {
                     ?comp hqdm:part ?s;
                         hqdm:whole ?topicId.
                     ?s hqdm:member_of_kind ?kind.
-                    ?kind hqdm:data_EntityName ?o.
+                    ?kind skos:prefLabel ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -986,6 +998,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_MEMBERS_OF_CLASS_BY_COMPOSITION_AND_PARTIAL_SIGN_CASE_INSENSITIVE = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT distinct ?s ?p ?o ?start ?finish
@@ -1011,11 +1024,11 @@ public class MagmaCoreServiceQueries {
                     ?s ?p ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -1040,17 +1053,17 @@ public class MagmaCoreServiceQueries {
                         hqdm:whole ?topicId.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:data_EntityName as ?p) ?o ?start ?finish
+                SELECT ?s (skos:prefLabel as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
@@ -1068,14 +1081,14 @@ public class MagmaCoreServiceQueries {
                     ?comp hqdm:part ?s;
                         hqdm:whole ?topicId.
                     ?s hqdm:member_of_kind ?kind.
-                    ?kind hqdm:data_EntityName ?o.
+                    ?kind skos:prefLabel ?o.
                     OPTIONAL {
                         ?repBySign hqdm:beginning ?begin.
-                        ?begin hqdm:data_EntityName ?start.
+                        ?begin skos:prefLabel ?start.
                     }
                     OPTIONAL {
                         ?repBySign hqdm:ending ?end.
-                        ?end hqdm:data_EntityName ?finish.
+                        ?end skos:prefLabel ?finish.
                     }
                     }
                 }
@@ -1088,6 +1101,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_SIGNS_FOR_ENTITY = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT distinct ?sign_value ?pattern_name ?rep_by_pattern_name ?start ?finish
@@ -1100,20 +1114,20 @@ public class MagmaCoreServiceQueries {
                         ?state_of_s hqdm:temporal_part_of ?s.
                         ?rep_by_sign hqdm:represents ?state_of_s;
                             hqdm:member_of_ ?rep_by_pattern.
-                        ?rep_by_pattern hqdm:data_EntityName ?rep_by_pattern_name.
+                        ?rep_by_pattern skos:prefLabel ?rep_by_pattern_name.
                         ?state_of_sign hqdm:participant_in ?rep_by_sign;
                             a hqdm:state_of_sign;
                             hqdm:temporal_part_of ?sign.
                         ?sign hqdm:value_ ?sign_value;
                             hqdm:member_of_ ?pattern.
-                        ?pattern hqdm:data_EntityName ?pattern_name.
+                        ?pattern skos:prefLabel ?pattern_name.
                         OPTIONAL {
                             ?rep_by_sign hqdm:beginning ?begin.
-                            ?begin hqdm:data_EntityName ?start.
+                            ?begin skos:prefLabel ?start.
                         }
                         OPTIONAL {
                             ?rep_by_sign hqdm:ending ?end.
-                            ?end hqdm:data_EntityName ?finish.
+                            ?end skos:prefLabel ?finish.
                         }
 
                     }
@@ -1126,6 +1140,7 @@ public class MagmaCoreServiceQueries {
      */
     public static final String FIND_BY_FIELD_VALUE_AND_CLASS = """
             PREFIX hqdm: <https://hqdmtop.github.io/hqdm#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
             SELECT ?s ?p ?o
