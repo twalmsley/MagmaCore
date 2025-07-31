@@ -189,14 +189,6 @@ public class PhysicalQuantityRangeBuilder {
                 && this.physicalQuantityRange.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.physicalQuantityRange.hasValue(MEMBER_OF)
-                && this.physicalQuantityRange.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.physicalQuantityRange.hasValue(MEMBER_OF)
-                && this.physicalQuantityRange.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.physicalQuantityRange.hasValue(PART_OF_BY_CLASS)
                 && this.physicalQuantityRange.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

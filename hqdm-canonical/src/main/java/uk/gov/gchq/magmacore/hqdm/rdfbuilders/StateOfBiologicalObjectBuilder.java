@@ -214,20 +214,12 @@ public class StateOfBiologicalObjectBuilder {
                 && this.stateOfBiologicalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfBiologicalObject.hasValue(MEMBER_OF)
-                && this.stateOfBiologicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfBiologicalObject.hasValue(PART_OF)
                 && this.stateOfBiologicalObject.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfBiologicalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfBiologicalObject.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfBiologicalObject.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {

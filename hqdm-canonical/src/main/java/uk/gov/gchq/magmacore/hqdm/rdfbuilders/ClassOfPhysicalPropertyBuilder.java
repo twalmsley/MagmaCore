@@ -92,10 +92,6 @@ public class ClassOfPhysicalPropertyBuilder {
                 && this.classOfPhysicalProperty.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfPhysicalProperty.hasValue(MEMBER_OF)
-                && this.classOfPhysicalProperty.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return this.classOfPhysicalProperty;
     }
 }

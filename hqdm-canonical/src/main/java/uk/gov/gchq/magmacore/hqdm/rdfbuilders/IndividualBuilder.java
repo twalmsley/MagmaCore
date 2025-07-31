@@ -235,10 +235,6 @@ public class IndividualBuilder {
                 && this.individual.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.individual.hasValue(MEMBER_OF)
-                && this.individual.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.individual.hasValue(MEMBER_OF_KIND)
                 && this.individual.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -249,10 +245,6 @@ public class IndividualBuilder {
         }
         if (!this.individual.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.individual.hasValue(TEMPORAL_PART_OF)
-                && this.individual.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.individual.hasValue(TEMPORAL_PART_OF)
                 && this.individual.values(TEMPORAL_PART_OF).isEmpty()) {

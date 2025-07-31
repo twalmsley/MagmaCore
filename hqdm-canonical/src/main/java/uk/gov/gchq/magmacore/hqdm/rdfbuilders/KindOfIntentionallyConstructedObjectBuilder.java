@@ -148,14 +148,6 @@ public class KindOfIntentionallyConstructedObjectBuilder {
                 && this.kindOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
-                && this.kindOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.kindOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
-                && this.kindOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.kindOfIntentionallyConstructedObject.hasValue(PART_OF_BY_CLASS)
                 && this.kindOfIntentionallyConstructedObject.values(PART_OF_BY_CLASS)
                         .isEmpty()) {

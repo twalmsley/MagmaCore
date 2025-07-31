@@ -149,14 +149,6 @@ public class ClassOfStateOfSociallyConstructedObjectBuilder {
                 && this.classOfStateOfSociallyConstructedObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfSociallyConstructedObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfSociallyConstructedObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfSociallyConstructedObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfSociallyConstructedObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfSociallyConstructedObject.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfSociallyConstructedObject.values(PART_OF_BY_CLASS)
                         .isEmpty()) {

@@ -152,16 +152,6 @@ public class ClassOfStateOfIntentionallyConstructedObjectBuilder {
                         .isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfIntentionallyConstructedObject.values(MEMBER_OF)
-                        .isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfIntentionallyConstructedObject.values(MEMBER_OF)
-                        .isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfIntentionallyConstructedObject.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfIntentionallyConstructedObject.values(PART_OF_BY_CLASS)
                         .isEmpty()) {

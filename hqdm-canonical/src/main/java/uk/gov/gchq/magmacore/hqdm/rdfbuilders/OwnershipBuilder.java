@@ -267,10 +267,6 @@ public class OwnershipBuilder {
                 && this.ownership.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.ownership.hasValue(MEMBER_OF)
-                && this.ownership.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.ownership.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -280,10 +276,6 @@ public class OwnershipBuilder {
         }
         if (!this.ownership.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.ownership.hasValue(TEMPORAL_PART_OF)
-                && this.ownership.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.ownership.hasValue(TEMPORAL_PART_OF)
                 && this.ownership.values(TEMPORAL_PART_OF).isEmpty()) {

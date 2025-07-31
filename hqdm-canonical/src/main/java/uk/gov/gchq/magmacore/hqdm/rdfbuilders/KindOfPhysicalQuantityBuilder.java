@@ -92,10 +92,6 @@ public class KindOfPhysicalQuantityBuilder {
                 && this.kindOfPhysicalQuantity.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfPhysicalQuantity.hasValue(MEMBER_OF)
-                && this.kindOfPhysicalQuantity.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return kindOfPhysicalQuantity;
     }
 }

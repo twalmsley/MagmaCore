@@ -161,14 +161,6 @@ public class RequirementSpecificationBuilder {
                 && this.requirementSpecification.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.requirementSpecification.hasValue(MEMBER_OF)
-                && this.requirementSpecification.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.requirementSpecification.hasValue(MEMBER_OF)
-                && this.requirementSpecification.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.requirementSpecification.hasValue(PART_OF_BY_CLASS)
                 && this.requirementSpecification.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

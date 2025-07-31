@@ -171,22 +171,6 @@ public class RoleBuilder {
                 && this.role.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.role.hasValue(MEMBER_OF)
-                && this.role.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.role.hasValue(MEMBER_OF)
-                && this.role.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.role.hasValue(PART_OF_BY_CLASS)
-                && this.role.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
-        if (this.role.hasValue(PART_OF_BY_CLASS)
-                && this.role.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
         if (this.role.hasValue(PART_OF_BY_CLASS)
                 && this.role.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

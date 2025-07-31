@@ -146,14 +146,6 @@ public class ClassOfStateOfBiologicalSystemBuilder {
                 && this.classOfStateOfBiologicalSystem.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfBiologicalSystem.hasValue(MEMBER_OF)
-                && this.classOfStateOfBiologicalSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfBiologicalSystem.hasValue(MEMBER_OF)
-                && this.classOfStateOfBiologicalSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfBiologicalSystem.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfBiologicalSystem.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

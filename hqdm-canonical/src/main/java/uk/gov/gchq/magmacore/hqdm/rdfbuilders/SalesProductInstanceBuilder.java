@@ -247,10 +247,6 @@ public class SalesProductInstanceBuilder {
                 && this.salesProductInstance.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.salesProductInstance.hasValue(MEMBER_OF)
-                && this.salesProductInstance.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.salesProductInstance.hasValue(MEMBER_OF_KIND)
                 && this.salesProductInstance.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -261,10 +257,6 @@ public class SalesProductInstanceBuilder {
         }
         if (!this.salesProductInstance.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.salesProductInstance.hasValue(TEMPORAL_PART_OF)
-                && this.salesProductInstance.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.salesProductInstance.hasValue(TEMPORAL_PART_OF)
                 && this.salesProductInstance.values(TEMPORAL_PART_OF).isEmpty()) {

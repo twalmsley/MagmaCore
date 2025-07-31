@@ -180,22 +180,6 @@ public class ClassOfAgreementProcessBuilder {
                 && this.classOfAgreementProcess.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfAgreementProcess.hasValue(MEMBER_OF)
-                && this.classOfAgreementProcess.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfAgreementProcess.hasValue(MEMBER_OF)
-                && this.classOfAgreementProcess.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfAgreementProcess.hasValue(PART_OF_BY_CLASS)
-                && this.classOfAgreementProcess.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
-        if (this.classOfAgreementProcess.hasValue(PART_OF_BY_CLASS)
-                && this.classOfAgreementProcess.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
         if (this.classOfAgreementProcess.hasValue(PART_OF_BY_CLASS)
                 && this.classOfAgreementProcess.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

@@ -92,10 +92,6 @@ public class EnumeratedClassBuilder {
                 && this.enumeratedClass.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.enumeratedClass.hasValue(MEMBER_OF)
-                && this.enumeratedClass.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return enumeratedClass;
     }
 }

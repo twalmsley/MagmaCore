@@ -195,10 +195,6 @@ public class EventBuilder {
                 && this.event.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.event.hasValue(MEMBER_OF)
-                && this.event.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.event.hasValue(PART_OF)
                 && this.event.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");

@@ -226,10 +226,6 @@ public class PartyBuilder {
                 && this.party.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.party.hasValue(MEMBER_OF)
-                && this.party.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.party.hasValue(MEMBER_OF_KIND)
                 && this.party.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -240,10 +236,6 @@ public class PartyBuilder {
         }
         if (!this.party.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.party.hasValue(TEMPORAL_PART_OF)
-                && this.party.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.party.hasValue(TEMPORAL_PART_OF)
                 && this.party.values(TEMPORAL_PART_OF).isEmpty()) {

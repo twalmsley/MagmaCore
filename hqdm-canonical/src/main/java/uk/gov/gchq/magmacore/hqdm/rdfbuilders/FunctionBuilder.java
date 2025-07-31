@@ -75,10 +75,6 @@ public class FunctionBuilder {
                 && this.function.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.function.hasValue(MEMBER_OF)
-                && this.function.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return function;
     }
 }

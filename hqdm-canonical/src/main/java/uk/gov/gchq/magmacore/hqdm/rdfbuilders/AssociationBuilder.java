@@ -250,10 +250,6 @@ public class AssociationBuilder {
                 && this.association.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.association.hasValue(MEMBER_OF)
-                && this.association.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.association.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -263,10 +259,6 @@ public class AssociationBuilder {
         }
         if (!this.association.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.association.hasValue(TEMPORAL_PART_OF)
-                && this.association.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.association.hasValue(TEMPORAL_PART_OF)
                 && this.association.values(TEMPORAL_PART_OF).isEmpty()) {

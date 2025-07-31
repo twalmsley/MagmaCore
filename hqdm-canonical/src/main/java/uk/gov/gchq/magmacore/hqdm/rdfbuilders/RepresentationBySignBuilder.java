@@ -308,13 +308,6 @@ public class RepresentationBySignBuilder {
                 && this.representationBySign.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.representationBySign.hasValue(MEMBER_OF)
-                && this.representationBySign.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (!this.representationBySign.hasValue(MEMBER_OF)) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.representationBySign.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -327,10 +320,6 @@ public class RepresentationBySignBuilder {
         }
         if (!this.representationBySign.hasValue(REPRESENTS)) {
             throw new HqdmException("Property Not Set: represents");
-        }
-        if (this.representationBySign.hasValue(TEMPORAL_PART_OF)
-                && this.representationBySign.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.representationBySign.hasValue(TEMPORAL_PART_OF)
                 && this.representationBySign.values(TEMPORAL_PART_OF).isEmpty()) {

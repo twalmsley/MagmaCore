@@ -252,10 +252,6 @@ public class FunctionalObjectBuilder {
                 && this.functionalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.functionalObject.hasValue(MEMBER_OF)
-                && this.functionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.functionalObject.hasValue(MEMBER_OF_KIND)
                 && this.functionalObject.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -266,10 +262,6 @@ public class FunctionalObjectBuilder {
         }
         if (!this.functionalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.functionalObject.hasValue(TEMPORAL_PART_OF)
-                && this.functionalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.functionalObject.hasValue(TEMPORAL_PART_OF)
                 && this.functionalObject.values(TEMPORAL_PART_OF).isEmpty()) {

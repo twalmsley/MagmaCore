@@ -145,14 +145,6 @@ public class ClassOfSalesProductInstanceBuilder {
                 && this.classOfSalesProductInstance.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfSalesProductInstance.hasValue(MEMBER_OF)
-                && this.classOfSalesProductInstance.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfSalesProductInstance.hasValue(MEMBER_OF)
-                && this.classOfSalesProductInstance.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfSalesProductInstance.hasValue(PART_OF_BY_CLASS)
                 && this.classOfSalesProductInstance.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

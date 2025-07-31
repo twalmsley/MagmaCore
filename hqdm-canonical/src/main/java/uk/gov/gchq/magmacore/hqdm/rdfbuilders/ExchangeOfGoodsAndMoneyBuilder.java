@@ -354,19 +354,8 @@ public class ExchangeOfGoodsAndMoneyBuilder {
                 && this.exchangeOfGoodsAndMoney.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.exchangeOfGoodsAndMoney.hasValue(MEMBER_OF)
-                && this.exchangeOfGoodsAndMoney.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.exchangeOfGoodsAndMoney.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.exchangeOfGoodsAndMoney.hasValue(PART_OF)
-                && this.exchangeOfGoodsAndMoney.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (!this.exchangeOfGoodsAndMoney.hasValue(PART_OF)) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.exchangeOfGoodsAndMoney.hasValue(PART_OF)
                 && this.exchangeOfGoodsAndMoney.values(PART_OF).isEmpty()) {
@@ -378,10 +367,6 @@ public class ExchangeOfGoodsAndMoneyBuilder {
         if (this.exchangeOfGoodsAndMoney.hasValue(REFERENCES)
                 && this.exchangeOfGoodsAndMoney.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.exchangeOfGoodsAndMoney.hasValue(TEMPORAL_PART_OF)
-                && this.exchangeOfGoodsAndMoney.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.exchangeOfGoodsAndMoney.hasValue(TEMPORAL_PART_OF)
                 && this.exchangeOfGoodsAndMoney.values(TEMPORAL_PART_OF).isEmpty()) {

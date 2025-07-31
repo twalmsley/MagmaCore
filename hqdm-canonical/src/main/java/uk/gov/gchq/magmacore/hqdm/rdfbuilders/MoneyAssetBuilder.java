@@ -243,10 +243,6 @@ public class MoneyAssetBuilder {
                 && this.moneyAsset.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.moneyAsset.hasValue(MEMBER_OF)
-                && this.moneyAsset.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.moneyAsset.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -259,10 +255,6 @@ public class MoneyAssetBuilder {
         }
         if (!this.moneyAsset.hasValue(PARTICIPANT_IN)) {
             throw new HqdmException("Property Not Set: participant_in");
-        }
-        if (this.moneyAsset.hasValue(TEMPORAL_PART_OF)
-                && this.moneyAsset.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.moneyAsset.hasValue(TEMPORAL_PART_OF)
                 && this.moneyAsset.values(TEMPORAL_PART_OF).isEmpty()) {

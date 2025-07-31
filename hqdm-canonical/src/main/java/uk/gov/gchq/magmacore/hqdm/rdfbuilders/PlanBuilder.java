@@ -250,10 +250,6 @@ public class PlanBuilder {
                 && this.plan.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.plan.hasValue(MEMBER_OF)
-                && this.plan.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.plan.hasValue(MEMBER_OF_KIND)
                 && this.plan.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -264,14 +260,6 @@ public class PlanBuilder {
         }
         if (!this.plan.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.plan.hasValue(TEMPORAL_PART_OF)
-                && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
-        }
-        if (this.plan.hasValue(TEMPORAL_PART_OF)
-                && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.plan.hasValue(TEMPORAL_PART_OF)
                 && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {

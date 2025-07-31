@@ -211,20 +211,12 @@ public class InstalledObjectBuilder {
                 && this.installedObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.installedObject.hasValue(MEMBER_OF)
-                && this.installedObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.installedObject.hasValue(PART_OF)
                 && this.installedObject.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.installedObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.installedObject.hasValue(TEMPORAL_PART_OF)
-                && this.installedObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.installedObject.hasValue(TEMPORAL_PART_OF)
                 && this.installedObject.values(TEMPORAL_PART_OF).isEmpty()) {

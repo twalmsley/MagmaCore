@@ -253,10 +253,6 @@ public class RecognizingLanguageCommunityBuilder {
                 && this.recognizingLanguageCommunity.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.recognizingLanguageCommunity.hasValue(MEMBER_OF)
-                && this.recognizingLanguageCommunity.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.recognizingLanguageCommunity.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -270,10 +266,6 @@ public class RecognizingLanguageCommunityBuilder {
         if (this.recognizingLanguageCommunity.hasValue(PARTICIPANT_IN)
                 && this.recognizingLanguageCommunity.values(PARTICIPANT_IN).isEmpty()) {
             throw new HqdmException("Property Not Set: participant_in");
-        }
-        if (this.recognizingLanguageCommunity.hasValue(TEMPORAL_PART_OF)
-                && this.recognizingLanguageCommunity.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.recognizingLanguageCommunity.hasValue(TEMPORAL_PART_OF)
                 && this.recognizingLanguageCommunity.values(TEMPORAL_PART_OF).isEmpty()) {

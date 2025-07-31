@@ -146,14 +146,6 @@ public class ClassOfBiologicalSystemComponentBuilder {
                 && this.classOfBiologicalSystemComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfBiologicalSystemComponent.hasValue(MEMBER_OF)
-                && this.classOfBiologicalSystemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfBiologicalSystemComponent.hasValue(MEMBER_OF)
-                && this.classOfBiologicalSystemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfBiologicalSystemComponent.hasValue(PART_OF_BY_CLASS)
                 && this.classOfBiologicalSystemComponent.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

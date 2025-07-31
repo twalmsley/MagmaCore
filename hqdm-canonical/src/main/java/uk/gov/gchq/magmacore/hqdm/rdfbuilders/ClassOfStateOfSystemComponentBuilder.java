@@ -145,14 +145,6 @@ public class ClassOfStateOfSystemComponentBuilder {
                 && this.classOfStateOfSystemComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfSystemComponent.hasValue(MEMBER_OF)
-                && this.classOfStateOfSystemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfSystemComponent.hasValue(MEMBER_OF)
-                && this.classOfStateOfSystemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfSystemComponent.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfSystemComponent.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

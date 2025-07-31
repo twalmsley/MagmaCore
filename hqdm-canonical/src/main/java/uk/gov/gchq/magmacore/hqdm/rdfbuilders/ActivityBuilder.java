@@ -321,16 +321,8 @@ public class ActivityBuilder {
                 && this.activity.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.activity.hasValue(MEMBER_OF)
-                && this.activity.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.activity.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.activity.hasValue(PART_OF)
-                && this.activity.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.activity.hasValue(PART_OF)
                 && this.activity.values(PART_OF).isEmpty()) {
@@ -342,10 +334,6 @@ public class ActivityBuilder {
         if (this.activity.hasValue(REFERENCES)
                 && this.activity.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.activity.hasValue(TEMPORAL_PART_OF)
-                && this.activity.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.activity.hasValue(TEMPORAL_PART_OF)
                 && this.activity.values(TEMPORAL_PART_OF).isEmpty()) {

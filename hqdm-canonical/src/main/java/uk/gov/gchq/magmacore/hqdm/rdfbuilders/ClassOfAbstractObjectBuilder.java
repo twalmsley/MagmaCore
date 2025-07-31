@@ -92,10 +92,6 @@ public class ClassOfAbstractObjectBuilder {
                 && this.classOfAbstractObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfAbstractObject.hasValue(MEMBER_OF)
-                && this.classOfAbstractObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return this.classOfAbstractObject;
     }
 }

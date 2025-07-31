@@ -196,10 +196,6 @@ public class PointInTimeBuilder {
                 && this.pointInTime.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.pointInTime.hasValue(MEMBER_OF)
-                && this.pointInTime.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.pointInTime.hasValue(PART_OF)
                 && this.pointInTime.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");

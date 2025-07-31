@@ -255,10 +255,6 @@ public class SystemComponentBuilder {
                 && this.systemComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.systemComponent.hasValue(MEMBER_OF)
-                && this.systemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.systemComponent.hasValue(MEMBER_OF_KIND)
                 && this.systemComponent.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -269,10 +265,6 @@ public class SystemComponentBuilder {
         }
         if (!this.systemComponent.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.systemComponent.hasValue(TEMPORAL_PART_OF)
-                && this.systemComponent.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.systemComponent.hasValue(TEMPORAL_PART_OF)
                 && this.systemComponent.values(TEMPORAL_PART_OF).isEmpty()) {

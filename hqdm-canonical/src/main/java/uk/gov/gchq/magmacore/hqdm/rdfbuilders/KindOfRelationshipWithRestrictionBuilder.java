@@ -122,10 +122,6 @@ public class KindOfRelationshipWithRestrictionBuilder {
                 && this.kindOfRelationshipWithRestriction.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfRelationshipWithRestriction.hasValue(MEMBER_OF)
-                && this.kindOfRelationshipWithRestriction.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.kindOfRelationshipWithRestriction.hasValue(REQUIRED_ROLE_PLAYER)) {
             throw new HqdmException("Property Not Set: required_role_player");
         }

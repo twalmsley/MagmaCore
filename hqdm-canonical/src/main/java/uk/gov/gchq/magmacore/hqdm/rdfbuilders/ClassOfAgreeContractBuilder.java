@@ -179,18 +179,6 @@ public class ClassOfAgreeContractBuilder {
                 && this.classOfAgreeContract.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfAgreeContract.hasValue(MEMBER_OF)
-                && this.classOfAgreeContract.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfAgreeContract.hasValue(MEMBER_OF)
-                && this.classOfAgreeContract.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfAgreeContract.hasValue(PART_OF_BY_CLASS)
-                && this.classOfAgreeContract.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
         if (this.classOfAgreeContract.hasValue(PART_OF_BY_CLASS)
                 && this.classOfAgreeContract.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

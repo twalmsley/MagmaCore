@@ -75,10 +75,6 @@ public class RelationshipBuilder {
                 && this.relationship.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.relationship.hasValue(MEMBER_OF)
-                && this.relationship.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return relationship;
     }
 }

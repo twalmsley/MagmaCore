@@ -337,20 +337,8 @@ public class OfferBuilder {
                 && this.offer.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.offer.hasValue(MEMBER_OF)
-                && this.offer.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.offer.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.offer.hasValue(PART_OF)
-                && this.offer.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (this.offer.hasValue(PART_OF)
-                && this.offer.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.offer.hasValue(PART_OF)
                 && this.offer.values(PART_OF).isEmpty()) {
@@ -362,10 +350,6 @@ public class OfferBuilder {
         if (this.offer.hasValue(REFERENCES)
                 && this.offer.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.offer.hasValue(TEMPORAL_PART_OF)
-                && this.offer.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.offer.hasValue(TEMPORAL_PART_OF)
                 && this.offer.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -344,20 +344,8 @@ public class SociallyConstructedActivityBuilder {
                 && this.sociallyConstructedActivity.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.sociallyConstructedActivity.hasValue(MEMBER_OF)
-                && this.sociallyConstructedActivity.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.sociallyConstructedActivity.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.sociallyConstructedActivity.hasValue(PART_OF)
-                && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (this.sociallyConstructedActivity.hasValue(PART_OF)
-                && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.sociallyConstructedActivity.hasValue(PART_OF)
                 && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
@@ -369,10 +357,6 @@ public class SociallyConstructedActivityBuilder {
         if (this.sociallyConstructedActivity.hasValue(REFERENCES)
                 && this.sociallyConstructedActivity.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.sociallyConstructedActivity.hasValue(TEMPORAL_PART_OF)
-                && this.sociallyConstructedActivity.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.sociallyConstructedActivity.hasValue(TEMPORAL_PART_OF)
                 && this.sociallyConstructedActivity.values(TEMPORAL_PART_OF).isEmpty()) {

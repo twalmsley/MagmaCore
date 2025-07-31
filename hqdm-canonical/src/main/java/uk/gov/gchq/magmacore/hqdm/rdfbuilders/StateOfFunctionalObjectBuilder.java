@@ -214,20 +214,12 @@ public class StateOfFunctionalObjectBuilder {
                 && this.stateOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfFunctionalObject.hasValue(MEMBER_OF)
-                && this.stateOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfFunctionalObject.hasValue(PART_OF)
                 && this.stateOfFunctionalObject.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfFunctionalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfFunctionalObject.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfFunctionalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfFunctionalObject.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfFunctionalObject.values(TEMPORAL_PART_OF).isEmpty()) {

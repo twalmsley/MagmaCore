@@ -351,20 +351,8 @@ public class AgreementProcessBuilder {
                 && this.agreementProcess.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.agreementProcess.hasValue(MEMBER_OF)
-                && this.agreementProcess.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.agreementProcess.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.agreementProcess.hasValue(PART_OF)
-                && this.agreementProcess.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (this.agreementProcess.hasValue(PART_OF)
-                && this.agreementProcess.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.agreementProcess.hasValue(PART_OF)
                 && this.agreementProcess.values(PART_OF).isEmpty()) {
@@ -376,10 +364,6 @@ public class AgreementProcessBuilder {
         if (this.agreementProcess.hasValue(REFERENCES)
                 && this.agreementProcess.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.agreementProcess.hasValue(TEMPORAL_PART_OF)
-                && this.agreementProcess.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.agreementProcess.hasValue(TEMPORAL_PART_OF)
                 && this.agreementProcess.values(TEMPORAL_PART_OF).isEmpty()) {

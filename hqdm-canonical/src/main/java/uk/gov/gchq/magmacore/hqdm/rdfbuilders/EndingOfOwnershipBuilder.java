@@ -196,10 +196,6 @@ public class EndingOfOwnershipBuilder {
                 && this.endingOfOwnership.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.endingOfOwnership.hasValue(MEMBER_OF)
-                && this.endingOfOwnership.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.endingOfOwnership.hasValue(PART_OF)
                 && this.endingOfOwnership.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");

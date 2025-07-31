@@ -165,14 +165,6 @@ public class KindOfFunctionalSystemBuilder {
                 && this.kindOfFunctionalSystem.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfFunctionalSystem.hasValue(MEMBER_OF)
-                && this.kindOfFunctionalSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.kindOfFunctionalSystem.hasValue(MEMBER_OF)
-                && this.kindOfFunctionalSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.kindOfFunctionalSystem.hasValue(PART_OF_BY_CLASS)
                 && this.kindOfFunctionalSystem.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

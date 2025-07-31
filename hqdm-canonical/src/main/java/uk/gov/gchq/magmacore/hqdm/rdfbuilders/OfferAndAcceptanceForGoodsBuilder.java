@@ -357,10 +357,6 @@ public class OfferAndAcceptanceForGoodsBuilder {
                 && this.offerAndAcceptanceForGoods.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.offerAndAcceptanceForGoods.hasValue(MEMBER_OF)
-                && this.offerAndAcceptanceForGoods.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.offerAndAcceptanceForGoods.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -381,10 +377,6 @@ public class OfferAndAcceptanceForGoodsBuilder {
         if (this.offerAndAcceptanceForGoods.hasValue(REFERENCES)
                 && this.offerAndAcceptanceForGoods.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.offerAndAcceptanceForGoods.hasValue(TEMPORAL_PART_OF)
-                && this.offerAndAcceptanceForGoods.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.offerAndAcceptanceForGoods.hasValue(TEMPORAL_PART_OF)
                 && this.offerAndAcceptanceForGoods.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -338,19 +338,8 @@ public class ReachingAgreementBuilder {
                 && this.reachingAgreement.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.reachingAgreement.hasValue(MEMBER_OF)
-                && this.reachingAgreement.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.reachingAgreement.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.reachingAgreement.hasValue(PART_OF)
-                && this.reachingAgreement.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (!this.reachingAgreement.hasValue(PART_OF)) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.reachingAgreement.hasValue(PART_OF)
                 && this.reachingAgreement.values(PART_OF).isEmpty()) {
@@ -362,10 +351,6 @@ public class ReachingAgreementBuilder {
         if (this.reachingAgreement.hasValue(REFERENCES)
                 && this.reachingAgreement.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.reachingAgreement.hasValue(TEMPORAL_PART_OF)
-                && this.reachingAgreement.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.reachingAgreement.hasValue(TEMPORAL_PART_OF)
                 && this.reachingAgreement.values(TEMPORAL_PART_OF).isEmpty()) {

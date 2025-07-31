@@ -243,10 +243,6 @@ public class BiologicalSystemBuilder {
                 && this.biologicalSystem.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.biologicalSystem.hasValue(MEMBER_OF)
-                && this.biologicalSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.biologicalSystem.hasValue(MEMBER_OF_KIND)
                 && this.biologicalSystem.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -260,10 +256,6 @@ public class BiologicalSystemBuilder {
         }
         if (!this.biologicalSystem.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.biologicalSystem.hasValue(TEMPORAL_PART_OF)
-                && this.biologicalSystem.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.biologicalSystem.hasValue(TEMPORAL_PART_OF)
                 && this.biologicalSystem.values(TEMPORAL_PART_OF).isEmpty()) {

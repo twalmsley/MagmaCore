@@ -267,13 +267,6 @@ public class SignBuilder {
                 && this.sign.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.sign.hasValue(MEMBER_OF)
-                && this.sign.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (!this.sign.hasValue(MEMBER_OF)) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.sign.hasValue(MEMBER_OF_KIND)
                 && this.sign.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -287,10 +280,6 @@ public class SignBuilder {
         }
         if (!this.sign.hasValue(PARTICIPANT_IN)) {
             throw new HqdmException("Property Not Set: participant_in");
-        }
-        if (this.sign.hasValue(TEMPORAL_PART_OF)
-                && this.sign.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.sign.hasValue(TEMPORAL_PART_OF)
                 && this.sign.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -144,14 +144,6 @@ public class ClassOfSpatioTemporalExtentBuilder {
                 && this.classOfSpatioTemporalExtent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfSpatioTemporalExtent.hasValue(MEMBER_OF)
-                && this.classOfSpatioTemporalExtent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfSpatioTemporalExtent.hasValue(MEMBER_OF)
-                && this.classOfSpatioTemporalExtent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfSpatioTemporalExtent.hasValue(PART_OF_BY_CLASS)
                 && this.classOfSpatioTemporalExtent.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

@@ -105,10 +105,6 @@ public class KindOfRelationshipWithSignatureBuilder {
                 && this.kindOfRelationshipWithSignature.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfRelationshipWithSignature.hasValue(MEMBER_OF)
-                && this.kindOfRelationshipWithSignature.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.kindOfRelationshipWithSignature.hasValue(ROLES)) {
             throw new HqdmException("Property Not Set: roles");
         }

@@ -144,14 +144,6 @@ public class ClassOfStateOfPositionBuilder {
                 && this.classOfStateOfPosition.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfPosition.hasValue(MEMBER_OF)
-                && this.classOfStateOfPosition.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfPosition.hasValue(MEMBER_OF)
-                && this.classOfStateOfPosition.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfPosition.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfPosition.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

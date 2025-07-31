@@ -145,14 +145,6 @@ public class ClassOfOrganizationComponentBuilder {
                 && this.classOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfOrganizationComponent.hasValue(MEMBER_OF)
-                && this.classOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfOrganizationComponent.hasValue(MEMBER_OF)
-                && this.classOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfOrganizationComponent.hasValue(PART_OF_BY_CLASS)
                 && this.classOfOrganizationComponent.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

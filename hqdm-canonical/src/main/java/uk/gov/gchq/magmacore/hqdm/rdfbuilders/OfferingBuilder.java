@@ -236,24 +236,8 @@ public class OfferingBuilder {
                 && this.offering.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.offering.hasValue(MEMBER_OF)
-                && this.offering.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.offering.hasValue(MEMBER_OF)
-                && this.offering.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.offering.hasValue(OFFEROR)) {
             throw new HqdmException("Property Not Set: offeror");
-        }
-        if (this.offering.hasValue(PART_OF_BY_CLASS)
-                && this.offering.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
-        }
-        if (this.offering.hasValue(PART_OF_BY_CLASS)
-                && this.offering.values(PART_OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class");
         }
         if (this.offering.hasValue(PART_OF_BY_CLASS)
                 && this.offering.values(PART_OF_BY_CLASS).isEmpty()) {

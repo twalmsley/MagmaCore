@@ -144,14 +144,6 @@ public class ClassOfAmountOfMoneyBuilder {
                 && this.classOfAmountOfMoney.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfAmountOfMoney.hasValue(MEMBER_OF)
-                && this.classOfAmountOfMoney.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfAmountOfMoney.hasValue(MEMBER_OF)
-                && this.classOfAmountOfMoney.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfAmountOfMoney.hasValue(PART_OF_BY_CLASS)
                 && this.classOfAmountOfMoney.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

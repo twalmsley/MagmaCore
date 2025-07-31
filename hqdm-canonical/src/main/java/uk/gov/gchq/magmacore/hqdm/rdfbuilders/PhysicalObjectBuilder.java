@@ -236,10 +236,6 @@ public class PhysicalObjectBuilder {
                 && this.physicalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.physicalObject.hasValue(MEMBER_OF)
-                && this.physicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.physicalObject.hasValue(MEMBER_OF_KIND)
                 && this.physicalObject.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -250,10 +246,6 @@ public class PhysicalObjectBuilder {
         }
         if (!this.physicalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.physicalObject.hasValue(TEMPORAL_PART_OF)
-                && this.physicalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.physicalObject.hasValue(TEMPORAL_PART_OF)
                 && this.physicalObject.values(TEMPORAL_PART_OF).isEmpty()) {

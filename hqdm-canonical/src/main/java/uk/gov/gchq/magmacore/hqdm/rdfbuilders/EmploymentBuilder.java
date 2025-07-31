@@ -263,10 +263,6 @@ public class EmploymentBuilder {
                 && this.employment.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.employment.hasValue(MEMBER_OF)
-                && this.employment.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.employment.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -276,10 +272,6 @@ public class EmploymentBuilder {
         }
         if (!this.employment.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.employment.hasValue(TEMPORAL_PART_OF)
-                && this.employment.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.employment.hasValue(TEMPORAL_PART_OF)
                 && this.employment.values(TEMPORAL_PART_OF).isEmpty()) {

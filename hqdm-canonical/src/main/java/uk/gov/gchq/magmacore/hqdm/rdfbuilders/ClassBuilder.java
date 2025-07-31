@@ -91,10 +91,6 @@ public class ClassBuilder {
                 && this.clazz.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.clazz.hasValue(MEMBER_OF)
-                && this.clazz.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return this.clazz;
     }
 }

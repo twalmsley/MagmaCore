@@ -354,19 +354,8 @@ public class AgreeContractBuilder {
                 && this.agreeContract.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.agreeContract.hasValue(MEMBER_OF)
-                && this.agreeContract.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.agreeContract.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.agreeContract.hasValue(PART_OF)
-                && this.agreeContract.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (!this.agreeContract.hasValue(PART_OF)) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.agreeContract.hasValue(PART_OF)
                 && this.agreeContract.values(PART_OF).isEmpty()) {
@@ -378,10 +367,6 @@ public class AgreeContractBuilder {
         if (this.agreeContract.hasValue(REFERENCES)
                 && this.agreeContract.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.agreeContract.hasValue(TEMPORAL_PART_OF)
-                && this.agreeContract.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.agreeContract.hasValue(TEMPORAL_PART_OF)
                 && this.agreeContract.values(TEMPORAL_PART_OF).isEmpty()) {

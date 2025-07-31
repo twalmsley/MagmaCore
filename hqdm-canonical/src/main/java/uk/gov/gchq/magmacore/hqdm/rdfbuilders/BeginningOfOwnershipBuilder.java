@@ -196,10 +196,6 @@ public class BeginningOfOwnershipBuilder {
                 && this.beginningOfOwnership.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.beginningOfOwnership.hasValue(MEMBER_OF)
-                && this.beginningOfOwnership.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.beginningOfOwnership.hasValue(PART_OF)
                 && this.beginningOfOwnership.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");

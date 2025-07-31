@@ -75,10 +75,6 @@ public class UnitOfMeasureBuilder {
                 && this.unitOfMeasure.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.unitOfMeasure.hasValue(MEMBER_OF)
-                && this.unitOfMeasure.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         return unitOfMeasure;
     }
 }

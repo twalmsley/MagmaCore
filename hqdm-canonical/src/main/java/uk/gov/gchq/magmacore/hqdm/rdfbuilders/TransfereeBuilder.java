@@ -243,10 +243,6 @@ public class TransfereeBuilder {
                 && this.transferee.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.transferee.hasValue(MEMBER_OF)
-                && this.transferee.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.transferee.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -259,10 +255,6 @@ public class TransfereeBuilder {
         }
         if (!this.transferee.hasValue(PARTICIPANT_IN)) {
             throw new HqdmException("Property Not Set: participant_in");
-        }
-        if (this.transferee.hasValue(TEMPORAL_PART_OF)
-                && this.transferee.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.transferee.hasValue(TEMPORAL_PART_OF)
                 && this.transferee.values(TEMPORAL_PART_OF).isEmpty()) {

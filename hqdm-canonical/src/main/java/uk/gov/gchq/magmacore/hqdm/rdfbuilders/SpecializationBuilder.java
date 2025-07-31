@@ -100,10 +100,6 @@ public class SpecializationBuilder {
                 && this.specialization.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.specialization.hasValue(MEMBER_OF)
-                && this.specialization.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.specialization.hasValue(SUBCLASS)) {
             throw new HqdmException("Property Not Set: subclass");
         }

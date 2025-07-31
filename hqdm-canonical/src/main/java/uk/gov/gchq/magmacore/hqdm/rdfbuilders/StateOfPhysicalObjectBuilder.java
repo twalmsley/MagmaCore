@@ -212,20 +212,12 @@ public class StateOfPhysicalObjectBuilder {
                 && this.stateOfPhysicalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfPhysicalObject.hasValue(MEMBER_OF)
-                && this.stateOfPhysicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfPhysicalObject.hasValue(PART_OF)
                 && this.stateOfPhysicalObject.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfPhysicalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfPhysicalObject.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfPhysicalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfPhysicalObject.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfPhysicalObject.values(TEMPORAL_PART_OF).isEmpty()) {

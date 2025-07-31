@@ -170,14 +170,6 @@ public class SalesProductVersionBuilder {
                 && this.salesProductVersion.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.salesProductVersion.hasValue(MEMBER_OF)
-                && this.salesProductVersion.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.salesProductVersion.hasValue(MEMBER_OF)
-                && this.salesProductVersion.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.salesProductVersion.hasValue(PART_OF_BY_CLASS)
                 && this.salesProductVersion.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

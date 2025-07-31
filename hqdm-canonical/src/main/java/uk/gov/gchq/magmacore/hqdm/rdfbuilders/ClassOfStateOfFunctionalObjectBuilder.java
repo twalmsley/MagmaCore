@@ -146,14 +146,6 @@ public class ClassOfStateOfFunctionalObjectBuilder {
                 && this.classOfStateOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfFunctionalObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfFunctionalObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfFunctionalObject.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfFunctionalObject.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

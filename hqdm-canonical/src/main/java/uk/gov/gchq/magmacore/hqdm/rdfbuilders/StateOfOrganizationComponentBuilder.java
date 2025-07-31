@@ -221,20 +221,12 @@ public class StateOfOrganizationComponentBuilder {
                 && this.stateOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfOrganizationComponent.hasValue(MEMBER_OF)
-                && this.stateOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfOrganizationComponent.hasValue(PART_OF)
                 && this.stateOfOrganizationComponent.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfOrganizationComponent.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfOrganizationComponent.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfOrganizationComponent.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfOrganizationComponent.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfOrganizationComponent.values(TEMPORAL_PART_OF).isEmpty()) {

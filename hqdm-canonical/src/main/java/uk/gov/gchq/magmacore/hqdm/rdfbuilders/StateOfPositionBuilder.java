@@ -210,20 +210,12 @@ public class StateOfPositionBuilder {
                 && this.stateOfPosition.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfPosition.hasValue(MEMBER_OF)
-                && this.stateOfPosition.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfPosition.hasValue(PART_OF)
                 && this.stateOfPosition.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfPosition.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfPosition.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfPosition.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfPosition.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfPosition.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -147,14 +147,6 @@ public class ClassOfInPlaceBiologicalComponentBuilder {
                 && this.classOfInPlaceBiologicalComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfInPlaceBiologicalComponent.hasValue(MEMBER_OF)
-                && this.classOfInPlaceBiologicalComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfInPlaceBiologicalComponent.hasValue(MEMBER_OF)
-                && this.classOfInPlaceBiologicalComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of_");
-        }
         if (this.classOfInPlaceBiologicalComponent.hasValue(PART_OF_BY_CLASS)
                 && this.classOfInPlaceBiologicalComponent.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

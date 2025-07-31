@@ -226,20 +226,12 @@ public class StateOfFunctionalSystemComponentBuilder {
                 && this.stateOfFunctionalSystemComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfFunctionalSystemComponent.hasValue(MEMBER_OF)
-                && this.stateOfFunctionalSystemComponent.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.stateOfFunctionalSystemComponent.hasValue(PART_OF)
                 && this.stateOfFunctionalSystemComponent.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfFunctionalSystemComponent.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.stateOfFunctionalSystemComponent.hasValue(TEMPORAL_PART_OF)
-                && this.stateOfFunctionalSystemComponent.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfFunctionalSystemComponent.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfFunctionalSystemComponent.values(TEMPORAL_PART_OF).isEmpty()) {

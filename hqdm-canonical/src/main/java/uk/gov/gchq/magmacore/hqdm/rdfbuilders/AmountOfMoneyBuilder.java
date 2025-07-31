@@ -244,10 +244,6 @@ public class AmountOfMoneyBuilder {
                 && this.amountOfMoney.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.amountOfMoney.hasValue(MEMBER_OF)
-                && this.amountOfMoney.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.amountOfMoney.hasValue(MEMBER_OF_CURRENCY)
                 && this.amountOfMoney.values(MEMBER_OF_CURRENCY).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_currency");
@@ -262,10 +258,6 @@ public class AmountOfMoneyBuilder {
         }
         if (!this.amountOfMoney.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.amountOfMoney.hasValue(TEMPORAL_PART_OF)
-                && this.amountOfMoney.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.amountOfMoney.hasValue(TEMPORAL_PART_OF)
                 && this.amountOfMoney.values(TEMPORAL_PART_OF).isEmpty()) {

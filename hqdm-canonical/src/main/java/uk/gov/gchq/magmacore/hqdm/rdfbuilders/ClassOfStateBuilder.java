@@ -141,14 +141,6 @@ public class ClassOfStateBuilder {
                 && this.classOfState.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfState.hasValue(MEMBER_OF)
-                && this.classOfState.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfState.hasValue(MEMBER_OF)
-                && this.classOfState.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfState.hasValue(PART_OF_BY_CLASS)
                 && this.classOfState.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

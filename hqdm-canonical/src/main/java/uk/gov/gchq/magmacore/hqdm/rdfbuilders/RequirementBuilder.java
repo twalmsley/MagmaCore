@@ -230,10 +230,6 @@ public class RequirementBuilder {
                 && this.requirement.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.requirement.hasValue(MEMBER_OF)
-                && this.requirement.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.requirement.hasValue(PART_OF)
                 && this.requirement.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");

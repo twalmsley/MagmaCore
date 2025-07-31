@@ -148,14 +148,6 @@ public class ClassOfStateOfOrdinaryBiologicalObjectBuilder {
                 && this.classOfStateOfOrdinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfStateOfOrdinaryBiologicalObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfOrdinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfStateOfOrdinaryBiologicalObject.hasValue(MEMBER_OF)
-                && this.classOfStateOfOrdinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfStateOfOrdinaryBiologicalObject.hasValue(PART_OF_BY_CLASS)
                 && this.classOfStateOfOrdinaryBiologicalObject.values(PART_OF_BY_CLASS)
                         .isEmpty()) {

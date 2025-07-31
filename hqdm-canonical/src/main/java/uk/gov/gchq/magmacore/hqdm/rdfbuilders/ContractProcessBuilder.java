@@ -353,20 +353,8 @@ public class ContractProcessBuilder {
                 && this.contractProcess.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.contractProcess.hasValue(MEMBER_OF)
-                && this.contractProcess.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.contractProcess.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
-        }
-        if (this.contractProcess.hasValue(PART_OF)
-                && this.contractProcess.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
-        }
-        if (this.contractProcess.hasValue(PART_OF)
-                && this.contractProcess.values(PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.contractProcess.hasValue(PART_OF)
                 && this.contractProcess.values(PART_OF).isEmpty()) {
@@ -378,10 +366,6 @@ public class ContractProcessBuilder {
         if (this.contractProcess.hasValue(REFERENCES)
                 && this.contractProcess.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
-        }
-        if (this.contractProcess.hasValue(TEMPORAL_PART_OF)
-                && this.contractProcess.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.contractProcess.hasValue(TEMPORAL_PART_OF)
                 && this.contractProcess.values(TEMPORAL_PART_OF).isEmpty()) {

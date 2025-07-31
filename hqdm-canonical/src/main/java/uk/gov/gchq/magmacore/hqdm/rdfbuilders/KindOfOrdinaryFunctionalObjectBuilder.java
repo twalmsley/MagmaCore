@@ -164,14 +164,6 @@ public class KindOfOrdinaryFunctionalObjectBuilder {
                 && this.kindOfOrdinaryFunctionalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfOrdinaryFunctionalObject.hasValue(MEMBER_OF)
-                && this.kindOfOrdinaryFunctionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.kindOfOrdinaryFunctionalObject.hasValue(MEMBER_OF)
-                && this.kindOfOrdinaryFunctionalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.kindOfOrdinaryFunctionalObject.hasValue(PART_OF_BY_CLASS)
                 && this.kindOfOrdinaryFunctionalObject.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

@@ -102,10 +102,6 @@ public class TemporalCompositionBuilder {
                 && this.temporalComposition.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.temporalComposition.hasValue(MEMBER_OF)
-                && this.temporalComposition.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.temporalComposition.hasValue(PART)) {
             throw new HqdmException("Property Not Set: part");
         }

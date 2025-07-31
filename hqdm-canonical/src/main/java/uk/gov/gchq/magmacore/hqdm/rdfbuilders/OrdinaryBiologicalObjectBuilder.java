@@ -234,10 +234,6 @@ public class OrdinaryBiologicalObjectBuilder {
                 && this.ordinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.ordinaryBiologicalObject.hasValue(MEMBER_OF)
-                && this.ordinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.ordinaryBiologicalObject.hasValue(MEMBER_OF_KIND)
                 && this.ordinaryBiologicalObject.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
@@ -248,10 +244,6 @@ public class OrdinaryBiologicalObjectBuilder {
         }
         if (!this.ordinaryBiologicalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.ordinaryBiologicalObject.hasValue(TEMPORAL_PART_OF)
-                && this.ordinaryBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.ordinaryBiologicalObject.hasValue(TEMPORAL_PART_OF)
                 && this.ordinaryBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {

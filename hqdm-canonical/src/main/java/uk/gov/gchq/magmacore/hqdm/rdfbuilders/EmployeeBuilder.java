@@ -243,10 +243,6 @@ public class EmployeeBuilder {
                 && this.employee.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.employee.hasValue(MEMBER_OF)
-                && this.employee.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (!this.employee.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
@@ -259,10 +255,6 @@ public class EmployeeBuilder {
         }
         if (!this.employee.hasValue(PARTICIPANT_IN)) {
             throw new HqdmException("Property Not Set: participant_in");
-        }
-        if (this.employee.hasValue(TEMPORAL_PART_OF)
-                && this.employee.values(TEMPORAL_PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.employee.hasValue(TEMPORAL_PART_OF)
                 && this.employee.values(TEMPORAL_PART_OF).isEmpty()) {

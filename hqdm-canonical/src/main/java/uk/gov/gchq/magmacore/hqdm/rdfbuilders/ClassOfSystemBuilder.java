@@ -141,14 +141,6 @@ public class ClassOfSystemBuilder {
                 && this.classOfSystem.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfSystem.hasValue(MEMBER_OF)
-                && this.classOfSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfSystem.hasValue(MEMBER_OF)
-                && this.classOfSystem.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfSystem.hasValue(PART_OF_BY_CLASS)
                 && this.classOfSystem.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");

@@ -141,14 +141,6 @@ public class ClassOfPersonBuilder {
                 && this.classOfPerson.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfPerson.hasValue(MEMBER_OF)
-                && this.classOfPerson.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
-        if (this.classOfPerson.hasValue(MEMBER_OF)
-                && this.classOfPerson.values(MEMBER_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of");
-        }
         if (this.classOfPerson.hasValue(PART_OF_BY_CLASS)
                 && this.classOfPerson.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");
