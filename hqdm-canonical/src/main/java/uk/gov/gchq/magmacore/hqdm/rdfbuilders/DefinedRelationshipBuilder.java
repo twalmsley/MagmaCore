@@ -17,7 +17,6 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.INVOLVES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -65,8 +64,8 @@ public class DefinedRelationshipBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final DefinedRelationshipBuilder member__Of(final Class clazz) {
-        this.definedRelationship.addValue(MEMBER__OF, clazz.getId());
+    public final DefinedRelationshipBuilder member_Of(final Class clazz) {
+        this.definedRelationship.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -108,9 +107,9 @@ public class DefinedRelationshipBuilder {
         if (!this.definedRelationship.hasValue(INVOLVES)) {
             throw new HqdmException("Property Not Set: involves");
         }
-        if (this.definedRelationship.hasValue(MEMBER__OF)
-                && this.definedRelationship.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.definedRelationship.hasValue(MEMBER_OF)
+                && this.definedRelationship.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.definedRelationship.hasValue(MEMBER_OF)
                 && this.definedRelationship.values(MEMBER_OF).isEmpty()) {

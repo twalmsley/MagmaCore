@@ -19,19 +19,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.AcceptanceOfOfferForGoods;
@@ -112,14 +107,14 @@ public class AcceptanceOfOfferForGoodsBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AcceptanceOfOfferForGoodsBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.acceptanceOfOfferForGoods.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final AcceptanceOfOfferForGoodsBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.acceptanceOfOfferForGoods.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -179,8 +174,8 @@ public class AcceptanceOfOfferForGoodsBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final AcceptanceOfOfferForGoodsBuilder member__Of(final Class clazz) {
-        this.acceptanceOfOfferForGoods.addValue(MEMBER__OF, clazz.getId());
+    public final AcceptanceOfOfferForGoodsBuilder member_Of(final Class clazz) {
+        this.acceptanceOfOfferForGoods.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -222,8 +217,21 @@ public class AcceptanceOfOfferForGoodsBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AcceptanceOfOfferForGoodsBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.acceptanceOfOfferForGoods.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final AcceptanceOfOfferForGoodsBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.acceptanceOfOfferForGoods.addValue(PART_OF, spatioTemporalExtent.getId());
+        return this;
+    }
+
+    /**
+     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where a
+     * {@link uk.gov.gchq.magmacore.hqdm.model.SociallyConstructedObject} may be a
+     * {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} one or more {@link AgreementExecution}.
+     *
+     * @param agreementExecution The AgreementExecution.
+     * @return This builder.
+     */
+    public final AcceptanceOfOfferForGoodsBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.acceptanceOfOfferForGoods.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -238,19 +246,6 @@ public class AcceptanceOfOfferForGoodsBuilder {
     public final AcceptanceOfOfferForGoodsBuilder part_Of_M(
             final OfferAndAcceptanceForGoods offerAndAcceptanceForGoods) {
         this.acceptanceOfOfferForGoods.addValue(PART_OF, offerAndAcceptanceForGoods.getId());
-        return this;
-    }
-
-    /**
-     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where a
-     * {@link uk.gov.gchq.magmacore.hqdm.model.SociallyConstructedObject} may be a
-     * {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} one or more {@link AgreementExecution}.
-     *
-     * @param agreementExecution The AgreementExecution.
-     * @return This builder.
-     */
-    public final AcceptanceOfOfferForGoodsBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.acceptanceOfOfferForGoods.addValue(PART_OF_, agreementExecution.getId());
         return this;
     }
 
@@ -291,8 +286,8 @@ public class AcceptanceOfOfferForGoodsBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AcceptanceOfOfferForGoodsBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.acceptanceOfOfferForGoods.addValue(TEMPORAL__PART_OF,
+    public final AcceptanceOfOfferForGoodsBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.acceptanceOfOfferForGoods.addValue(TEMPORAL_PART_OF,
                 spatioTemporalExtent.getId());
         return this;
     }
@@ -345,9 +340,9 @@ public class AcceptanceOfOfferForGoodsBuilder {
                 && this.acceptanceOfOfferForGoods.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.acceptanceOfOfferForGoods.hasValue(MEMBER__OF)
-                && this.acceptanceOfOfferForGoods.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.acceptanceOfOfferForGoods.hasValue(MEMBER_OF)
+                && this.acceptanceOfOfferForGoods.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.acceptanceOfOfferForGoods.hasValue(MEMBER_OF)
                 && this.acceptanceOfOfferForGoods.values(MEMBER_OF).isEmpty()) {
@@ -356,15 +351,15 @@ public class AcceptanceOfOfferForGoodsBuilder {
         if (!this.acceptanceOfOfferForGoods.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.acceptanceOfOfferForGoods.hasValue(PART__OF)
-                && this.acceptanceOfOfferForGoods.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.acceptanceOfOfferForGoods.hasValue(PART_OF)
+                && this.acceptanceOfOfferForGoods.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.acceptanceOfOfferForGoods.hasValue(PART_OF)) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.acceptanceOfOfferForGoods.hasValue(PART_OF_)
-                && this.acceptanceOfOfferForGoods.values(PART_OF_).isEmpty()) {
+        if (this.acceptanceOfOfferForGoods.hasValue(PART_OF)
+                && this.acceptanceOfOfferForGoods.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_");
         }
         if (!this.acceptanceOfOfferForGoods.hasValue(PART_OF_POSSIBLE_WORLD)) {
@@ -373,9 +368,9 @@ public class AcceptanceOfOfferForGoodsBuilder {
         if (!this.acceptanceOfOfferForGoods.hasValue(REFERENCES)) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.acceptanceOfOfferForGoods.hasValue(TEMPORAL__PART_OF)
-                && this.acceptanceOfOfferForGoods.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.acceptanceOfOfferForGoods.hasValue(TEMPORAL_PART_OF)
+                && this.acceptanceOfOfferForGoods.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.acceptanceOfOfferForGoods.hasValue(TEMPORAL_PART_OF)
                 && this.acceptanceOfOfferForGoods.values(TEMPORAL_PART_OF).isEmpty()) {

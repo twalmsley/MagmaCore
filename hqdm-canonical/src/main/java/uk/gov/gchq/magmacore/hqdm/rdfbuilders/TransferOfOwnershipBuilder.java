@@ -21,20 +21,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES_BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES_ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Activity;
@@ -141,14 +135,14 @@ public class TransferOfOwnershipBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.transferOfOwnership.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final TransferOfOwnershipBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.transferOfOwnership.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -188,8 +182,8 @@ public class TransferOfOwnershipBuilder {
      * @param transferee The Transferee.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder consists_Of_Participant_(final Transferee transferee) {
-        this.transferOfOwnership.addValue(CONSISTS_OF_PARTICIPANT_, transferee.getId());
+    public final TransferOfOwnershipBuilder consists_Of_Participant(final Transferee transferee) {
+        this.transferOfOwnership.addValue(CONSISTS_OF_PARTICIPANT, transferee.getId());
         return this;
     }
 
@@ -223,8 +217,8 @@ public class TransferOfOwnershipBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder member__Of(final Class clazz) {
-        this.transferOfOwnership.addValue(MEMBER__OF, clazz.getId());
+    public final TransferOfOwnershipBuilder member_Of(final Class clazz) {
+        this.transferOfOwnership.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -266,8 +260,8 @@ public class TransferOfOwnershipBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.transferOfOwnership.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final TransferOfOwnershipBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.transferOfOwnership.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -292,8 +286,8 @@ public class TransferOfOwnershipBuilder {
      * @param agreementExecution The AgreementExecution.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.transferOfOwnership.addValue(PART_OF_, agreementExecution.getId());
+    public final TransferOfOwnershipBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.transferOfOwnership.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -335,8 +329,8 @@ public class TransferOfOwnershipBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final TransferOfOwnershipBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.transferOfOwnership.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final TransferOfOwnershipBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.transferOfOwnership.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -394,9 +388,9 @@ public class TransferOfOwnershipBuilder {
                 && this.transferOfOwnership.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.transferOfOwnership.hasValue(MEMBER__OF)
-                && this.transferOfOwnership.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.transferOfOwnership.hasValue(MEMBER_OF)
+                && this.transferOfOwnership.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.transferOfOwnership.hasValue(MEMBER_OF)
                 && this.transferOfOwnership.values(MEMBER_OF).isEmpty()) {
@@ -405,17 +399,17 @@ public class TransferOfOwnershipBuilder {
         if (!this.transferOfOwnership.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.transferOfOwnership.hasValue(PART__OF)
-                && this.transferOfOwnership.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.transferOfOwnership.hasValue(PART_OF)
+                && this.transferOfOwnership.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.transferOfOwnership.hasValue(PART_OF)
                 && this.transferOfOwnership.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.transferOfOwnership.hasValue(PART_OF_)
-                && this.transferOfOwnership.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.transferOfOwnership.hasValue(PART_OF)
+                && this.transferOfOwnership.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.transferOfOwnership.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -423,9 +417,9 @@ public class TransferOfOwnershipBuilder {
         if (!this.transferOfOwnership.hasValue(REFERENCES)) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.transferOfOwnership.hasValue(TEMPORAL__PART_OF)
-                && this.transferOfOwnership.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.transferOfOwnership.hasValue(TEMPORAL_PART_OF)
+                && this.transferOfOwnership.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.transferOfOwnership.hasValue(TEMPORAL_PART_OF)
                 && this.transferOfOwnership.values(TEMPORAL_PART_OF).isEmpty()) {

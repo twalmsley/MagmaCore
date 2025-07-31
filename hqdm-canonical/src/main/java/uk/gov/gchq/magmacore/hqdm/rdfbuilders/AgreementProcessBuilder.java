@@ -20,19 +20,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.AgreementExecution;
@@ -112,14 +107,14 @@ public class AgreementProcessBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementProcessBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementProcess.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final AgreementProcessBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementProcess.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -190,8 +185,8 @@ public class AgreementProcessBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final AgreementProcessBuilder member__Of(final Class clazz) {
-        this.agreementProcess.addValue(MEMBER__OF, clazz.getId());
+    public final AgreementProcessBuilder member_Of(final Class clazz) {
+        this.agreementProcess.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -230,8 +225,8 @@ public class AgreementProcessBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementProcessBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementProcess.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final AgreementProcessBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementProcess.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -256,8 +251,8 @@ public class AgreementProcessBuilder {
      * @param agreementExecution The AgreementExecution.
      * @return This builder.
      */
-    public final AgreementProcessBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.agreementProcess.addValue(PART_OF_, agreementExecution.getId());
+    public final AgreementProcessBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.agreementProcess.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -299,8 +294,8 @@ public class AgreementProcessBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementProcessBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementProcess.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final AgreementProcessBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementProcess.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -352,9 +347,9 @@ public class AgreementProcessBuilder {
                 && this.agreementProcess.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.agreementProcess.hasValue(MEMBER__OF)
-                && this.agreementProcess.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.agreementProcess.hasValue(MEMBER_OF)
+                && this.agreementProcess.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.agreementProcess.hasValue(MEMBER_OF)
                 && this.agreementProcess.values(MEMBER_OF).isEmpty()) {
@@ -363,17 +358,17 @@ public class AgreementProcessBuilder {
         if (!this.agreementProcess.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.agreementProcess.hasValue(PART__OF)
-                && this.agreementProcess.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.agreementProcess.hasValue(PART_OF)
+                && this.agreementProcess.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.agreementProcess.hasValue(PART_OF)
                 && this.agreementProcess.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.agreementProcess.hasValue(PART_OF_)
-                && this.agreementProcess.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.agreementProcess.hasValue(PART_OF)
+                && this.agreementProcess.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.agreementProcess.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -382,9 +377,9 @@ public class AgreementProcessBuilder {
                 && this.agreementProcess.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.agreementProcess.hasValue(TEMPORAL__PART_OF)
-                && this.agreementProcess.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.agreementProcess.hasValue(TEMPORAL_PART_OF)
+                && this.agreementProcess.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.agreementProcess.hasValue(TEMPORAL_PART_OF)
                 && this.agreementProcess.values(TEMPORAL_PART_OF).isEmpty()) {

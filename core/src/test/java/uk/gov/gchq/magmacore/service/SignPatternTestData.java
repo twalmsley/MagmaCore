@@ -149,17 +149,17 @@ public class SignPatternTestData {
         // Create signs
         final Sign sign1 = SpatioTemporalExtentServices.createSign(new IRI(TEST_BASE, "sign1"));
         sign1.addValue(RDFS.RDF_TYPE, HQDM.SIGN);
-        sign1.addValue(HQDM.MEMBER_OF_, pattern1Iri);
+        sign1.addValue(HQDM.MEMBER_OF, pattern1Iri);
         sign1.addStringValue(HQDM.VALUE_, "person1");
 
         final Sign sign2 = SpatioTemporalExtentServices.createSign(new IRI(TEST_BASE, "sign2"));
         sign2.addValue(RDFS.RDF_TYPE, HQDM.SIGN);
-        sign2.addValue(HQDM.MEMBER_OF_, pattern2Iri);
+        sign2.addValue(HQDM.MEMBER_OF, pattern2Iri);
         sign2.addStringValue(HQDM.VALUE_, "person2");
 
         final Sign sign3 = SpatioTemporalExtentServices.createSign(new IRI(TEST_BASE, "sign3"));
         sign3.addValue(RDFS.RDF_TYPE, HQDM.SIGN);
-        sign3.addValue(HQDM.MEMBER_OF_, pattern2Iri);
+        sign3.addValue(HQDM.MEMBER_OF, pattern2Iri);
         sign3.addStringValue(HQDM.VALUE_, "person3");
 
         // Create states for the Signs
@@ -196,7 +196,7 @@ public class SignPatternTestData {
                 .createRepresentationBySign(new IRI(TEST_BASE, "repBySign1"));
         repBySign1.addValue(RDFS.RDF_TYPE, HQDM.REPRESENTATION_BY_SIGN);
         repBySign1.addValue(HQDM.REPRESENTS, stateOfPerson1.getId());
-        repBySign1.addValue(HQDM.MEMBER_OF_, repByPattern1.getId());
+        repBySign1.addValue(HQDM.MEMBER_OF, repByPattern1.getId());
         repBySign1.addValue(HQDM.BEGINNING, objectId);
         repBySign1.addValue(HQDM.ENDING, objectId2);
         community1.addValue(HQDM.PARTICIPANT_IN, repBySign1.getId());
@@ -206,7 +206,7 @@ public class SignPatternTestData {
                 .createRepresentationBySign(new IRI(TEST_BASE, "repBySign2"));
         repBySign2.addValue(RDFS.RDF_TYPE, HQDM.REPRESENTATION_BY_SIGN);
         repBySign2.addValue(HQDM.REPRESENTS, stateOfPerson2.getId());
-        repBySign2.addValue(HQDM.MEMBER_OF_, repByPattern2.getId());
+        repBySign2.addValue(HQDM.MEMBER_OF, repByPattern2.getId());
         repBySign2.addValue(HQDM.BEGINNING, objectId);
         repBySign2.addValue(HQDM.ENDING, objectId2);
         community2.addValue(HQDM.PARTICIPANT_IN, repBySign2.getId());
@@ -216,7 +216,7 @@ public class SignPatternTestData {
                 .createRepresentationBySign(new IRI(TEST_BASE, "repBySign3"));
         repBySign3.addValue(RDFS.RDF_TYPE, HQDM.REPRESENTATION_BY_SIGN);
         repBySign3.addValue(HQDM.REPRESENTS, stateOfPerson3.getId());
-        repBySign3.addValue(HQDM.MEMBER_OF_, repByPattern2.getId());
+        repBySign3.addValue(HQDM.MEMBER_OF, repByPattern2.getId());
         repBySign3.addValue(HQDM.BEGINNING, objectId);
         repBySign3.addValue(HQDM.ENDING, objectId2);
         community2.addValue(HQDM.PARTICIPANT_IN, repBySign3.getId());

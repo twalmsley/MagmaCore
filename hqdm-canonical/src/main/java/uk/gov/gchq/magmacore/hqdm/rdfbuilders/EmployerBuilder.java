@@ -16,16 +16,14 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PARTICIPANT_IN;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -89,14 +87,14 @@ public class EmployerBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final EmployerBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.employer.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final EmployerBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.employer.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -119,8 +117,8 @@ public class EmployerBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final EmployerBuilder member__Of(final Class clazz) {
-        this.employer.addValue(MEMBER__OF, clazz.getId());
+    public final EmployerBuilder member_Of(final Class clazz) {
+        this.employer.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -160,8 +158,8 @@ public class EmployerBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final EmployerBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.employer.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final EmployerBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.employer.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -204,8 +202,8 @@ public class EmployerBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final EmployerBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.employer.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final EmployerBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.employer.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -241,9 +239,9 @@ public class EmployerBuilder {
                 && this.employer.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.employer.hasValue(MEMBER__OF)
-                && this.employer.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.employer.hasValue(MEMBER_OF)
+                && this.employer.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.employer.hasValue(MEMBER_OF)
                 && this.employer.values(MEMBER_OF).isEmpty()) {
@@ -252,9 +250,9 @@ public class EmployerBuilder {
         if (!this.employer.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.employer.hasValue(PART__OF)
-                && this.employer.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.employer.hasValue(PART_OF)
+                && this.employer.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.employer.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -262,9 +260,9 @@ public class EmployerBuilder {
         if (!this.employer.hasValue(PARTICIPANT_IN)) {
             throw new HqdmException("Property Not Set: participant_in");
         }
-        if (this.employer.hasValue(TEMPORAL__PART_OF)
-                && this.employer.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.employer.hasValue(TEMPORAL_PART_OF)
+                && this.employer.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.employer.hasValue(TEMPORAL_PART_OF)
                 && this.employer.values(TEMPORAL_PART_OF).isEmpty()) {

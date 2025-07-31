@@ -20,19 +20,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.AgreementExecution;
@@ -113,14 +108,14 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ExchangeOfGoodsAndMoneyBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.exchangeOfGoodsAndMoney.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final ExchangeOfGoodsAndMoneyBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.exchangeOfGoodsAndMoney.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -143,7 +138,7 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      * @param transferOfOwnershipOfMoney The TransferOfOwnershipOfMoney.
      * @return Builder
      */
-    public final ExchangeOfGoodsAndMoneyBuilder consists_Of_(
+    public final ExchangeOfGoodsAndMoneyBuilder consists_Of(
             final TransferOfOwnershipOfMoney transferOfOwnershipOfMoney) {
         this.exchangeOfGoodsAndMoney.addValue(CONSISTS_OF_, transferOfOwnershipOfMoney.getId());
         return this;
@@ -192,8 +187,8 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final ExchangeOfGoodsAndMoneyBuilder member__Of(final Class clazz) {
-        this.exchangeOfGoodsAndMoney.addValue(MEMBER__OF, clazz.getId());
+    public final ExchangeOfGoodsAndMoneyBuilder member_Of(final Class clazz) {
+        this.exchangeOfGoodsAndMoney.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -233,8 +228,21 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ExchangeOfGoodsAndMoneyBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.exchangeOfGoodsAndMoney.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final ExchangeOfGoodsAndMoneyBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.exchangeOfGoodsAndMoney.addValue(PART_OF, spatioTemporalExtent.getId());
+        return this;
+    }
+
+    /**
+     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where a
+     * {@link uk.gov.gchq.magmacore.hqdm.model.SociallyConstructedObject} may be a
+     * {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} one or more {@link AgreementExecution}.
+     *
+     * @param agreementExecution The AgreementExecution.
+     * @return This builder.
+     */
+    public final ExchangeOfGoodsAndMoneyBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.exchangeOfGoodsAndMoney.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -248,19 +256,6 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      */
     public final ExchangeOfGoodsAndMoneyBuilder part_Of_M(final SaleOfGoods saleOfGoods) {
         this.exchangeOfGoodsAndMoney.addValue(PART_OF, saleOfGoods.getId());
-        return this;
-    }
-
-    /**
-     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where a
-     * {@link uk.gov.gchq.magmacore.hqdm.model.SociallyConstructedObject} may be a
-     * {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} one or more {@link AgreementExecution}.
-     *
-     * @param agreementExecution The AgreementExecution.
-     * @return This builder.
-     */
-    public final ExchangeOfGoodsAndMoneyBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.exchangeOfGoodsAndMoney.addValue(PART_OF_, agreementExecution.getId());
         return this;
     }
 
@@ -302,8 +297,8 @@ public class ExchangeOfGoodsAndMoneyBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ExchangeOfGoodsAndMoneyBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.exchangeOfGoodsAndMoney.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final ExchangeOfGoodsAndMoneyBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.exchangeOfGoodsAndMoney.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -355,9 +350,9 @@ public class ExchangeOfGoodsAndMoneyBuilder {
                 && this.exchangeOfGoodsAndMoney.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.exchangeOfGoodsAndMoney.hasValue(MEMBER__OF)
-                && this.exchangeOfGoodsAndMoney.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.exchangeOfGoodsAndMoney.hasValue(MEMBER_OF)
+                && this.exchangeOfGoodsAndMoney.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.exchangeOfGoodsAndMoney.hasValue(MEMBER_OF)
                 && this.exchangeOfGoodsAndMoney.values(MEMBER_OF).isEmpty()) {
@@ -366,16 +361,16 @@ public class ExchangeOfGoodsAndMoneyBuilder {
         if (!this.exchangeOfGoodsAndMoney.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.exchangeOfGoodsAndMoney.hasValue(PART__OF)
-                && this.exchangeOfGoodsAndMoney.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.exchangeOfGoodsAndMoney.hasValue(PART_OF)
+                && this.exchangeOfGoodsAndMoney.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.exchangeOfGoodsAndMoney.hasValue(PART_OF)) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.exchangeOfGoodsAndMoney.hasValue(PART_OF_)
-                && this.exchangeOfGoodsAndMoney.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.exchangeOfGoodsAndMoney.hasValue(PART_OF)
+                && this.exchangeOfGoodsAndMoney.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.exchangeOfGoodsAndMoney.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -384,9 +379,9 @@ public class ExchangeOfGoodsAndMoneyBuilder {
                 && this.exchangeOfGoodsAndMoney.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.exchangeOfGoodsAndMoney.hasValue(TEMPORAL__PART_OF)
-                && this.exchangeOfGoodsAndMoney.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.exchangeOfGoodsAndMoney.hasValue(TEMPORAL_PART_OF)
+                && this.exchangeOfGoodsAndMoney.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.exchangeOfGoodsAndMoney.hasValue(TEMPORAL_PART_OF)
                 && this.exchangeOfGoodsAndMoney.values(TEMPORAL_PART_OF).isEmpty()) {

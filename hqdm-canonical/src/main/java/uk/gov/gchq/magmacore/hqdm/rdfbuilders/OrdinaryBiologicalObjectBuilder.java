@@ -16,15 +16,13 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -86,14 +84,14 @@ public class OrdinaryBiologicalObjectBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryBiologicalObjectBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryBiologicalObject.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final OrdinaryBiologicalObjectBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryBiologicalObject.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -116,8 +114,8 @@ public class OrdinaryBiologicalObjectBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final OrdinaryBiologicalObjectBuilder member__Of(final Class clazz) {
-        this.ordinaryBiologicalObject.addValue(MEMBER__OF, clazz.getId());
+    public final OrdinaryBiologicalObjectBuilder member_Of(final Class clazz) {
+        this.ordinaryBiologicalObject.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -161,8 +159,8 @@ public class OrdinaryBiologicalObjectBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryBiologicalObjectBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryBiologicalObject.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final OrdinaryBiologicalObjectBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryBiologicalObject.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -192,8 +190,8 @@ public class OrdinaryBiologicalObjectBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryBiologicalObjectBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryBiologicalObject.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final OrdinaryBiologicalObjectBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryBiologicalObject.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -232,9 +230,9 @@ public class OrdinaryBiologicalObjectBuilder {
                 && this.ordinaryBiologicalObject.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.ordinaryBiologicalObject.hasValue(MEMBER__OF)
-                && this.ordinaryBiologicalObject.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.ordinaryBiologicalObject.hasValue(MEMBER_OF)
+                && this.ordinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.ordinaryBiologicalObject.hasValue(MEMBER_OF)
                 && this.ordinaryBiologicalObject.values(MEMBER_OF).isEmpty()) {
@@ -244,16 +242,16 @@ public class OrdinaryBiologicalObjectBuilder {
                 && this.ordinaryBiologicalObject.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.ordinaryBiologicalObject.hasValue(PART__OF)
-                && this.ordinaryBiologicalObject.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.ordinaryBiologicalObject.hasValue(PART_OF)
+                && this.ordinaryBiologicalObject.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.ordinaryBiologicalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.ordinaryBiologicalObject.hasValue(TEMPORAL__PART_OF)
-                && this.ordinaryBiologicalObject.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.ordinaryBiologicalObject.hasValue(TEMPORAL_PART_OF)
+                && this.ordinaryBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.ordinaryBiologicalObject.hasValue(TEMPORAL_PART_OF)
                 && this.ordinaryBiologicalObject.values(TEMPORAL_PART_OF).isEmpty()) {

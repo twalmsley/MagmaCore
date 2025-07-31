@@ -17,15 +17,13 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.COMPONENT_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -101,14 +99,14 @@ public class PositionBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PositionBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.position.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final PositionBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.position.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -131,8 +129,8 @@ public class PositionBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final PositionBuilder member__Of(final Class clazz) {
-        this.position.addValue(MEMBER__OF, clazz.getId());
+    public final PositionBuilder member_Of(final Class clazz) {
+        this.position.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -171,8 +169,8 @@ public class PositionBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PositionBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.position.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final PositionBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.position.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -202,8 +200,8 @@ public class PositionBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PositionBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.position.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final PositionBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.position.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -243,9 +241,9 @@ public class PositionBuilder {
                 && this.position.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.position.hasValue(MEMBER__OF)
-                && this.position.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.position.hasValue(MEMBER_OF)
+                && this.position.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.position.hasValue(MEMBER_OF)
                 && this.position.values(MEMBER_OF).isEmpty()) {
@@ -255,16 +253,16 @@ public class PositionBuilder {
                 && this.position.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.position.hasValue(PART__OF)
-                && this.position.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.position.hasValue(PART_OF)
+                && this.position.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.position.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.position.hasValue(TEMPORAL__PART_OF)
-                && this.position.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.position.hasValue(TEMPORAL_PART_OF)
+                && this.position.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.position.hasValue(TEMPORAL_PART_OF)
                 && this.position.values(TEMPORAL_PART_OF).isEmpty()) {

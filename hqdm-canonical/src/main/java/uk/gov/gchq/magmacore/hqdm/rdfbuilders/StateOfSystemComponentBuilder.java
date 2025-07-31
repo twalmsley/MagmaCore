@@ -16,14 +16,12 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -84,14 +82,14 @@ public class StateOfSystemComponentBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final StateOfSystemComponentBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.stateOfSystemComponent.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final StateOfSystemComponentBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.stateOfSystemComponent.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -114,8 +112,8 @@ public class StateOfSystemComponentBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final StateOfSystemComponentBuilder member__Of(final Class clazz) {
-        this.stateOfSystemComponent.addValue(MEMBER__OF, clazz.getId());
+    public final StateOfSystemComponentBuilder member_Of(final Class clazz) {
+        this.stateOfSystemComponent.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -141,8 +139,8 @@ public class StateOfSystemComponentBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final StateOfSystemComponentBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.stateOfSystemComponent.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final StateOfSystemComponentBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.stateOfSystemComponent.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -172,8 +170,8 @@ public class StateOfSystemComponentBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final StateOfSystemComponentBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.stateOfSystemComponent.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final StateOfSystemComponentBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.stateOfSystemComponent.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -210,24 +208,24 @@ public class StateOfSystemComponentBuilder {
                 && this.stateOfSystemComponent.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.stateOfSystemComponent.hasValue(MEMBER__OF)
-                && this.stateOfSystemComponent.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.stateOfSystemComponent.hasValue(MEMBER_OF)
+                && this.stateOfSystemComponent.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.stateOfSystemComponent.hasValue(MEMBER_OF)
                 && this.stateOfSystemComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.stateOfSystemComponent.hasValue(PART__OF)
-                && this.stateOfSystemComponent.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.stateOfSystemComponent.hasValue(PART_OF)
+                && this.stateOfSystemComponent.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.stateOfSystemComponent.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.stateOfSystemComponent.hasValue(TEMPORAL__PART_OF)
-                && this.stateOfSystemComponent.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.stateOfSystemComponent.hasValue(TEMPORAL_PART_OF)
+                && this.stateOfSystemComponent.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.stateOfSystemComponent.hasValue(TEMPORAL_PART_OF)
                 && this.stateOfSystemComponent.values(TEMPORAL_PART_OF).isEmpty()) {

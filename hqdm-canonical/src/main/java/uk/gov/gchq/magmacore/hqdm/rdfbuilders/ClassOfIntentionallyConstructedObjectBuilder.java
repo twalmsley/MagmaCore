@@ -14,12 +14,10 @@
 
 package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_BY_CLASS;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -49,7 +47,7 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
     }
 
     /**
-     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF_BY_CLASS} relationship type
+     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF_BY_CLASS} relationship type
      * where a {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} one
      * {@link ClassOfSpatioTemporalExtent} {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#CONSISTS_OF}
      * another {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} a
@@ -58,9 +56,9 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ClassOfIntentionallyConstructedObjectBuilder consists__Of_By_Class(
+    public final ClassOfIntentionallyConstructedObjectBuilder consists_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.classOfIntentionallyConstructedObject.addValue(CONSISTS__OF_BY_CLASS,
+        this.classOfIntentionallyConstructedObject.addValue(CONSISTS_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -84,8 +82,8 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final ClassOfIntentionallyConstructedObjectBuilder member__Of(final Class clazz) {
-        this.classOfIntentionallyConstructedObject.addValue(MEMBER__OF, clazz.getId());
+    public final ClassOfIntentionallyConstructedObjectBuilder member_Of(final Class clazz) {
+        this.classOfIntentionallyConstructedObject.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -110,9 +108,9 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
      * @param classOfClassOfSpatioTemporalExtent The ClassOfClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ClassOfIntentionallyConstructedObjectBuilder member_Of_(
+    public final ClassOfIntentionallyConstructedObjectBuilder member_Of(
             final ClassOfClassOfSpatioTemporalExtent classOfClassOfSpatioTemporalExtent) {
-        this.classOfIntentionallyConstructedObject.addValue(MEMBER_OF_,
+        this.classOfIntentionallyConstructedObject.addValue(MEMBER_OF,
                 classOfClassOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -126,9 +124,9 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ClassOfIntentionallyConstructedObjectBuilder part__Of_By_Class(
+    public final ClassOfIntentionallyConstructedObjectBuilder part_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.classOfIntentionallyConstructedObject.addValue(PART__OF_BY_CLASS,
+        this.classOfIntentionallyConstructedObject.addValue(PART_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -146,23 +144,23 @@ public class ClassOfIntentionallyConstructedObjectBuilder {
                 && this.classOfIntentionallyConstructedObject.values(HAS_SUPERCLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: has_superclass");
         }
-        if (this.classOfIntentionallyConstructedObject.hasValue(MEMBER__OF)
-                && this.classOfIntentionallyConstructedObject.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.classOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
+                && this.classOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.classOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
                 && this.classOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfIntentionallyConstructedObject.hasValue(MEMBER_OF_)
-                && this.classOfIntentionallyConstructedObject.values(MEMBER_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of_");
+        if (this.classOfIntentionallyConstructedObject.hasValue(MEMBER_OF)
+                && this.classOfIntentionallyConstructedObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.classOfIntentionallyConstructedObject.hasValue(PART__OF_BY_CLASS)
+        if (this.classOfIntentionallyConstructedObject.hasValue(PART_OF_BY_CLASS)
                 && this.classOfIntentionallyConstructedObject
-                        .values(PART__OF_BY_CLASS)
+                        .values(PART_OF_BY_CLASS)
                         .isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of_by_class");
+            throw new HqdmException("Property Not Set: part_of_by_class");
         }
         return this.classOfIntentionallyConstructedObject;
     }

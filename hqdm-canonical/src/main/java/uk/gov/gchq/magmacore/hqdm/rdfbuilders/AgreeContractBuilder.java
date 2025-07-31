@@ -20,19 +20,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.AcceptanceOfOffer;
@@ -113,14 +108,14 @@ public class AgreeContractBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreeContractBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreeContract.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final AgreeContractBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreeContract.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -193,8 +188,8 @@ public class AgreeContractBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final AgreeContractBuilder member__Of(final Class clazz) {
-        this.agreeContract.addValue(MEMBER__OF, clazz.getId());
+    public final AgreeContractBuilder member_Of(final Class clazz) {
+        this.agreeContract.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -233,8 +228,8 @@ public class AgreeContractBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreeContractBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreeContract.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final AgreeContractBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreeContract.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -260,7 +255,7 @@ public class AgreeContractBuilder {
      * @return This builder.
      */
     public final AgreeContractBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.agreeContract.addValue(PART_OF_, agreementExecution.getId());
+        this.agreeContract.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -302,8 +297,8 @@ public class AgreeContractBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreeContractBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreeContract.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final AgreeContractBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreeContract.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -355,9 +350,9 @@ public class AgreeContractBuilder {
                 && this.agreeContract.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.agreeContract.hasValue(MEMBER__OF)
-                && this.agreeContract.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.agreeContract.hasValue(MEMBER_OF)
+                && this.agreeContract.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.agreeContract.hasValue(MEMBER_OF)
                 && this.agreeContract.values(MEMBER_OF).isEmpty()) {
@@ -366,16 +361,16 @@ public class AgreeContractBuilder {
         if (!this.agreeContract.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.agreeContract.hasValue(PART__OF)
-                && this.agreeContract.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.agreeContract.hasValue(PART_OF)
+                && this.agreeContract.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.agreeContract.hasValue(PART_OF)) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.agreeContract.hasValue(PART_OF_)
-                && this.agreeContract.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.agreeContract.hasValue(PART_OF)
+                && this.agreeContract.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.agreeContract.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -384,9 +379,9 @@ public class AgreeContractBuilder {
                 && this.agreeContract.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.agreeContract.hasValue(TEMPORAL__PART_OF)
-                && this.agreeContract.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.agreeContract.hasValue(TEMPORAL_PART_OF)
+                && this.agreeContract.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.agreeContract.hasValue(TEMPORAL_PART_OF)
                 && this.agreeContract.values(TEMPORAL_PART_OF).isEmpty()) {

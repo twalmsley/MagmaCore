@@ -16,15 +16,13 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -86,14 +84,14 @@ public class PartyBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PartyBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.party.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final PartyBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.party.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -116,8 +114,8 @@ public class PartyBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final PartyBuilder member__Of(final Class clazz) {
-        this.party.addValue(MEMBER__OF, clazz.getId());
+    public final PartyBuilder member_Of(final Class clazz) {
+        this.party.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -156,8 +154,8 @@ public class PartyBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PartyBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.party.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final PartyBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.party.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -187,8 +185,8 @@ public class PartyBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PartyBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.party.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final PartyBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.party.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -224,9 +222,9 @@ public class PartyBuilder {
                 && this.party.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.party.hasValue(MEMBER__OF)
-                && this.party.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.party.hasValue(MEMBER_OF)
+                && this.party.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.party.hasValue(MEMBER_OF)
                 && this.party.values(MEMBER_OF).isEmpty()) {
@@ -236,16 +234,16 @@ public class PartyBuilder {
                 && this.party.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.party.hasValue(PART__OF)
-                && this.party.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.party.hasValue(PART_OF)
+                && this.party.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.party.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.party.hasValue(TEMPORAL__PART_OF)
-                && this.party.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.party.hasValue(TEMPORAL_PART_OF)
+                && this.party.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.party.hasValue(TEMPORAL_PART_OF)
                 && this.party.values(TEMPORAL_PART_OF).isEmpty()) {

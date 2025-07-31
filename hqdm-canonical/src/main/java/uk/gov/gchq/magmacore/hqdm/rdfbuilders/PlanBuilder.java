@@ -16,16 +16,13 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -88,14 +85,14 @@ public class PlanBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PlanBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.plan.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final PlanBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.plan.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -118,8 +115,8 @@ public class PlanBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final PlanBuilder member__Of(final Class clazz) {
-        this.plan.addValue(MEMBER__OF, clazz.getId());
+    public final PlanBuilder member_Of(final Class clazz) {
+        this.plan.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -158,8 +155,8 @@ public class PlanBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PlanBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.plan.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final PlanBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.plan.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -189,8 +186,8 @@ public class PlanBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final PlanBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.plan.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final PlanBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.plan.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -225,8 +222,8 @@ public class PlanBuilder {
      * @param possibleWorld The PossibleWorld.
      * @return This builder.
      */
-    public final PlanBuilder temporal_Part_Of_(final PossibleWorld possibleWorld) {
-        this.plan.addValue(TEMPORAL_PART_OF_, possibleWorld.getId());
+    public final PlanBuilder temporal_Part_Of(final PossibleWorld possibleWorld) {
+        this.plan.addValue(TEMPORAL_PART_OF, possibleWorld.getId());
         return this;
     }
 
@@ -249,9 +246,9 @@ public class PlanBuilder {
                 && this.plan.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.plan.hasValue(MEMBER__OF)
-                && this.plan.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.plan.hasValue(MEMBER_OF)
+                && this.plan.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.plan.hasValue(MEMBER_OF)
                 && this.plan.values(MEMBER_OF).isEmpty()) {
@@ -261,24 +258,24 @@ public class PlanBuilder {
                 && this.plan.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.plan.hasValue(PART__OF)
-                && this.plan.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.plan.hasValue(PART_OF)
+                && this.plan.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.plan.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
-        }
-        if (this.plan.hasValue(TEMPORAL__PART_OF)
-                && this.plan.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
         }
         if (this.plan.hasValue(TEMPORAL_PART_OF)
                 && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: temporal_part_of");
         }
-        if (this.plan.hasValue(TEMPORAL_PART_OF_)
-                && this.plan.values(TEMPORAL_PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal_part_of_");
+        if (this.plan.hasValue(TEMPORAL_PART_OF)
+                && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
+        }
+        if (this.plan.hasValue(TEMPORAL_PART_OF)
+                && this.plan.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         return plan;
     }

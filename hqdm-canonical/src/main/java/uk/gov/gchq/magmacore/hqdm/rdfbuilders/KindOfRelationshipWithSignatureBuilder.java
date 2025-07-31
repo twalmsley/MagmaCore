@@ -16,7 +16,6 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ROLES;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
@@ -61,8 +60,8 @@ public class KindOfRelationshipWithSignatureBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final KindOfRelationshipWithSignatureBuilder member__Of(final Class clazz) {
-        this.kindOfRelationshipWithSignature.addValue(MEMBER__OF, clazz.getId());
+    public final KindOfRelationshipWithSignatureBuilder member_Of(final Class clazz) {
+        this.kindOfRelationshipWithSignature.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -102,9 +101,9 @@ public class KindOfRelationshipWithSignatureBuilder {
                 && this.kindOfRelationshipWithSignature.values(HAS_SUPERCLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: has_superclass");
         }
-        if (this.kindOfRelationshipWithSignature.hasValue(MEMBER__OF)
-                && this.kindOfRelationshipWithSignature.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.kindOfRelationshipWithSignature.hasValue(MEMBER_OF)
+                && this.kindOfRelationshipWithSignature.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.kindOfRelationshipWithSignature.hasValue(MEMBER_OF)
                 && this.kindOfRelationshipWithSignature.values(MEMBER_OF).isEmpty()) {

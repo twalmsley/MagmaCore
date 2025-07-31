@@ -300,9 +300,11 @@ public class MagmaCoreService {
 
         final Instant when = Instant.parse(pointInTimeValue);
 
+        final String queryString = String.format(MagmaCoreServiceQueries.FIND_OBJECTS_BY_TYPE_AND_SIGN_PATTERN,
+                        type, kind, pattern, type, kind, pattern);
+
         final QueryResultList queryResultList = database
-                .executeQuery(String.format(MagmaCoreServiceQueries.FIND_OBJECTS_BY_TYPE_AND_SIGN_PATTERN,
-                        type, kind, pattern, type, kind, pattern));
+                .executeQuery(queryString);
 
         // Filter by the pointInTime
         final QueryResultList queryResults = filterByPointInTime(when, queryResultList);

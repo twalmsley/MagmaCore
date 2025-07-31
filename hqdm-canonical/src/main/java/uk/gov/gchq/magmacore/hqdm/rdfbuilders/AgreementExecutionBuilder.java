@@ -19,19 +19,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Activity;
@@ -110,14 +105,14 @@ public class AgreementExecutionBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementExecutionBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementExecution.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final AgreementExecutionBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementExecution.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -177,8 +172,8 @@ public class AgreementExecutionBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final AgreementExecutionBuilder member__Of(final Class clazz) {
-        this.agreementExecution.addValue(MEMBER__OF, clazz.getId());
+    public final AgreementExecutionBuilder member_Of(final Class clazz) {
+        this.agreementExecution.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -217,21 +212,8 @@ public class AgreementExecutionBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementExecutionBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementExecution.addValue(PART__OF, spatioTemporalExtent.getId());
-        return this;
-    }
-
-    /**
-     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where an
-     * {@link AgreementExecution} is {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} exactly one
-     * {@link AgreementProcess}.
-     *
-     * @param agreementProcess The AgreementProcess.
-     * @return This builder.
-     */
-    public final AgreementExecutionBuilder part_Of_M(final AgreementProcess agreementProcess) {
-        this.agreementExecution.addValue(PART_OF, agreementProcess.getId());
+    public final AgreementExecutionBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementExecution.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -243,8 +225,22 @@ public class AgreementExecutionBuilder {
      * @param agreementExecution The AgreementExecution.
      * @return This builder.
      */
-    public final AgreementExecutionBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.agreementExecution.addValue(PART_OF_, agreementExecution.getId());
+    public final AgreementExecutionBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.agreementExecution.addValue(PART_OF, agreementExecution.getId());
+        return this;
+    }
+
+
+    /**
+     * A {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} relationship type where an
+     * {@link AgreementExecution} is {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF} exactly one
+     * {@link AgreementProcess}.
+     *
+     * @param agreementProcess The AgreementProcess.
+     * @return This builder.
+     */
+    public final AgreementExecutionBuilder part_Of_M(final AgreementProcess agreementProcess) {
+        this.agreementExecution.addValue(PART_OF, agreementProcess.getId());
         return this;
     }
 
@@ -285,8 +281,8 @@ public class AgreementExecutionBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final AgreementExecutionBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.agreementExecution.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final AgreementExecutionBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.agreementExecution.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -338,9 +334,9 @@ public class AgreementExecutionBuilder {
                 && this.agreementExecution.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.agreementExecution.hasValue(MEMBER__OF)
-                && this.agreementExecution.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.agreementExecution.hasValue(MEMBER_OF)
+                && this.agreementExecution.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.agreementExecution.hasValue(MEMBER_OF)
                 && this.agreementExecution.values(MEMBER_OF).isEmpty()) {
@@ -349,15 +345,15 @@ public class AgreementExecutionBuilder {
         if (!this.agreementExecution.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.agreementExecution.hasValue(PART__OF)
-                && this.agreementExecution.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.agreementExecution.hasValue(PART_OF)
+                && this.agreementExecution.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.agreementExecution.hasValue(PART_OF)) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.agreementExecution.hasValue(PART_OF_)
-                && this.agreementExecution.values(PART_OF_).isEmpty()) {
+        if (this.agreementExecution.hasValue(PART_OF)
+                && this.agreementExecution.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_");
         }
         if (!this.agreementExecution.hasValue(PART_OF_POSSIBLE_WORLD)) {
@@ -367,9 +363,9 @@ public class AgreementExecutionBuilder {
                 && this.agreementExecution.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.agreementExecution.hasValue(TEMPORAL__PART_OF)
-                && this.agreementExecution.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.agreementExecution.hasValue(TEMPORAL_PART_OF)
+                && this.agreementExecution.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.agreementExecution.hasValue(TEMPORAL_PART_OF)
                 && this.agreementExecution.values(TEMPORAL_PART_OF).isEmpty()) {

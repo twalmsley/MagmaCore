@@ -18,21 +18,15 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.AgreeContract;
@@ -113,14 +107,14 @@ public class ContractProcessBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ContractProcessBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.contractProcess.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final ContractProcessBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.contractProcess.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -145,8 +139,8 @@ public class ContractProcessBuilder {
      * @param contractExecution The ContractExecution.
      * @return This builder.
      */
-    public final ContractProcessBuilder consists_Of_(final ContractExecution contractExecution) {
-        this.contractProcess.addValue(CONSISTS_OF_, contractExecution.getId());
+    public final ContractProcessBuilder consists_Of(final ContractExecution contractExecution) {
+        this.contractProcess.addValue(CONSISTS_OF, contractExecution.getId());
         return this;
     }
 
@@ -193,8 +187,8 @@ public class ContractProcessBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final ContractProcessBuilder member__Of(final Class clazz) {
-        this.contractProcess.addValue(MEMBER__OF, clazz.getId());
+    public final ContractProcessBuilder member_Of(final Class clazz) {
+        this.contractProcess.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -233,8 +227,8 @@ public class ContractProcessBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ContractProcessBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.contractProcess.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final ContractProcessBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.contractProcess.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -259,8 +253,8 @@ public class ContractProcessBuilder {
      * @param agreementExecution The AgreementExecution.
      * @return This builder.
      */
-    public final ContractProcessBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.contractProcess.addValue(PART_OF_, agreementExecution.getId());
+    public final ContractProcessBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.contractProcess.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -302,8 +296,8 @@ public class ContractProcessBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final ContractProcessBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.contractProcess.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final ContractProcessBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.contractProcess.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -355,9 +349,9 @@ public class ContractProcessBuilder {
                 && this.contractProcess.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.contractProcess.hasValue(MEMBER__OF)
-                && this.contractProcess.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.contractProcess.hasValue(MEMBER_OF)
+                && this.contractProcess.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.contractProcess.hasValue(MEMBER_OF)
                 && this.contractProcess.values(MEMBER_OF).isEmpty()) {
@@ -366,17 +360,17 @@ public class ContractProcessBuilder {
         if (!this.contractProcess.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.contractProcess.hasValue(PART__OF)
-                && this.contractProcess.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.contractProcess.hasValue(PART_OF)
+                && this.contractProcess.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.contractProcess.hasValue(PART_OF)
                 && this.contractProcess.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.contractProcess.hasValue(PART_OF_)
-                && this.contractProcess.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.contractProcess.hasValue(PART_OF)
+                && this.contractProcess.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.contractProcess.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -385,9 +379,9 @@ public class ContractProcessBuilder {
                 && this.contractProcess.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.contractProcess.hasValue(TEMPORAL__PART_OF)
-                && this.contractProcess.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.contractProcess.hasValue(TEMPORAL_PART_OF)
+                && this.contractProcess.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.contractProcess.hasValue(TEMPORAL_PART_OF)
                 && this.contractProcess.values(TEMPORAL_PART_OF).isEmpty()) {

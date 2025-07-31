@@ -429,276 +429,276 @@ public final class HqdmObjectFactory {
         //
         // Populate a map of type names to factory methods.
         //
-        factoryMethods.put("abstract_object", SpatioTemporalExtentServices::createAbstractObject);
-        factoryMethods.put("acceptance_of_offer", SpatioTemporalExtentServices::createAcceptanceOfOffer);
-        factoryMethods.put("acceptance_of_offer_for_goods", 
+        factoryMethods.put("AbstractObject", SpatioTemporalExtentServices::createAbstractObject);
+        factoryMethods.put("AcceptanceOfOffer", SpatioTemporalExtentServices::createAcceptanceOfOffer);
+        factoryMethods.put("AcceptanceOfOfferForGoods", 
                 SpatioTemporalExtentServices::createAcceptanceOfOfferForGoods);
-        factoryMethods.put("activity", SpatioTemporalExtentServices::createActivity);
-        factoryMethods.put("aggregation", RelationshipServices::createAggregation);
-        factoryMethods.put("agree_contract", SpatioTemporalExtentServices::createAgreeContract);
-        factoryMethods.put("agreement_execution", SpatioTemporalExtentServices::createAgreementExecution);
-        factoryMethods.put("agreement_process", SpatioTemporalExtentServices::createAgreementProcess);
-        factoryMethods.put("amount_of_money", SpatioTemporalExtentServices::createAmountOfMoney);
-        factoryMethods.put("asset", SpatioTemporalExtentServices::createAsset);
-        factoryMethods.put("association", SpatioTemporalExtentServices::createAssociation);
-        factoryMethods.put("beginning_of_ownership", SpatioTemporalExtentServices::createBeginningOfOwnership);
-        factoryMethods.put("biological_object", SpatioTemporalExtentServices::createBiologicalObject);
-        factoryMethods.put("biological_system", SpatioTemporalExtentServices::createBiologicalSystem);
-        factoryMethods.put("biological_system_component", 
+        factoryMethods.put("aCtivity", SpatioTemporalExtentServices::createActivity);
+        factoryMethods.put("Aggregation", RelationshipServices::createAggregation);
+        factoryMethods.put("AgreeContract", SpatioTemporalExtentServices::createAgreeContract);
+        factoryMethods.put("AgreementExecution", SpatioTemporalExtentServices::createAgreementExecution);
+        factoryMethods.put("AgreementProcess", SpatioTemporalExtentServices::createAgreementProcess);
+        factoryMethods.put("AmountOfMoney", SpatioTemporalExtentServices::createAmountOfMoney);
+        factoryMethods.put("Asset", SpatioTemporalExtentServices::createAsset);
+        factoryMethods.put("Association", SpatioTemporalExtentServices::createAssociation);
+        factoryMethods.put("BeginningOfOwnership", SpatioTemporalExtentServices::createBeginningOfOwnership);
+        factoryMethods.put("BiologicalObject", SpatioTemporalExtentServices::createBiologicalObject);
+        factoryMethods.put("BiologicalSystem", SpatioTemporalExtentServices::createBiologicalSystem);
+        factoryMethods.put("BiologicalSystemComponent", 
                 SpatioTemporalExtentServices::createBiologicalSystemComponent);
-        factoryMethods.put("class", ClassServices::createClass);
-        factoryMethods.put("classification", RelationshipServices::createClassification);
-        factoryMethods.put("class_of_abstract_object", ClassServices::createClassOfAbstractObject);
-        factoryMethods.put("class_of_activity", ClassServices::createClassOfActivity);
-        factoryMethods.put("class_of_agree_contract", ClassServices::createClassOfAgreeContract);
-        factoryMethods.put("class_of_agreement_execution", ClassServices::createClassOfAgreementExecution);
-        factoryMethods.put("class_of_agreement_process", ClassServices::createClassOfAgreementProcess);
-        factoryMethods.put("class_of_amount_of_money", ClassServices::createClassOfAmountOfMoney);
-        factoryMethods.put("class_of_association", ClassServices::createClassOfAssociation);
-        factoryMethods.put("class_of_biological_object", ClassServices::createClassOfBiologicalObject);
-        factoryMethods.put("class_of_biological_system", ClassServices::createClassOfBiologicalSystem);
-        factoryMethods.put("class_of_biological_system_component", 
+        factoryMethods.put("Class", ClassServices::createClass);
+        factoryMethods.put("Classification", RelationshipServices::createClassification);
+        factoryMethods.put("ClassOfAbstractObject", ClassServices::createClassOfAbstractObject);
+        factoryMethods.put("ClassOfActivity", ClassServices::createClassOfActivity);
+        factoryMethods.put("ClassOfAgreeContract", ClassServices::createClassOfAgreeContract);
+        factoryMethods.put("ClassOfAgreementExecution", ClassServices::createClassOfAgreementExecution);
+        factoryMethods.put("ClassOfAgreementProcess", ClassServices::createClassOfAgreementProcess);
+        factoryMethods.put("ClassOfAmountOfMoney", ClassServices::createClassOfAmountOfMoney);
+        factoryMethods.put("ClassOfAssociation", ClassServices::createClassOfAssociation);
+        factoryMethods.put("ClassOfBiologicalObject", ClassServices::createClassOfBiologicalObject);
+        factoryMethods.put("ClassOfBiologicalSystem", ClassServices::createClassOfBiologicalSystem);
+        factoryMethods.put("ClassOfBiologicalSystemComponent", 
                 ClassServices::createClassOfBiologicalSystemComponent);
-        factoryMethods.put("class_of_class", ClassServices::createClassOfClass);
-        factoryMethods.put("class_of_class_of_spatio_temporal_extent", 
+        factoryMethods.put("ClassOfClass", ClassServices::createClassOfClass);
+        factoryMethods.put("ClassOfClassOfSpatioTemporalExtent", 
                 ClassServices::createClassOfSpatioTemporalExtent);
-        factoryMethods.put("class_of_contract_execution", ClassServices::createClassOfContractExecution);
-        factoryMethods.put("class_of_contract_process", ClassServices::createClassOfContractProcess);
-        factoryMethods.put("class_of_event", ClassServices::createClassOfEvent);
-        factoryMethods.put("class_of_functional_object", ClassServices::createClassOfFunctionalObject);
-        factoryMethods.put("class_of_functional_system", ClassServices::createClassOfFunctionalSystem);
-        factoryMethods.put("class_of_functional_system_component", 
+        factoryMethods.put("ClassOfContractExecution", ClassServices::createClassOfContractExecution);
+        factoryMethods.put("ClassOfContractProcess", ClassServices::createClassOfContractProcess);
+        factoryMethods.put("ClassOfEvent", ClassServices::createClassOfEvent);
+        factoryMethods.put("ClassOfFunctionalObject", ClassServices::createClassOfFunctionalObject);
+        factoryMethods.put("ClassOfFunctionalSystem", ClassServices::createClassOfFunctionalSystem);
+        factoryMethods.put("ClassOfFunctionalSystemComponent", 
                 ClassServices::createClassOfFunctionalSystemComponent);
-        factoryMethods.put("class_of_individual", ClassServices::createClassOfIndividual);
-        factoryMethods.put("class_of_in_place_biological_component", 
+        factoryMethods.put("ClassOfIndividual", ClassServices::createClassOfIndividual);
+        factoryMethods.put("ClassOfInPlaceBiologicalComponent", 
                 ClassServices::createClassOfInPlaceBiologicalComponent);
-        factoryMethods.put("class_of_installed_functional_system_component", 
+        factoryMethods.put("ClassOfInstalledFunctionalSystemComponent", 
                 ClassServices::createClassOfInstalledFunctionalSystemComponent);
-        factoryMethods.put("class_of_installed_object", ClassServices::createClassOfInstalledObject);
-        factoryMethods.put("class_of_intentionally_constructed_object", 
+        factoryMethods.put("ClassOfInstalledObject", ClassServices::createClassOfInstalledObject);
+        factoryMethods.put("ClassOfIntentionallyConstructedObject", 
                 ClassServices::createClassOfIntentionallyConstructedObject);
-        factoryMethods.put("class_of_offer", ClassServices::createClassOfOffer);
-        factoryMethods.put("class_of_ordinary_biological_object", ClassServices::createClassOfOrdinaryBiologicalObject);
-        factoryMethods.put("class_of_ordinary_functional_object", ClassServices::createClassOfOrdinaryFunctionalObject);
-        factoryMethods.put("class_of_ordinary_physical_object", ClassServices::createClassOfOrdinaryPhysicalObject);
-        factoryMethods.put("class_of_organization", ClassServices::createClassOfOrganization);
-        factoryMethods.put("class_of_organization_component", ClassServices::createClassOfOrganizationComponent);
-        factoryMethods.put("class_of_participant", ClassServices::createClassOfParticipant);
-        factoryMethods.put("class_of_party", ClassServices::createClassOfParty);
-        factoryMethods.put("class_of_period_of_time", ClassServices::createClassOfPeriodOfTime);
-        factoryMethods.put("class_of_person", ClassServices::createClassOfPerson);
-        factoryMethods.put("class_of_person_in_position", ClassServices::createClassOfPersonInPosition);
-        factoryMethods.put("class_of_physical_object", ClassServices::createClassOfPhysicalObject);
-        factoryMethods.put("class_of_physical_property", ClassServices::createClassOfPhysicalProperty);
-        factoryMethods.put("class_of_physical_quantity", ClassServices::createClassOfPhysicalQuantity);
-        factoryMethods.put("class_of_point_in_time", ClassServices::createClassOfPointInTime);
-        factoryMethods.put("class_of_position", ClassServices::createClassOfPosition);
-        factoryMethods.put("class_of_possible_world", ClassServices::createClassOfPossibleWorld);
-        factoryMethods.put("class_of_reaching_agreement", ClassServices::createClassOfReachingAgreement);
-        factoryMethods.put("class_of_relationship", ClassServices::createClassOfRelationship);
-        factoryMethods.put("class_of_representation", ClassServices::createClassOfRepresentation);
-        factoryMethods.put("class_of_sales_product_instance", ClassServices::createClassOfSalesProductInstance);
-        factoryMethods.put("class_of_sign", ClassServices::createClassOfSign);
-        factoryMethods.put("class_of_socially_constructed_activity", 
+        factoryMethods.put("ClassOfOffer", ClassServices::createClassOfOffer);
+        factoryMethods.put("ClassOfOrdinaryBiologicalObject", ClassServices::createClassOfOrdinaryBiologicalObject);
+        factoryMethods.put("ClassOfOrdinaryFunctionalObject", ClassServices::createClassOfOrdinaryFunctionalObject);
+        factoryMethods.put("ClassOfOrdinaryPhysicalObject", ClassServices::createClassOfOrdinaryPhysicalObject);
+        factoryMethods.put("ClassOfOrganization", ClassServices::createClassOfOrganization);
+        factoryMethods.put("ClassOfOrganizationComponent", ClassServices::createClassOfOrganizationComponent);
+        factoryMethods.put("ClassOfParticipant", ClassServices::createClassOfParticipant);
+        factoryMethods.put("ClassOfParty", ClassServices::createClassOfParty);
+        factoryMethods.put("ClassOfPeriodOfTime", ClassServices::createClassOfPeriodOfTime);
+        factoryMethods.put("ClassOfPerson", ClassServices::createClassOfPerson);
+        factoryMethods.put("ClassOfPersonInPosition", ClassServices::createClassOfPersonInPosition);
+        factoryMethods.put("ClassOfPhysicalObject", ClassServices::createClassOfPhysicalObject);
+        factoryMethods.put("ClassOfPhysicalProperty", ClassServices::createClassOfPhysicalProperty);
+        factoryMethods.put("ClassOfPhysicalQuantity", ClassServices::createClassOfPhysicalQuantity);
+        factoryMethods.put("ClassOfPointInTime", ClassServices::createClassOfPointInTime);
+        factoryMethods.put("ClassOfPosition", ClassServices::createClassOfPosition);
+        factoryMethods.put("ClassOfPossibleWorld", ClassServices::createClassOfPossibleWorld);
+        factoryMethods.put("ClassOfReachingAgreement", ClassServices::createClassOfReachingAgreement);
+        factoryMethods.put("ClassOfRelationship", ClassServices::createClassOfRelationship);
+        factoryMethods.put("ClassOfRepresentation", ClassServices::createClassOfRepresentation);
+        factoryMethods.put("ClassOfSalesProductInstance", ClassServices::createClassOfSalesProductInstance);
+        factoryMethods.put("ClassOfSign", ClassServices::createClassOfSign);
+        factoryMethods.put("ClassOfSociallyConstructedActivity", 
                 ClassServices::createClassOfSociallyConstructedActivity);
-        factoryMethods.put("class_of_socially_constructed_object", 
+        factoryMethods.put("ClassOfSociallyConstructedObject", 
                 ClassServices::createClassOfSociallyConstructedObject);
-        factoryMethods.put("class_of_spatio_temporal_extent", ClassServices::createClassOfSpatioTemporalExtent);
-        factoryMethods.put("class_of_state", ClassServices::createClassOfState);
-        factoryMethods.put("class_of_state_of_activity", ClassServices::createClassOfStateOfActivity);
-        factoryMethods.put("class_of_state_of_amount_of_money", ClassServices::createClassOfStateOfAmountOfMoney);
-        factoryMethods.put("class_of_state_of_association", ClassServices::createClassOfStateOfAssociation);
-        factoryMethods.put("class_of_state_of_biological_object", ClassServices::createClassOfStateOfBiologicalObject);
-        factoryMethods.put("class_of_state_of_biological_system", ClassServices::createClassOfStateOfBiologicalSystem);
-        factoryMethods.put("class_of_state_of_biological_system_component", 
+        factoryMethods.put("ClassOfSpatioTemporalExtent", ClassServices::createClassOfSpatioTemporalExtent);
+        factoryMethods.put("ClassOfState", ClassServices::createClassOfState);
+        factoryMethods.put("ClassOfStateOfActivity", ClassServices::createClassOfStateOfActivity);
+        factoryMethods.put("ClassOfStateOfAmountOfMoney", ClassServices::createClassOfStateOfAmountOfMoney);
+        factoryMethods.put("ClassOfStateOfAssociation", ClassServices::createClassOfStateOfAssociation);
+        factoryMethods.put("ClassOfStateOfBiologicalObject", ClassServices::createClassOfStateOfBiologicalObject);
+        factoryMethods.put("ClassOfStateOfBiologicalSystem", ClassServices::createClassOfStateOfBiologicalSystem);
+        factoryMethods.put("ClassOfStateOfBiologicalSystemComponent", 
                 ClassServices::createClassOfStateOfBiologicalSystemComponent);
-        factoryMethods.put("class_of_state_of_functional_object", ClassServices::createClassOfStateOfFunctionalObject);
-        factoryMethods.put("class_of_state_of_functional_system", ClassServices::createClassOfStateOfFunctionalSystem);
-        factoryMethods.put("class_of_state_of_functional_system_component", 
+        factoryMethods.put("ClassOfStateOfFunctionalObject", ClassServices::createClassOfStateOfFunctionalObject);
+        factoryMethods.put("ClassOfStateOfFunctionalSystem", ClassServices::createClassOfStateOfFunctionalSystem);
+        factoryMethods.put("ClassOfStateOfFunctionalSystemComponent", 
                 ClassServices::createClassOfStateOfFunctionalSystemComponent);
-        factoryMethods.put("class_of_state_of_intentionally_constructed_object", 
+        factoryMethods.put("ClassOfStateOfIntentionallyConstructedObject", 
                 ClassServices::createClassOfStateOfIntentionallyConstructedObject);
-        factoryMethods.put("class_of_state_of_ordinary_biological_object", 
+        factoryMethods.put("ClassOfStateOfOrdinaryBiologicalObject", 
                 ClassServices::createClassOfStateOfOrdinaryBiologicalObject);
-        factoryMethods.put("class_of_state_of_ordinary_functional_object", 
+        factoryMethods.put("ClassOfStateOfOrdinaryFunctionalObject", 
                 ClassServices::createClassOfStateOfOrdinaryFunctionalObject);
-        factoryMethods.put("class_of_state_of_ordinary_physical_object", 
+        factoryMethods.put("ClassOfStateOfOrdinaryPhysicalObject", 
                 ClassServices::createClassOfStateOfOrdinaryPhysicalObject);
-        factoryMethods.put("class_of_state_of_organization", ClassServices::createClassOfStateOfOrganization);
-        factoryMethods.put("class_of_state_of_organization_component", 
+        factoryMethods.put("ClassOfStateOfOrganization", ClassServices::createClassOfStateOfOrganization);
+        factoryMethods.put("ClassOfStateOfOrganizationComponent", 
                 ClassServices::createClassOfStateOfOrganizationComponent);
-        factoryMethods.put("class_of_state_of_party", ClassServices::createClassOfStateOfParty);
-        factoryMethods.put("class_of_state_of_person", ClassServices::createClassOfStateOfPerson);
-        factoryMethods.put("class_of_state_of_physical_object", ClassServices::createClassOfStateOfPhysicalObject);
-        factoryMethods.put("class_of_state_of_position", ClassServices::createClassOfStateOfPosition);
-        factoryMethods.put("class_of_state_of_sales_product_instance", 
+        factoryMethods.put("ClassOfStateOfParty", ClassServices::createClassOfStateOfParty);
+        factoryMethods.put("ClassOfStateOfPerson", ClassServices::createClassOfStateOfPerson);
+        factoryMethods.put("ClassOfStateOfPhysicalObject", ClassServices::createClassOfStateOfPhysicalObject);
+        factoryMethods.put("ClassOfStateOfPosition", ClassServices::createClassOfStateOfPosition);
+        factoryMethods.put("ClassOfStateOfSalesProductInstance", 
                 ClassServices::createClassOfStateOfSalesProductInstance);
-        factoryMethods.put("class_of_state_of_sign", ClassServices::createClassOfStateOfSign);
-        factoryMethods.put("class_of_state_of_socially_constructed_activity", 
+        factoryMethods.put("ClassOfStateOfSign", ClassServices::createClassOfStateOfSign);
+        factoryMethods.put("ClassOfStateOfSociallyConstructedActivity", 
                 ClassServices::createClassOfStateOfSociallyConstructedActivity);
-        factoryMethods.put("class_of_state_of_socially_constructed_object", 
+        factoryMethods.put("ClassOfStateOfSociallyConstructedObject", 
                 ClassServices::createClassOfStateOfSociallyConstructedObject);
-        factoryMethods.put("class_of_state_of_system", ClassServices::createClassOfStateOfSystem);
-        factoryMethods.put("class_of_state_of_system_component", ClassServices::createClassOfStateOfSystemComponent);
-        factoryMethods.put("class_of_system", ClassServices::createClassOfSystem);
-        factoryMethods.put("class_of_system_component", ClassServices::createClassOfSystemComponent);
-        factoryMethods.put("composition", RelationshipServices::createComposition);
-        factoryMethods.put("contract_execution", SpatioTemporalExtentServices::createContractExecution);
-        factoryMethods.put("contract_process", SpatioTemporalExtentServices::createContractProcess);
-        factoryMethods.put("currency", SpatioTemporalExtentServices::createCurrency);
-        factoryMethods.put("defined_relationship", RelationshipServices::createDefinedRelationship);
-        factoryMethods.put("definition", ClassServices::createDefinition);
-        factoryMethods.put("description", ClassServices::createDescription);
-        factoryMethods.put("employee", SpatioTemporalExtentServices::createEmployee);
-        factoryMethods.put("employer", SpatioTemporalExtentServices::createEmployer);
-        factoryMethods.put("employment", SpatioTemporalExtentServices::createEmployment);
-        factoryMethods.put("ending_of_ownership", SpatioTemporalExtentServices::createEndingOfOwnership);
-        factoryMethods.put("enumerated_class", ClassServices::createEnumeratedClass);
-        factoryMethods.put("event", SpatioTemporalExtentServices::createEvent);
-        factoryMethods.put("exchange_of_goods_and_money", SpatioTemporalExtentServices::createExchangeOfGoodsAndMoney);
-        factoryMethods.put("function_", RelationshipServices::createFunction);
-        factoryMethods.put("functional_object", SpatioTemporalExtentServices::createFunctionalObject);
-        factoryMethods.put("functional_system", SpatioTemporalExtentServices::createFunctionalSystem);
-        factoryMethods.put("functional_system_component", 
+        factoryMethods.put("ClassOfStateOfSystem", ClassServices::createClassOfStateOfSystem);
+        factoryMethods.put("ClassOfStateOfSystemComponent", ClassServices::createClassOfStateOfSystemComponent);
+        factoryMethods.put("ClassOfSystem", ClassServices::createClassOfSystem);
+        factoryMethods.put("ClassOfSystemComponent", ClassServices::createClassOfSystemComponent);
+        factoryMethods.put("Composition", RelationshipServices::createComposition);
+        factoryMethods.put("ContractExecution", SpatioTemporalExtentServices::createContractExecution);
+        factoryMethods.put("ContractProcess", SpatioTemporalExtentServices::createContractProcess);
+        factoryMethods.put("Currency", SpatioTemporalExtentServices::createCurrency);
+        factoryMethods.put("DefinedRelationship", RelationshipServices::createDefinedRelationship);
+        factoryMethods.put("Definition", ClassServices::createDefinition);
+        factoryMethods.put("Description", ClassServices::createDescription);
+        factoryMethods.put("Employee", SpatioTemporalExtentServices::createEmployee);
+        factoryMethods.put("Employer", SpatioTemporalExtentServices::createEmployer);
+        factoryMethods.put("Employment", SpatioTemporalExtentServices::createEmployment);
+        factoryMethods.put("EndingOfOwnership", SpatioTemporalExtentServices::createEndingOfOwnership);
+        factoryMethods.put("EnumeratedClass", ClassServices::createEnumeratedClass);
+        factoryMethods.put("Event", SpatioTemporalExtentServices::createEvent);
+        factoryMethods.put("ExchangeOfGoodsAndMoney", SpatioTemporalExtentServices::createExchangeOfGoodsAndMoney);
+        factoryMethods.put("Function", RelationshipServices::createFunction);
+        factoryMethods.put("FunctionalObject", SpatioTemporalExtentServices::createFunctionalObject);
+        factoryMethods.put("FunctionalSystem", SpatioTemporalExtentServices::createFunctionalSystem);
+        factoryMethods.put("FunctionalSystemComponent", 
                 SpatioTemporalExtentServices::createFunctionalSystemComponent);
-        factoryMethods.put("identification", ClassServices::createIdentification);
-        factoryMethods.put("identification_of_physical_quantity", 
+        factoryMethods.put("Identification", ClassServices::createIdentification);
+        factoryMethods.put("IdentificationOfPhysicalQuantity", 
                 SpatioTemporalExtentServices::createIdentificationOfPhysicalQuantity);
-        factoryMethods.put("individual", SpatioTemporalExtentServices::createIndividual);
-        factoryMethods.put("in_place_biological_component", 
+        factoryMethods.put("Individual", SpatioTemporalExtentServices::createIndividual);
+        factoryMethods.put("InPlaceBiologicalComponent", 
                 SpatioTemporalExtentServices::createInPlaceBiologicalComponent);
-        factoryMethods.put("installed_functional_system_component", 
+        factoryMethods.put("InstalledFunctionalSystemComponent", 
                 SpatioTemporalExtentServices::createInstalledFunctionalSystemComponent);
-        factoryMethods.put("installed_object", SpatioTemporalExtentServices::createInstalledObject);
-        factoryMethods.put("intentionally_constructed_object", 
+        factoryMethods.put("InstalledObject", SpatioTemporalExtentServices::createInstalledObject);
+        factoryMethods.put("IntentionallyConstructedObject", 
                 SpatioTemporalExtentServices::createIntentionallyConstructedObject);
-        factoryMethods.put("kind_of_activity", ClassServices::createKindOfActivity);
-        factoryMethods.put("kind_of_association", ClassServices::createKindOfAssociation);
-        factoryMethods.put("kind_of_biological_object", ClassServices::createKindOfBiologicalObject);
-        factoryMethods.put("kind_of_biological_system", ClassServices::createKindOfBiologicalSystem);
-        factoryMethods.put("kind_of_biological_system_component", ClassServices::createKindOfBiologicalSystemComponent);
-        factoryMethods.put("kind_of_functional_object", ClassServices::createKindOfFunctionalObject);
-        factoryMethods.put("kind_of_functional_system", ClassServices::createKindOfFunctionalSystem);
-        factoryMethods.put("kind_of_functional_system_component", ClassServices::createKindOfFunctionalSystemComponent);
-        factoryMethods.put("kind_of_individual", ClassServices::createKindOfIndividual);
-        factoryMethods.put("kind_of_intentionally_constructed_object", 
+        factoryMethods.put("KindOfActivity", ClassServices::createKindOfActivity);
+        factoryMethods.put("KindOfAssociation", ClassServices::createKindOfAssociation);
+        factoryMethods.put("KindOfBiologicalObject", ClassServices::createKindOfBiologicalObject);
+        factoryMethods.put("KindOfBiologicalSystem", ClassServices::createKindOfBiologicalSystem);
+        factoryMethods.put("KindOfBiologicalSystemComponent", ClassServices::createKindOfBiologicalSystemComponent);
+        factoryMethods.put("KindOfFunctionalObject", ClassServices::createKindOfFunctionalObject);
+        factoryMethods.put("KindOfFunctionalSystem", ClassServices::createKindOfFunctionalSystem);
+        factoryMethods.put("KindOfFunctionalSystemComponent", ClassServices::createKindOfFunctionalSystemComponent);
+        factoryMethods.put("KindOfIndividual", ClassServices::createKindOfIndividual);
+        factoryMethods.put("KindOfIntentionallyConstructedObject", 
                 ClassServices::createKindOfIntentionallyConstructedObject);
-        factoryMethods.put("kind_of_ordinary_biological_object", ClassServices::createKindOfOrdinaryBiologicalObject);
-        factoryMethods.put("kind_of_ordinary_functional_object", ClassServices::createKindOfOrdinaryFunctionalObject);
-        factoryMethods.put("kind_of_ordinary_physical_object", ClassServices::createKindOfOrdinaryPhysicalObject);
-        factoryMethods.put("kind_of_organization", ClassServices::createKindOfOrganization);
-        factoryMethods.put("kind_of_organization_component", ClassServices::createKindOfOrganizationComponent);
-        factoryMethods.put("kind_of_party", ClassServices::createKindOfParty);
-        factoryMethods.put("kind_of_person", ClassServices::createKindOfPerson);
-        factoryMethods.put("kind_of_physical_object", ClassServices::createKindOfPhysicalObject);
-        factoryMethods.put("kind_of_physical_property", ClassServices::createKindOfPhysicalProperty);
-        factoryMethods.put("kind_of_physical_quantity", ClassServices::createKindOfPhysicalQuantity);
-        factoryMethods.put("kind_of_position", ClassServices::createKindOfPosition);
-        factoryMethods.put("kind_of_relationship_with_restriction", 
+        factoryMethods.put("KindOfOrdinaryBiologicalObject", ClassServices::createKindOfOrdinaryBiologicalObject);
+        factoryMethods.put("KindOfOrdinaryFunctionalObject", ClassServices::createKindOfOrdinaryFunctionalObject);
+        factoryMethods.put("KindOfOrdinaryPhysicalObject", ClassServices::createKindOfOrdinaryPhysicalObject);
+        factoryMethods.put("KindOfOrganization", ClassServices::createKindOfOrganization);
+        factoryMethods.put("KindOfOrganizationComponent", ClassServices::createKindOfOrganizationComponent);
+        factoryMethods.put("KindOfParty", ClassServices::createKindOfParty);
+        factoryMethods.put("KindOfPerson", ClassServices::createKindOfPerson);
+        factoryMethods.put("KindOfPhysicalObject", ClassServices::createKindOfPhysicalObject);
+        factoryMethods.put("KindOfPhysicalProperty", ClassServices::createKindOfPhysicalProperty);
+        factoryMethods.put("KindOfPhysicalQuantity", ClassServices::createKindOfPhysicalQuantity);
+        factoryMethods.put("KindOfPosition", ClassServices::createKindOfPosition);
+        factoryMethods.put("KindOfRelationshipWithRestriction", 
                 ClassServices::createKindOfRelationshipWithRestriction);
-        factoryMethods.put("kind_of_relationship_with_signature", ClassServices::createKindOfRelationshipWithSignature);
-        factoryMethods.put("kind_of_socially_constructed_object", ClassServices::createKindOfSociallyConstructedObject);
-        factoryMethods.put("kind_of_system", ClassServices::createKindOfSystem);
-        factoryMethods.put("kind_of_system_component", ClassServices::createKindOfSystemComponent);
-        factoryMethods.put("language_community", SpatioTemporalExtentServices::createLanguageCommunity);
-        factoryMethods.put("money_asset", SpatioTemporalExtentServices::createMoneyAsset);
-        factoryMethods.put("offer", SpatioTemporalExtentServices::createOffer);
-        factoryMethods.put("offer_and_acceptance_for_goods", 
+        factoryMethods.put("KindOfRelationshipWithSignature", ClassServices::createKindOfRelationshipWithSignature);
+        factoryMethods.put("KindOfSociallyConstructedObject", ClassServices::createKindOfSociallyConstructedObject);
+        factoryMethods.put("KindOfSystem", ClassServices::createKindOfSystem);
+        factoryMethods.put("KindOfSystemComponent", ClassServices::createKindOfSystemComponent);
+        factoryMethods.put("LanguageCommunity", SpatioTemporalExtentServices::createLanguageCommunity);
+        factoryMethods.put("MoneyAsset", SpatioTemporalExtentServices::createMoneyAsset);
+        factoryMethods.put("Offer", SpatioTemporalExtentServices::createOffer);
+        factoryMethods.put("OfferAndAcceptanceForGoods", 
                 SpatioTemporalExtentServices::createOfferAndAcceptanceForGoods);
-        factoryMethods.put("offer_for_goods", SpatioTemporalExtentServices::createOfferForGoods);
-        factoryMethods.put("offering", SpatioTemporalExtentServices::createOffering);
-        factoryMethods.put("ordinary_biological_object", SpatioTemporalExtentServices::createOrdinaryBiologicalObject);
-        factoryMethods.put("ordinary_functional_object", SpatioTemporalExtentServices::createOrdinaryFunctionalObject);
-        factoryMethods.put("ordinary_physical_object", SpatioTemporalExtentServices::createOrdinaryPhysicalObject);
-        factoryMethods.put("organization", SpatioTemporalExtentServices::createOrganization);
-        factoryMethods.put("organization_component", SpatioTemporalExtentServices::createOrganizationComponent);
-        factoryMethods.put("owner", SpatioTemporalExtentServices::createOwner);
-        factoryMethods.put("ownership", SpatioTemporalExtentServices::createOwnership);
-        factoryMethods.put("participant", SpatioTemporalExtentServices::createParticipant);
-        factoryMethods.put("party", SpatioTemporalExtentServices::createParty);
-        factoryMethods.put("pattern", ClassServices::createPattern);
-        factoryMethods.put("period_of_time", SpatioTemporalExtentServices::createPeriodOfTime);
-        factoryMethods.put("person", SpatioTemporalExtentServices::createPerson);
-        factoryMethods.put("person_in_position", SpatioTemporalExtentServices::createPersonInPosition);
-        factoryMethods.put("physical_object", SpatioTemporalExtentServices::createPhysicalObject);
-        factoryMethods.put("physical_property", SpatioTemporalExtentServices::createPhysicalProperty);
-        factoryMethods.put("physical_property_range", SpatioTemporalExtentServices::createPhysicalPropertyRange);
-        factoryMethods.put("physical_quantity", SpatioTemporalExtentServices::createPhysicalQuantity);
-        factoryMethods.put("physical_quantity_range", SpatioTemporalExtentServices::createPhysicalQuantityRange);
-        factoryMethods.put("plan", SpatioTemporalExtentServices::createPlan);
-        factoryMethods.put("point_in_time", SpatioTemporalExtentServices::createPointInTime);
-        factoryMethods.put("position", SpatioTemporalExtentServices::createPosition);
-        factoryMethods.put("possible_world", SpatioTemporalExtentServices::createPossibleWorld);
-        factoryMethods.put("price", SpatioTemporalExtentServices::createPrice);
-        factoryMethods.put("product_brand", SpatioTemporalExtentServices::createProductBrand);
-        factoryMethods.put("product_offering", SpatioTemporalExtentServices::createProductOffering);
-        factoryMethods.put("reaching_agreement", SpatioTemporalExtentServices::createReachingAgreement);
-        factoryMethods.put("recognizing_language_community", 
+        factoryMethods.put("OfferForGoods", SpatioTemporalExtentServices::createOfferForGoods);
+        factoryMethods.put("Offering", SpatioTemporalExtentServices::createOffering);
+        factoryMethods.put("OrdinaryBiologicalObject", SpatioTemporalExtentServices::createOrdinaryBiologicalObject);
+        factoryMethods.put("OrdinaryFunctionalObject", SpatioTemporalExtentServices::createOrdinaryFunctionalObject);
+        factoryMethods.put("OrdinaryPhysicalObject", SpatioTemporalExtentServices::createOrdinaryPhysicalObject);
+        factoryMethods.put("Organization", SpatioTemporalExtentServices::createOrganization);
+        factoryMethods.put("OrganizationComponent", SpatioTemporalExtentServices::createOrganizationComponent);
+        factoryMethods.put("Owner", SpatioTemporalExtentServices::createOwner);
+        factoryMethods.put("Ownership", SpatioTemporalExtentServices::createOwnership);
+        factoryMethods.put("Participant", SpatioTemporalExtentServices::createParticipant);
+        factoryMethods.put("Party", SpatioTemporalExtentServices::createParty);
+        factoryMethods.put("Pattern", ClassServices::createPattern);
+        factoryMethods.put("PeriodOfTime", SpatioTemporalExtentServices::createPeriodOfTime);
+        factoryMethods.put("Person", SpatioTemporalExtentServices::createPerson);
+        factoryMethods.put("PersonInPosition", SpatioTemporalExtentServices::createPersonInPosition);
+        factoryMethods.put("PhysicalObject", SpatioTemporalExtentServices::createPhysicalObject);
+        factoryMethods.put("PhysicalProperty", SpatioTemporalExtentServices::createPhysicalProperty);
+        factoryMethods.put("PhysicalPropertyRange", SpatioTemporalExtentServices::createPhysicalPropertyRange);
+        factoryMethods.put("PhysicalQuantity", SpatioTemporalExtentServices::createPhysicalQuantity);
+        factoryMethods.put("PhysicalQuantityRange", SpatioTemporalExtentServices::createPhysicalQuantityRange);
+        factoryMethods.put("Plan", SpatioTemporalExtentServices::createPlan);
+        factoryMethods.put("PointInTime", SpatioTemporalExtentServices::createPointInTime);
+        factoryMethods.put("Position", SpatioTemporalExtentServices::createPosition);
+        factoryMethods.put("PossibleWorld", SpatioTemporalExtentServices::createPossibleWorld);
+        factoryMethods.put("Price", SpatioTemporalExtentServices::createPrice);
+        factoryMethods.put("ProductBrand", SpatioTemporalExtentServices::createProductBrand);
+        factoryMethods.put("ProductOffering", SpatioTemporalExtentServices::createProductOffering);
+        factoryMethods.put("ReachingAgreement", SpatioTemporalExtentServices::createReachingAgreement);
+        factoryMethods.put("RecognizingLanguageCommunity", 
                 SpatioTemporalExtentServices::createRecognizingLanguageCommunity);
-        factoryMethods.put("relationship", RelationshipServices::createRelationship);
-        factoryMethods.put("representation_by_pattern", ClassServices::createRepresentationByPattern);
-        factoryMethods.put("representation_by_sign", SpatioTemporalExtentServices::createRepresentationBySign);
-        factoryMethods.put("requirement", SpatioTemporalExtentServices::createRequirement);
-        factoryMethods.put("requirement_specification", SpatioTemporalExtentServices::createRequirementSpecification);
-        factoryMethods.put("role", ClassServices::createRole);
-        factoryMethods.put("sale_of_goods", SpatioTemporalExtentServices::createSaleOfGoods);
-        factoryMethods.put("sales_product", SpatioTemporalExtentServices::createSalesProduct);
-        factoryMethods.put("sales_product_instance", SpatioTemporalExtentServices::createSalesProductInstance);
-        factoryMethods.put("sales_product_version", SpatioTemporalExtentServices::createSalesProductVersion);
-        factoryMethods.put("scale", RelationshipServices::createScale);
-        factoryMethods.put("sign", SpatioTemporalExtentServices::createSign);
-        factoryMethods.put("socially_constructed_activity", 
+        factoryMethods.put("Relationship", RelationshipServices::createRelationship);
+        factoryMethods.put("RepresentationByPattern", ClassServices::createRepresentationByPattern);
+        factoryMethods.put("RepresentationBySign", SpatioTemporalExtentServices::createRepresentationBySign);
+        factoryMethods.put("Requirement", SpatioTemporalExtentServices::createRequirement);
+        factoryMethods.put("RequirementSpecification", SpatioTemporalExtentServices::createRequirementSpecification);
+        factoryMethods.put("Role", ClassServices::createRole);
+        factoryMethods.put("SaleOfGoods", SpatioTemporalExtentServices::createSaleOfGoods);
+        factoryMethods.put("SalesProduct", SpatioTemporalExtentServices::createSalesProduct);
+        factoryMethods.put("SalesProductInstance", SpatioTemporalExtentServices::createSalesProductInstance);
+        factoryMethods.put("SalesProductVersion", SpatioTemporalExtentServices::createSalesProductVersion);
+        factoryMethods.put("Scale", RelationshipServices::createScale);
+        factoryMethods.put("Sign", SpatioTemporalExtentServices::createSign);
+        factoryMethods.put("SociallyConstructedActivity", 
                 SpatioTemporalExtentServices::createSociallyConstructedActivity);
-        factoryMethods.put("socially_constructed_object", 
+        factoryMethods.put("SociallyConstructedObject", 
                 SpatioTemporalExtentServices::createSociallyConstructedObject);
-        factoryMethods.put("spatio_temporal_extent", SpatioTemporalExtentServices::createSpatioTemporalExtent);
-        factoryMethods.put("specialization", RelationshipServices::createSpecialization);
-        factoryMethods.put("state", SpatioTemporalExtentServices::createState);
-        factoryMethods.put("state_of_activity", SpatioTemporalExtentServices::createStateOfActivity);
-        factoryMethods.put("state_of_amount_of_money", SpatioTemporalExtentServices::createStateOfAmountOfMoney);
-        factoryMethods.put("state_of_association", SpatioTemporalExtentServices::createStateOfAssociation);
-        factoryMethods.put("state_of_biological_object", SpatioTemporalExtentServices::createStateOfBiologicalObject);
-        factoryMethods.put("state_of_biological_system", SpatioTemporalExtentServices::createStateOfBiologicalSystem);
-        factoryMethods.put("state_of_biological_system_component", 
+        factoryMethods.put("SpatioTemporalExtent", SpatioTemporalExtentServices::createSpatioTemporalExtent);
+        factoryMethods.put("Specialization", RelationshipServices::createSpecialization);
+        factoryMethods.put("State", SpatioTemporalExtentServices::createState);
+        factoryMethods.put("StateOfActivity", SpatioTemporalExtentServices::createStateOfActivity);
+        factoryMethods.put("StateOfAmountOfMoney", SpatioTemporalExtentServices::createStateOfAmountOfMoney);
+        factoryMethods.put("StateOfAssociation", SpatioTemporalExtentServices::createStateOfAssociation);
+        factoryMethods.put("StateOfBiologicalObject", SpatioTemporalExtentServices::createStateOfBiologicalObject);
+        factoryMethods.put("StateOfBiologicalSystem", SpatioTemporalExtentServices::createStateOfBiologicalSystem);
+        factoryMethods.put("StateOfBiologicalSystemComponent", 
                 SpatioTemporalExtentServices::createStateOfBiologicalSystemComponent);
-        factoryMethods.put("state_of_functional_object", SpatioTemporalExtentServices::createStateOfFunctionalObject);
-        factoryMethods.put("state_of_functional_system", SpatioTemporalExtentServices::createStateOfFunctionalSystem);
-        factoryMethods.put("state_of_functional_system_component", 
+        factoryMethods.put("StateOfFunctionalObject", SpatioTemporalExtentServices::createStateOfFunctionalObject);
+        factoryMethods.put("StateOfFunctionalSystem", SpatioTemporalExtentServices::createStateOfFunctionalSystem);
+        factoryMethods.put("StateOfFunctionalSystemComponent", 
                 SpatioTemporalExtentServices::createStateOfFunctionalSystemComponent);
-        factoryMethods.put("state_of_intentionally_constructed_object", 
+        factoryMethods.put("StateOfIntentionallyConstructedObject", 
                 SpatioTemporalExtentServices::createStateOfIntentionallyConstructedObject);
-        factoryMethods.put("state_of_language_community", SpatioTemporalExtentServices::createStateOfLanguageCommunity);
-        factoryMethods.put("state_of_ordinary_biological_object", 
+        factoryMethods.put("StateOfLanguageCommunity", SpatioTemporalExtentServices::createStateOfLanguageCommunity);
+        factoryMethods.put("StateOfOrdinaryBiologicalObject", 
                 SpatioTemporalExtentServices::createStateOfOrdinaryBiologicalObject);
-        factoryMethods.put("state_of_ordinary_functional_object", 
+        factoryMethods.put("StateOfOrdinaryFunctionalObject", 
                 SpatioTemporalExtentServices::createStateOfOrdinaryFunctionalObject);
-        factoryMethods.put("state_of_ordinary_physical_object", 
+        factoryMethods.put("StateOfOrdinaryPhysicalObject", 
                 SpatioTemporalExtentServices::createStateOfOrdinaryPhysicalObject);
-        factoryMethods.put("state_of_organization", SpatioTemporalExtentServices::createStateOfOrganization);
-        factoryMethods.put("state_of_organization_component", 
+        factoryMethods.put("StateOfOrganization", SpatioTemporalExtentServices::createStateOfOrganization);
+        factoryMethods.put("StateOfOrganizationComponent", 
                 SpatioTemporalExtentServices::createStateOfOrganizationComponent);
-        factoryMethods.put("state_of_party", SpatioTemporalExtentServices::createStateOfParty);
-        factoryMethods.put("state_of_person", SpatioTemporalExtentServices::createStateOfPerson);
-        factoryMethods.put("state_of_physical_object", SpatioTemporalExtentServices::createStateOfPhysicalObject);
-        factoryMethods.put("state_of_position", SpatioTemporalExtentServices::createStateOfPosition);
-        factoryMethods.put("state_of_sales_product_instance", 
+        factoryMethods.put("StateOfParty", SpatioTemporalExtentServices::createStateOfParty);
+        factoryMethods.put("StateOfPerson", SpatioTemporalExtentServices::createStateOfPerson);
+        factoryMethods.put("StateOfPhysicalObject", SpatioTemporalExtentServices::createStateOfPhysicalObject);
+        factoryMethods.put("StateOfPosition", SpatioTemporalExtentServices::createStateOfPosition);
+        factoryMethods.put("StateOfSalesProductInstance", 
                 SpatioTemporalExtentServices::createStateOfSalesProductInstance);
-        factoryMethods.put("state_of_sign", SpatioTemporalExtentServices::createStateOfSign);
-        factoryMethods.put("state_of_socially_constructed_activity", 
+        factoryMethods.put("StateOfSign", SpatioTemporalExtentServices::createStateOfSign);
+        factoryMethods.put("StateOfSociallyConstructedActivity", 
                 SpatioTemporalExtentServices::createStateOfSociallyConstructedActivity);
-        factoryMethods.put("state_of_socially_constructed_object", 
+        factoryMethods.put("StateOfSociallyConstructedObject", 
                 SpatioTemporalExtentServices::createStateOfSociallyConstructedObject);
-        factoryMethods.put("state_of_system", SpatioTemporalExtentServices::createStateOfSystem);
-        factoryMethods.put("state_of_system_component", SpatioTemporalExtentServices::createStateOfSystemComponent);
-        factoryMethods.put("system", SpatioTemporalExtentServices::createSystem);
-        factoryMethods.put("system_component", SpatioTemporalExtentServices::createSystemComponent);
-        factoryMethods.put("temporal_composition", RelationshipServices::createTemporalComposition);
-        factoryMethods.put("thing", SpatioTemporalExtentServices::createThing);
-        factoryMethods.put("transferee", SpatioTemporalExtentServices::createTransferee);
-        factoryMethods.put("transfer_of_ownership", SpatioTemporalExtentServices::createTransferOfOwnership);
-        factoryMethods.put("transfer_of_ownership_of_money", 
+        factoryMethods.put("StateOfSystem", SpatioTemporalExtentServices::createStateOfSystem);
+        factoryMethods.put("StateOfSystemComponent", SpatioTemporalExtentServices::createStateOfSystemComponent);
+        factoryMethods.put("System", SpatioTemporalExtentServices::createSystem);
+        factoryMethods.put("SystemComponent", SpatioTemporalExtentServices::createSystemComponent);
+        factoryMethods.put("TemporalComposition", RelationshipServices::createTemporalComposition);
+        factoryMethods.put("Thing", SpatioTemporalExtentServices::createThing);
+        factoryMethods.put("Transferee", SpatioTemporalExtentServices::createTransferee);
+        factoryMethods.put("TransferOfOwnership", SpatioTemporalExtentServices::createTransferOfOwnership);
+        factoryMethods.put("TransferOfOwnershipOfMoney", 
                 SpatioTemporalExtentServices::createTransferOfOwnershipOfMoney);
-        factoryMethods.put("transferor", SpatioTemporalExtentServices::createTransferor);
-        factoryMethods.put("unit_of_measure", RelationshipServices::createUnitOfMeasure);
+        factoryMethods.put("Transferor", SpatioTemporalExtentServices::createTransferor);
+        factoryMethods.put("UnitOfMeasure", RelationshipServices::createUnitOfMeasure);
     }
 }

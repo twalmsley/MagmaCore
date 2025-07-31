@@ -19,19 +19,14 @@ import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CAUSES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.DETERMINES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.REFERENCES;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Activity;
@@ -111,14 +106,14 @@ public class SociallyConstructedActivityBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final SociallyConstructedActivityBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.sociallyConstructedActivity.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final SociallyConstructedActivityBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.sociallyConstructedActivity.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -178,8 +173,8 @@ public class SociallyConstructedActivityBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final SociallyConstructedActivityBuilder member__Of(final Class clazz) {
-        this.sociallyConstructedActivity.addValue(MEMBER__OF, clazz.getId());
+    public final SociallyConstructedActivityBuilder member_Of(final Class clazz) {
+        this.sociallyConstructedActivity.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -221,8 +216,8 @@ public class SociallyConstructedActivityBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final SociallyConstructedActivityBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.sociallyConstructedActivity.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final SociallyConstructedActivityBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.sociallyConstructedActivity.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -247,8 +242,8 @@ public class SociallyConstructedActivityBuilder {
      * @param agreementExecution The AgreementExecution.
      * @return This builder.
      */
-    public final SociallyConstructedActivityBuilder part_Of_(final AgreementExecution agreementExecution) {
-        this.sociallyConstructedActivity.addValue(PART_OF_, agreementExecution.getId());
+    public final SociallyConstructedActivityBuilder part_Of(final AgreementExecution agreementExecution) {
+        this.sociallyConstructedActivity.addValue(PART_OF, agreementExecution.getId());
         return this;
     }
 
@@ -290,8 +285,8 @@ public class SociallyConstructedActivityBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final SociallyConstructedActivityBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.sociallyConstructedActivity.addValue(TEMPORAL__PART_OF,
+    public final SociallyConstructedActivityBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.sociallyConstructedActivity.addValue(TEMPORAL_PART_OF,
                 spatioTemporalExtent.getId());
         return this;
     }
@@ -345,9 +340,9 @@ public class SociallyConstructedActivityBuilder {
                 && this.sociallyConstructedActivity.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.sociallyConstructedActivity.hasValue(MEMBER__OF)
-                && this.sociallyConstructedActivity.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.sociallyConstructedActivity.hasValue(MEMBER_OF)
+                && this.sociallyConstructedActivity.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.sociallyConstructedActivity.hasValue(MEMBER_OF)
                 && this.sociallyConstructedActivity.values(MEMBER_OF).isEmpty()) {
@@ -356,17 +351,17 @@ public class SociallyConstructedActivityBuilder {
         if (!this.sociallyConstructedActivity.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.sociallyConstructedActivity.hasValue(PART__OF)
-                && this.sociallyConstructedActivity.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.sociallyConstructedActivity.hasValue(PART_OF)
+                && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (this.sociallyConstructedActivity.hasValue(PART_OF)
                 && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of");
         }
-        if (this.sociallyConstructedActivity.hasValue(PART_OF_)
-                && this.sociallyConstructedActivity.values(PART_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_");
+        if (this.sociallyConstructedActivity.hasValue(PART_OF)
+                && this.sociallyConstructedActivity.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.sociallyConstructedActivity.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
@@ -375,9 +370,9 @@ public class SociallyConstructedActivityBuilder {
                 && this.sociallyConstructedActivity.values(REFERENCES).isEmpty()) {
             throw new HqdmException("Property Not Set: references");
         }
-        if (this.sociallyConstructedActivity.hasValue(TEMPORAL__PART_OF)
-                && this.sociallyConstructedActivity.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.sociallyConstructedActivity.hasValue(TEMPORAL_PART_OF)
+                && this.sociallyConstructedActivity.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.sociallyConstructedActivity.hasValue(TEMPORAL_PART_OF)
                 && this.sociallyConstructedActivity.values(TEMPORAL_PART_OF).isEmpty()) {

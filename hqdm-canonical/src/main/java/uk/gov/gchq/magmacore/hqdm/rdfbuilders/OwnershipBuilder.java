@@ -16,17 +16,14 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_PARTICIPANT_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Asset;
@@ -93,14 +90,14 @@ public class OwnershipBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OwnershipBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ownership.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final OwnershipBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ownership.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -125,8 +122,8 @@ public class OwnershipBuilder {
      * @param asset The Asset.
      * @return This builder.
      */
-    public final OwnershipBuilder consists_Of_Participant_(final Asset asset) {
-        this.ownership.addValue(CONSISTS_OF_PARTICIPANT_, asset.getId());
+    public final OwnershipBuilder consists_Of_Participant(final Asset asset) {
+        this.ownership.addValue(CONSISTS_OF_PARTICIPANT, asset.getId());
         return this;
     }
 
@@ -150,8 +147,8 @@ public class OwnershipBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final OwnershipBuilder member__Of(final Class clazz) {
-        this.ownership.addValue(MEMBER__OF, clazz.getId());
+    public final OwnershipBuilder member_Of(final Class clazz) {
+        this.ownership.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -190,8 +187,8 @@ public class OwnershipBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OwnershipBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ownership.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final OwnershipBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ownership.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -221,8 +218,8 @@ public class OwnershipBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OwnershipBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ownership.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final OwnershipBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ownership.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -266,9 +263,9 @@ public class OwnershipBuilder {
                 && this.ownership.values(ENDING).isEmpty()) {
             throw new HqdmException("Property Not Set: ending");
         }
-        if (this.ownership.hasValue(MEMBER__OF)
-                && this.ownership.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.ownership.hasValue(MEMBER_OF)
+                && this.ownership.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.ownership.hasValue(MEMBER_OF)
                 && this.ownership.values(MEMBER_OF).isEmpty()) {
@@ -277,16 +274,16 @@ public class OwnershipBuilder {
         if (!this.ownership.hasValue(MEMBER_OF_KIND)) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.ownership.hasValue(PART__OF)
-                && this.ownership.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.ownership.hasValue(PART_OF)
+                && this.ownership.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.ownership.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.ownership.hasValue(TEMPORAL__PART_OF)
-                && this.ownership.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.ownership.hasValue(TEMPORAL_PART_OF)
+                && this.ownership.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.ownership.hasValue(TEMPORAL_PART_OF)
                 && this.ownership.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -16,7 +16,6 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -60,8 +59,8 @@ public class KindOfPhysicalPropertyBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final KindOfPhysicalPropertyBuilder member__Of(final Class clazz) {
-        this.kindOfPhysicalProperty.addValue(MEMBER__OF, clazz.getId());
+    public final KindOfPhysicalPropertyBuilder member_Of(final Class clazz) {
+        this.kindOfPhysicalProperty.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -89,9 +88,9 @@ public class KindOfPhysicalPropertyBuilder {
                 && this.kindOfPhysicalProperty.values(HAS_SUPERCLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: has_superclass");
         }
-        if (this.kindOfPhysicalProperty.hasValue(MEMBER__OF)
-                && this.kindOfPhysicalProperty.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.kindOfPhysicalProperty.hasValue(MEMBER_OF)
+                && this.kindOfPhysicalProperty.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.kindOfPhysicalProperty.hasValue(MEMBER_OF)
                 && this.kindOfPhysicalProperty.values(MEMBER_OF).isEmpty()) {

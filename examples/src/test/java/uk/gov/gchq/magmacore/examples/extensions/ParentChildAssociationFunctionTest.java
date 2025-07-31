@@ -65,7 +65,7 @@ public class ParentChildAssociationFunctionTest {
                 ending));
 
         // Export the TTL for inspection.
-        svc.exportTtl(System.out);
+        // svc.exportTtl(System.out);
 
     }
 

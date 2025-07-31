@@ -16,15 +16,11 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CLASS_OF_OFFERED;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSIDERATION_BY_CLASS;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.OFFEROR;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_BY_CLASS;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_BY_CLASS_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PERIOD_OFFERED;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
@@ -83,7 +79,7 @@ public class ProductOfferingBuilder {
     }
 
     /**
-     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF_BY_CLASS} relationship type
+     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF_BY_CLASS} relationship type
      * where a {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} one
      * {@link ClassOfSpatioTemporalExtent} {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#CONSISTS_OF}
      * another {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} a
@@ -92,9 +88,9 @@ public class ProductOfferingBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ProductOfferingBuilder consists__Of_By_Class(
+    public final ProductOfferingBuilder consists_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.productOffering.addValue(CONSISTS__OF_BY_CLASS,
+        this.productOffering.addValue(CONSISTS_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -118,8 +114,8 @@ public class ProductOfferingBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final ProductOfferingBuilder member__Of(final Class clazz) {
-        this.productOffering.addValue(MEMBER__OF, clazz.getId());
+    public final ProductOfferingBuilder member_Of(final Class clazz) {
+        this.productOffering.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -144,9 +140,9 @@ public class ProductOfferingBuilder {
      * @param classOfClassOfSpatioTemporalExtent The ClassOfClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ProductOfferingBuilder member_Of_(
+    public final ProductOfferingBuilder member_Of(
             final ClassOfClassOfSpatioTemporalExtent classOfClassOfSpatioTemporalExtent) {
-        this.productOffering.addValue(MEMBER_OF_, classOfClassOfSpatioTemporalExtent.getId());
+        this.productOffering.addValue(MEMBER_OF, classOfClassOfSpatioTemporalExtent.getId());
         return this;
     }
 
@@ -171,9 +167,9 @@ public class ProductOfferingBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final ProductOfferingBuilder part__Of_By_Class(
+    public final ProductOfferingBuilder part_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.productOffering.addValue(PART__OF_BY_CLASS, classOfSpatioTemporalExtent.getId());
+        this.productOffering.addValue(PART_OF_BY_CLASS, classOfSpatioTemporalExtent.getId());
         return this;
     }
 
@@ -203,9 +199,9 @@ public class ProductOfferingBuilder {
      * @param classOfAgreementExecution The ClassOfAgreementExecution.
      * @return This builder.
      */
-    public final ProductOfferingBuilder part_Of_By_Class_(
+    public final ProductOfferingBuilder part_Of_By_Class(
             final ClassOfAgreementExecution classOfAgreementExecution) {
-        this.productOffering.addValue(PART_OF_BY_CLASS_, classOfAgreementExecution.getId());
+        this.productOffering.addValue(PART_OF_BY_CLASS, classOfAgreementExecution.getId());
         return this;
     }
 
@@ -238,32 +234,32 @@ public class ProductOfferingBuilder {
                 && this.productOffering.values(HAS_SUPERCLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: has_superclass");
         }
-        if (this.productOffering.hasValue(MEMBER__OF)
-                && this.productOffering.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.productOffering.hasValue(MEMBER_OF)
+                && this.productOffering.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.productOffering.hasValue(MEMBER_OF)
                 && this.productOffering.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.productOffering.hasValue(MEMBER_OF_)
-                && this.productOffering.values(MEMBER_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of_");
+        if (this.productOffering.hasValue(MEMBER_OF)
+                && this.productOffering.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (!this.productOffering.hasValue(OFFEROR)) {
             throw new HqdmException("Property Not Set: offeror");
-        }
-        if (this.productOffering.hasValue(PART__OF_BY_CLASS)
-                && this.productOffering.values(PART__OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of_by_class");
         }
         if (this.productOffering.hasValue(PART_OF_BY_CLASS)
                 && this.productOffering.values(PART_OF_BY_CLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: part_of_by_class");
         }
-        if (this.productOffering.hasValue(PART_OF_BY_CLASS_)
-                && this.productOffering.values(PART_OF_BY_CLASS_).isEmpty()) {
-            throw new HqdmException("Property Not Set: part_of_by_class_");
+        if (this.productOffering.hasValue(PART_OF_BY_CLASS)
+                && this.productOffering.values(PART_OF_BY_CLASS).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of_by_class");
+        }
+        if (this.productOffering.hasValue(PART_OF_BY_CLASS)
+                && this.productOffering.values(PART_OF_BY_CLASS).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of_by_class");
         }
         if (!this.productOffering.hasValue(PERIOD_OFFERED)) {
             throw new HqdmException("Property Not Set: period_offered");

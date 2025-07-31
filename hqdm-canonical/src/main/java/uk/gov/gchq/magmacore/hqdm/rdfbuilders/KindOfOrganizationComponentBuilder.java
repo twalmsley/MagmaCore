@@ -14,12 +14,10 @@
 
 package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_BY_CLASS;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -47,7 +45,7 @@ public class KindOfOrganizationComponentBuilder {
     }
 
     /**
-     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF_BY_CLASS} relationship type
+     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF_BY_CLASS} relationship type
      * where a {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} one
      * {@link ClassOfSpatioTemporalExtent} {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#CONSISTS_OF}
      * another {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} a
@@ -56,9 +54,9 @@ public class KindOfOrganizationComponentBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfOrganizationComponentBuilder consists__Of_By_Class(
+    public final KindOfOrganizationComponentBuilder consists_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.kindOfOrganizationComponent.addValue(CONSISTS__OF_BY_CLASS,
+        this.kindOfOrganizationComponent.addValue(CONSISTS_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -82,8 +80,8 @@ public class KindOfOrganizationComponentBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final KindOfOrganizationComponentBuilder member__Of(final Class clazz) {
-        this.kindOfOrganizationComponent.addValue(MEMBER__OF, clazz.getId());
+    public final KindOfOrganizationComponentBuilder member_Of(final Class clazz) {
+        this.kindOfOrganizationComponent.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -108,9 +106,9 @@ public class KindOfOrganizationComponentBuilder {
      * @param classOfClassOfSpatioTemporalExtent The ClassOfClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfOrganizationComponentBuilder member_Of_(
+    public final KindOfOrganizationComponentBuilder member_Of(
             final ClassOfClassOfSpatioTemporalExtent classOfClassOfSpatioTemporalExtent) {
-        this.kindOfOrganizationComponent.addValue(MEMBER_OF_,
+        this.kindOfOrganizationComponent.addValue(MEMBER_OF,
                 classOfClassOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -124,9 +122,9 @@ public class KindOfOrganizationComponentBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfOrganizationComponentBuilder part__Of_By_Class(
+    public final KindOfOrganizationComponentBuilder part_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.kindOfOrganizationComponent.addValue(PART__OF_BY_CLASS,
+        this.kindOfOrganizationComponent.addValue(PART_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -143,21 +141,21 @@ public class KindOfOrganizationComponentBuilder {
                 && this.kindOfOrganizationComponent.values(HAS_SUPERCLASS).isEmpty()) {
             throw new HqdmException("Property Not Set: has_superclass");
         }
-        if (this.kindOfOrganizationComponent.hasValue(MEMBER__OF)
-                && this.kindOfOrganizationComponent.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.kindOfOrganizationComponent.hasValue(MEMBER_OF)
+                && this.kindOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.kindOfOrganizationComponent.hasValue(MEMBER_OF)
                 && this.kindOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfOrganizationComponent.hasValue(MEMBER_OF_)
-                && this.kindOfOrganizationComponent.values(MEMBER_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of_");
+        if (this.kindOfOrganizationComponent.hasValue(MEMBER_OF)
+                && this.kindOfOrganizationComponent.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfOrganizationComponent.hasValue(PART__OF_BY_CLASS)
-                && this.kindOfOrganizationComponent.values(PART__OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of_by_class");
+        if (this.kindOfOrganizationComponent.hasValue(PART_OF_BY_CLASS)
+                && this.kindOfOrganizationComponent.values(PART_OF_BY_CLASS).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of_by_class");
         }
         return kindOfOrganizationComponent;
     }

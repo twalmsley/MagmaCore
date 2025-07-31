@@ -16,16 +16,14 @@ package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.AGGREGATED_INTO;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.BEGINNING;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.ENDING;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.INTENDED_ROLE;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_KIND;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_POSSIBLE_WORLD;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL_PART_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.TEMPORAL__PART_OF;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -89,14 +87,14 @@ public class OrdinaryFunctionalObjectBuilder {
      * A relationship type where a {@link SpatioTemporalExtent} may consist of one or more others.
      *
      * <p>
-     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF}.
+     * Note: This is the inverse of {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF}.
      * </p>
      *
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryFunctionalObjectBuilder consists__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryFunctionalObject.addValue(CONSISTS__OF, spatioTemporalExtent.getId());
+    public final OrdinaryFunctionalObjectBuilder consists_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryFunctionalObject.addValue(CONSISTS_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -131,8 +129,8 @@ public class OrdinaryFunctionalObjectBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final OrdinaryFunctionalObjectBuilder member__Of(final Class clazz) {
-        this.ordinaryFunctionalObject.addValue(MEMBER__OF, clazz.getId());
+    public final OrdinaryFunctionalObjectBuilder member_Of(final Class clazz) {
+        this.ordinaryFunctionalObject.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -176,8 +174,8 @@ public class OrdinaryFunctionalObjectBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryFunctionalObjectBuilder part__Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryFunctionalObject.addValue(PART__OF, spatioTemporalExtent.getId());
+    public final OrdinaryFunctionalObjectBuilder part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryFunctionalObject.addValue(PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -207,8 +205,8 @@ public class OrdinaryFunctionalObjectBuilder {
      * @param spatioTemporalExtent The SpatioTemporalExtent.
      * @return This builder.
      */
-    public final OrdinaryFunctionalObjectBuilder temporal__Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
-        this.ordinaryFunctionalObject.addValue(TEMPORAL__PART_OF, spatioTemporalExtent.getId());
+    public final OrdinaryFunctionalObjectBuilder temporal_Part_Of(final SpatioTemporalExtent spatioTemporalExtent) {
+        this.ordinaryFunctionalObject.addValue(TEMPORAL_PART_OF, spatioTemporalExtent.getId());
         return this;
     }
 
@@ -256,9 +254,9 @@ public class OrdinaryFunctionalObjectBuilder {
         if (!this.ordinaryFunctionalObject.hasValue(INTENDED_ROLE)) {
             throw new HqdmException("Property Not Set: intended_role");
         }
-        if (this.ordinaryFunctionalObject.hasValue(MEMBER__OF)
-                && this.ordinaryFunctionalObject.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.ordinaryFunctionalObject.hasValue(MEMBER_OF)
+                && this.ordinaryFunctionalObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.ordinaryFunctionalObject.hasValue(MEMBER_OF)
                 && this.ordinaryFunctionalObject.values(MEMBER_OF).isEmpty()) {
@@ -268,16 +266,16 @@ public class OrdinaryFunctionalObjectBuilder {
                 && this.ordinaryFunctionalObject.values(MEMBER_OF_KIND).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of_kind");
         }
-        if (this.ordinaryFunctionalObject.hasValue(PART__OF)
-                && this.ordinaryFunctionalObject.values(PART__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of");
+        if (this.ordinaryFunctionalObject.hasValue(PART_OF)
+                && this.ordinaryFunctionalObject.values(PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of");
         }
         if (!this.ordinaryFunctionalObject.hasValue(PART_OF_POSSIBLE_WORLD)) {
             throw new HqdmException("Property Not Set: part_of_possible_world");
         }
-        if (this.ordinaryFunctionalObject.hasValue(TEMPORAL__PART_OF)
-                && this.ordinaryFunctionalObject.values(TEMPORAL__PART_OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: temporal__part_of");
+        if (this.ordinaryFunctionalObject.hasValue(TEMPORAL_PART_OF)
+                && this.ordinaryFunctionalObject.values(TEMPORAL_PART_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: temporal_part_of");
         }
         if (this.ordinaryFunctionalObject.hasValue(TEMPORAL_PART_OF)
                 && this.ordinaryFunctionalObject.values(TEMPORAL_PART_OF).isEmpty()) {

@@ -14,13 +14,11 @@
 
 package uk.gov.gchq.magmacore.hqdm.rdfbuilders;
 
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.CONSISTS_OF_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.HAS_SUPERCLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.INTENDED_ROLE_BY_CLASS;
 import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER_OF_;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.MEMBER__OF;
-import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART__OF_BY_CLASS;
+import static uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM.PART_OF_BY_CLASS;
 
 import uk.gov.gchq.magmacore.hqdm.exception.HqdmException;
 import uk.gov.gchq.magmacore.hqdm.model.Class;
@@ -49,7 +47,7 @@ public class KindOfFunctionalObjectBuilder {
     }
 
     /**
-     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART__OF_BY_CLASS} relationship type
+     * An inverse {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#PART_OF_BY_CLASS} relationship type
      * where a {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} one
      * {@link ClassOfSpatioTemporalExtent} {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#CONSISTS_OF}
      * another {@link uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM#MEMBER_OF} a
@@ -58,9 +56,9 @@ public class KindOfFunctionalObjectBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfFunctionalObjectBuilder consists__Of_By_Class(
+    public final KindOfFunctionalObjectBuilder consists_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.kindOfFunctionalObject.addValue(CONSISTS__OF_BY_CLASS,
+        this.kindOfFunctionalObject.addValue(CONSISTS_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -96,8 +94,8 @@ public class KindOfFunctionalObjectBuilder {
      * @param clazz The Class.
      * @return This builder.
      */
-    public final KindOfFunctionalObjectBuilder member__Of(final Class clazz) {
-        this.kindOfFunctionalObject.addValue(MEMBER__OF, clazz.getId());
+    public final KindOfFunctionalObjectBuilder member_Of(final Class clazz) {
+        this.kindOfFunctionalObject.addValue(MEMBER_OF, clazz.getId());
         return this;
     }
 
@@ -122,9 +120,9 @@ public class KindOfFunctionalObjectBuilder {
      * @param classOfClassOfSpatioTemporalExtent The ClassOfClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfFunctionalObjectBuilder member_Of_(
+    public final KindOfFunctionalObjectBuilder member_Of(
             final ClassOfClassOfSpatioTemporalExtent classOfClassOfSpatioTemporalExtent) {
-        this.kindOfFunctionalObject.addValue(MEMBER_OF_,
+        this.kindOfFunctionalObject.addValue(MEMBER_OF,
                 classOfClassOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -138,9 +136,9 @@ public class KindOfFunctionalObjectBuilder {
      * @param classOfSpatioTemporalExtent The ClassOfSpatioTemporalExtent.
      * @return This builder.
      */
-    public final KindOfFunctionalObjectBuilder part__Of_By_Class(
+    public final KindOfFunctionalObjectBuilder part_Of_By_Class(
             final ClassOfSpatioTemporalExtent classOfSpatioTemporalExtent) {
-        this.kindOfFunctionalObject.addValue(PART__OF_BY_CLASS,
+        this.kindOfFunctionalObject.addValue(PART_OF_BY_CLASS,
                 classOfSpatioTemporalExtent.getId());
         return this;
     }
@@ -159,21 +157,21 @@ public class KindOfFunctionalObjectBuilder {
         if (!this.kindOfFunctionalObject.hasValue(INTENDED_ROLE_BY_CLASS)) {
             throw new HqdmException("Property Not Set: intended_role_by_class");
         }
-        if (this.kindOfFunctionalObject.hasValue(MEMBER__OF)
-                && this.kindOfFunctionalObject.values(MEMBER__OF).isEmpty()) {
-            throw new HqdmException("Property Not Set: member__of");
+        if (this.kindOfFunctionalObject.hasValue(MEMBER_OF)
+                && this.kindOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
         if (this.kindOfFunctionalObject.hasValue(MEMBER_OF)
                 && this.kindOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
             throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfFunctionalObject.hasValue(MEMBER_OF_)
-                && this.kindOfFunctionalObject.values(MEMBER_OF_).isEmpty()) {
-            throw new HqdmException("Property Not Set: member_of_");
+        if (this.kindOfFunctionalObject.hasValue(MEMBER_OF)
+                && this.kindOfFunctionalObject.values(MEMBER_OF).isEmpty()) {
+            throw new HqdmException("Property Not Set: member_of");
         }
-        if (this.kindOfFunctionalObject.hasValue(PART__OF_BY_CLASS)
-                && this.kindOfFunctionalObject.values(PART__OF_BY_CLASS).isEmpty()) {
-            throw new HqdmException("Property Not Set: part__of_by_class");
+        if (this.kindOfFunctionalObject.hasValue(PART_OF_BY_CLASS)
+                && this.kindOfFunctionalObject.values(PART_OF_BY_CLASS).isEmpty()) {
+            throw new HqdmException("Property Not Set: part_of_by_class");
         }
         return kindOfFunctionalObject;
     }
