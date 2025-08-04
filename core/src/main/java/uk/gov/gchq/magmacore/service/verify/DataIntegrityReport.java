@@ -355,7 +355,7 @@ public class DataIntegrityReport {
                 ?s a hqdm:sign;
                    ?p ?o.
                 OPTIONAL {
-                  ?s hqdm:value ?v.
+                  ?s skos:definition ?v.
                 }
 
               FILTER(!bound(?v))

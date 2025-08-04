@@ -31,6 +31,8 @@ public final class HQDM {
     /** A human-interpretable name for a particular HQDM entity. */
     public static final HqdmIri ENTITY_NAME = new HqdmIri(SKOS, "prefLabel");
 
+    /** Used to add values to signs etc. **/
+    public static final HqdmIri SKOS_DEFINITION = new HqdmIri(SKOS, "definition");
     // =======================================================================
     // Entities
     // =======================================================================

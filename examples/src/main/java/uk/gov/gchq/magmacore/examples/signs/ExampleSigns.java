@@ -107,27 +107,27 @@ public class ExampleSigns {
                 // Create the signs that represent the thing.
                 new DbCreateOperation(wikipediaSign, RDFS.RDF_TYPE, HQDM.STATE_OF_SIGN),
                 new DbCreateOperation(wikipediaSign, HQDM.MEMBER_OF, urlPattern.getId()),
-                new DbCreateOperation(wikipediaSign, HQDM.VALUE_, "https://en.wikipedia.org/wiki/Socrates"),
+                new DbCreateOperation(wikipediaSign, HQDM.SKOS_DEFINITION, "https://en.wikipedia.org/wiki/Socrates"),
                 new DbCreateOperation(wikipediaSign, HQDM.PART_OF_POSSIBLE_WORLD, possibleWorld),
 
                 new DbCreateOperation(britannica, RDFS.RDF_TYPE, HQDM.STATE_OF_SIGN),
                 new DbCreateOperation(britannica, HQDM.MEMBER_OF, urlPattern.getId()),
-                new DbCreateOperation(britannica, HQDM.VALUE_, "https://www.britannica.com/biography/Socrates"),
+                new DbCreateOperation(britannica, HQDM.SKOS_DEFINITION, "https://www.britannica.com/biography/Socrates"),
                 new DbCreateOperation(britannica, HQDM.PART_OF_POSSIBLE_WORLD, possibleWorld),
 
                 new DbCreateOperation(biography, RDFS.RDF_TYPE, HQDM.STATE_OF_SIGN),
                 new DbCreateOperation(biography, HQDM.MEMBER_OF, urlPattern.getId()),
-                new DbCreateOperation(biography, HQDM.VALUE_, "https://www.biography.com/scholar/socrates"),
+                new DbCreateOperation(biography, HQDM.SKOS_DEFINITION, "https://www.biography.com/scholar/socrates"),
                 new DbCreateOperation(biography, HQDM.PART_OF_POSSIBLE_WORLD, possibleWorld),
 
                 new DbCreateOperation(stanford, RDFS.RDF_TYPE, HQDM.STATE_OF_SIGN),
                 new DbCreateOperation(stanford, HQDM.MEMBER_OF, urlPattern.getId()),
-                new DbCreateOperation(stanford, HQDM.VALUE_, "https://plato.stanford.edu/entries/socrates/"),
+                new DbCreateOperation(stanford, HQDM.SKOS_DEFINITION, "https://plato.stanford.edu/entries/socrates/"),
                 new DbCreateOperation(stanford, HQDM.PART_OF_POSSIBLE_WORLD, possibleWorld),
 
                 new DbCreateOperation(nationalGeographic, RDFS.RDF_TYPE, HQDM.STATE_OF_SIGN),
                 new DbCreateOperation(nationalGeographic, HQDM.MEMBER_OF, urlPattern.getId()),
-                new DbCreateOperation(nationalGeographic, HQDM.VALUE_,
+                new DbCreateOperation(nationalGeographic, HQDM.SKOS_DEFINITION,
                         "https://www.nationalgeographic.com/culture/article/socrates"),
                 new DbCreateOperation(nationalGeographic, HQDM.PART_OF_POSSIBLE_WORLD, possibleWorld),
 

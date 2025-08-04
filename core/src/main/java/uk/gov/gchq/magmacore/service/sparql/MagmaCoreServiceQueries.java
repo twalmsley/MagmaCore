@@ -44,7 +44,7 @@ public class MagmaCoreServiceQueries {
                 BIND(<%s> as ?rlc)
                 BIND(<%s> as ?pattern)
 
-                ?sign hqdm:value ?signvalue;
+                ?sign skos:definition ?signvalue;
                     hqdm:memberOf ?pattern.
                 ?sos hqdm:temporalPartOf ?sign;
                     hqdm:participantIn ?repBySign.
@@ -88,7 +88,7 @@ public class MagmaCoreServiceQueries {
                 BIND(<%s> as ?rlc)
                 BIND(<%s> as ?pattern)
 
-                ?sign hqdm:value ?signvalue;
+                ?sign skos:definition ?signvalue;
                     hqdm:memberOf ?pattern.
                 FILTER(CONTAINS(lcase(str(?signvalue)), lcase(?text)))
                 ?sos hqdm:temporalPartOf ?sign;
@@ -189,7 +189,7 @@ public class MagmaCoreServiceQueries {
      * </ol>
      * </p>
      * <p>
-     * The result includes `hqdm:value_` predicates for the signValues.
+     * The result includes `skos:definition` predicates for the signValues.
      * </p>
      */
     public static final String FIND_OBJECTS_BY_TYPE_CLASS_AND_SIGN_PATTERN = """
@@ -214,7 +214,7 @@ public class MagmaCoreServiceQueries {
                     ?signst hqdm:participantIn ?repBySign;
                         a hqdm:StateOfSign;
                         hqdm:temporalPartOf ?sign.
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
 
                     OPTIONAL {
@@ -244,7 +244,7 @@ public class MagmaCoreServiceQueries {
                         ?signst hqdm:participantIn ?repBySign;
                             a hqdm:StateOfSign;
                             hqdm:temporalPartOf ?sign.
-                        ?sign hqdm:value ?o;
+                        ?sign skos:definition ?o;
                             ?p ?o;
                             hqdm:memberOf ?pattern.
 
@@ -275,7 +275,7 @@ public class MagmaCoreServiceQueries {
      * </ol>
      * </p>
      * <p>
-     * The result includes `hqdm:value_` predicates for the signValues.
+     * The result includes `skos:definition` predicates for the signValues.
      * </p>
      */
     public static final String FIND_OBJECTS_BY_TYPE_AND_SIGN_PATTERN = """
@@ -300,7 +300,7 @@ public class MagmaCoreServiceQueries {
                     ?signst hqdm:participantIn ?repBySign;
                         a hqdm:StateOfSign;
                         hqdm:temporalPartOf ?sign.
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
 
                     OPTIONAL {
@@ -330,7 +330,7 @@ public class MagmaCoreServiceQueries {
                         ?signst hqdm:participantIn ?repBySign;
                             a hqdm:StateOfSign;
                             hqdm:temporalPartOf ?sign.
-                        ?sign hqdm:value ?o;
+                        ?sign skos:definition ?o;
                             ?p ?o;
                             hqdm:memberOf ?pattern.
 
@@ -401,7 +401,7 @@ public class MagmaCoreServiceQueries {
                         ?stateOfSign hqdm:participantIn ?repBySign;
                             a hqdm:StateOfSign;
                             hqdm:temporalPartOf ?sign.
-                        ?sign hqdm:value ?o;
+                        ?sign skos:definition ?o;
                             ?p ?o.
 
                     }
@@ -491,7 +491,7 @@ public class MagmaCoreServiceQueries {
                         ?association hqdm:ending ?end.
                         ?end skos:prefLabel ?finish.
                     }
-                    ?sign hqdm:value ?o;
+                    ?sign skos:definition ?o;
                         ?p ?o.
                 }
             }
@@ -516,7 +516,7 @@ public class MagmaCoreServiceQueries {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class) # IRI of the class
 
-                        ?sign hqdm:value ?signvalue;
+                        ?sign skos:definition ?signvalue;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(str(?signvalue), ?text))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -538,12 +538,12 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                    SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                    SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                     WHERE {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class) # IRI of the class
 
-                        ?sign hqdm:value ?o;
+                        ?sign skos:definition ?o;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(str(?o), ?text))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -569,7 +569,7 @@ public class MagmaCoreServiceQueries {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class)
 
-                        ?sign hqdm:value ?signValue;
+                        ?sign skos:definition ?signValue;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(str(?signValue), ?text))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -611,7 +611,7 @@ public class MagmaCoreServiceQueries {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class) # IRI of the class
 
-                        ?sign hqdm:value ?signvalue;
+                        ?sign skos:definition ?signvalue;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(lcase(str(?signvalue)), lcase(?text)))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -633,12 +633,12 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                    SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                    SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                     WHERE {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class) # IRI of the class
 
-                        ?sign hqdm:value ?o;
+                        ?sign skos:definition ?o;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(lcase(str(?o)), lcase(?text)))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -664,7 +664,7 @@ public class MagmaCoreServiceQueries {
                         BIND("%s" as ?text)
                         BIND(<%s> as ?class)
 
-                        ?sign hqdm:value ?signValue;
+                        ?sign skos:definition ?signValue;
                             hqdm:memberOf ?pattern.
                         FILTER(CONTAINS(lcase(str(?signValue)), lcase(?text)))
                         ?sos hqdm:temporalPartOf ?sign;
@@ -707,7 +707,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?signvalue), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -730,13 +730,13 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?o;
+                    ?sign skos:definition ?o;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?o), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -764,7 +764,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signValue;
+                    ?sign skos:definition ?signValue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?signValue), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -807,7 +807,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?signvalue)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -830,13 +830,13 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?o;
+                    ?sign skos:definition ?o;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?o)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -864,7 +864,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signValue;
+                    ?sign skos:definition ?signValue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?signValue)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -907,7 +907,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?signvalue), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -931,13 +931,13 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?o;
+                    ?sign skos:definition ?o;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?o), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -966,7 +966,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signValue;
+                    ?sign skos:definition ?signValue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(str(?signValue), ?text))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -1010,7 +1010,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signvalue;
+                    ?sign skos:definition ?signvalue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?signvalue)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -1034,13 +1034,13 @@ public class MagmaCoreServiceQueries {
                 }
                 UNION
                 {
-                SELECT ?s (hqdm:value as ?p) ?o ?start ?finish
+                SELECT ?s (skos:definition as ?p) ?o ?start ?finish
                 WHERE {
                     BIND("%s" as ?text)
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?o;
+                    ?sign skos:definition ?o;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?o)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -1069,7 +1069,7 @@ public class MagmaCoreServiceQueries {
                     BIND(<%s> as ?class)
                     BIND(<%s> as ?topicId)
 
-                    ?sign hqdm:value ?signValue;
+                    ?sign skos:definition ?signValue;
                         hqdm:memberOf ?pattern.
                     FILTER(CONTAINS(lcase(str(?signValue)), lcase(?text)))
                     ?sos hqdm:temporalPartOf ?sign;
@@ -1118,7 +1118,7 @@ public class MagmaCoreServiceQueries {
                         ?stateOfSign hqdm:participantIn ?repBySign;
                             a hqdm:StateOfSign;
                             hqdm:temporalPartOf ?sign.
-                        ?sign hqdm:value ?signValue;
+                        ?sign skos:definition ?signValue;
                             hqdm:memberOf ?pattern.
                         ?pattern skos:prefLabel ?patternName.
                         OPTIONAL {

@@ -284,7 +284,7 @@ public class AssociationPatternTestData {
         sign1.addValue(RDFS.RDF_TYPE, HQDM.SIGN);
         sign1.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         sign1.addValue(HQDM.MEMBER_OF, patternIri);
-        sign1.addStringValue(HQDM.VALUE_, "sign1Value");
+        sign1.addStringValue(HQDM.SKOS_DEFINITION, "sign1Value");
 
         final IRI stateOfSign1Iri = new IRI(TEST_BASE, UID.uid());
         final StateOfSign stateOfSign1 = SpatioTemporalExtentServices.createStateOfSign(stateOfSign1Iri);
@@ -310,7 +310,7 @@ public class AssociationPatternTestData {
         sign2.addValue(RDFS.RDF_TYPE, HQDM.SIGN);
         sign2.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         sign2.addValue(HQDM.MEMBER_OF, patternIri);
-        sign2.addStringValue(HQDM.VALUE_, "sign2Value");
+        sign2.addStringValue(HQDM.SKOS_DEFINITION, "sign2Value");
 
         final IRI stateOfSign2Iri = new IRI(TEST_BASE, UID.uid());
         final StateOfSign stateOfSign2 = SpatioTemporalExtentServices.createStateOfSign(stateOfSign2Iri);
