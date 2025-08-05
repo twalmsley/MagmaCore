@@ -73,7 +73,7 @@ public class ExamplePatterns {
      */
     private static DbChangeSet addPatterns(final MagmaCoreService mcService) {
         final Map<String, Thing> entities = mcService
-                .findByEntityNameInTransaction(List.of("URL Pattern", "Description By URL", "English Speakers"));
+                .findByEntityNameInTransaction(List.of("English Speakers"));
 
         // Find the required classes, kinds, and roles.
         final RecognizingLanguageCommunity englishSpeakers = (RecognizingLanguageCommunity) entities
