@@ -211,7 +211,6 @@ public class MagmaCoreService {
      *
      * @param community   The {@link RecognizingLanguageCommunity} that recognizes
      *                    the sign value.
-     * @param pattern     The {@link Pattern} the sign conforms to.
      * @param value       {@link String} the partial sign value to look for.
      * @param pointInTime {@link PointInTime} the point in time we are interested
      *                    in.
@@ -221,7 +220,6 @@ public class MagmaCoreService {
      */
     public List<? extends Thing> findByPartialSignValue(
             final RecognizingLanguageCommunity community,
-            final Pattern pattern,
             final String value,
             final PointInTime pointInTime) throws MagmaCoreException {
 
@@ -235,8 +233,7 @@ public class MagmaCoreService {
         final QueryResultList queryResultList = database
                 .executeQuery(String.format(MagmaCoreServiceQueries.FIND_BY_PARTIAL_SIGN_VALUE_CASE_INSENSITIVE_QUERY,
                         value,
-                        community.getId(),
-                        pattern.getId()));
+                        community.getId()));
 
         // Filter by the pointInTime
         final QueryResultList queryResults = filterByPointInTime(when, queryResultList);
