@@ -47,6 +47,7 @@
       <module>hqdm</module>
       <module>hqdm-canonical</module>
       <module>model-extension-example</module>
+      <module>model-extension-f35</module>
   </modules>
 
   <scm>
