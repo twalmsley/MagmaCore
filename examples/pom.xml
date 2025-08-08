@@ -34,6 +34,10 @@
       <artifactId>model-extension-example</artifactId>
     </dependency>
     <dependency>
+      <groupId>uk.gov.gchq.magma-core</groupId>
+      <artifactId>model-extension-f35</artifactId>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
     </dependency>
