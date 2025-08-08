@@ -17,8 +17,11 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponentImp
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystemImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystemImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeatImpl;
 import uk.gov.gchq.magmacore.hqdm.extensions.ExtensionService;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
@@ -82,6 +85,9 @@ public class F35ExtensionService implements ExtensionService {
             case INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME:
                 return (T) new InstalledF135EngineInF135EngineSystemImpl(iri);
 
+            case INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME:
+                return (T) new InstalledF135TurbineInF135EngineSystemImpl(iri);
+
             case US16E_EJECTION_SEAT_TYPE_NAME:
                 return (T) new US16EEjectionSeatImpl(iri);
 
@@ -90,6 +96,12 @@ public class F35ExtensionService implements ExtensionService {
 
             case STATE_OF_F135_ENGINE_TYPE_NAME:
                 return (T) new StateOfF135EngineImpl(iri);
+
+            case STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME:
+                return (T) new StateOfF135TurbineComponentImpl(iri);
+
+            case STATE_OF_F135_TURBINE_TYPE_NAME:
+                return (T) new StateOfF135TurbineImpl(iri);
 
             default:
                 // Or null if it's not a class from this extension package.

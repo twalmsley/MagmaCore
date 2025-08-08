@@ -1,0 +1,11 @@
+package uk.gov.gchq.magmacore.examples.extensions.f35.model;
+
+import uk.gov.gchq.magmacore.hqdm.model.StateOfOrdinaryFunctionalObject;
+
+/**
+ * A StateOfOrdinaryFunctionalObject.
+ */
+public interface StateOfF135Turbine extends StateOfOrdinaryFunctionalObject {
+
+}
+
