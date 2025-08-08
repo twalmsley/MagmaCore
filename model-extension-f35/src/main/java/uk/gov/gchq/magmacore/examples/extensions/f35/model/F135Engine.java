@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.OrdinaryFunctionalObject;
 /**
  * F135 Engine.
  */
-public interface F135Engine extends OrdinaryFunctionalObject {
+public interface F135Engine extends OrdinaryFunctionalObject, StateOfF135Engine {
 }
