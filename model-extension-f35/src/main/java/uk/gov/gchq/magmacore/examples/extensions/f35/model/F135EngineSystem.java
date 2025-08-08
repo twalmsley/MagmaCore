@@ -7,15 +7,15 @@ import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystem;
  */
 public interface F135EngineSystem extends FunctionalSystem {
 
-    public F35EngineComponent getEngine();
+    public F135EngineComponent getEngine();
 
-    public F35TurbineComponent getTurbine();
+    public F135TurbineComponent getTurbine();
 
-    public F35VerticalLiftSystemComponent getVls();
+    public F135VerticalLiftSystemComponent getVls();
 
-    void setEngine(final F35EngineComponent engine);
+    void setEngine(final F135EngineComponent engine);
 
-    void setTurbine(final F35TurbineComponent turbine);
+    void setTurbine(final F135TurbineComponent turbine);
 
-    void setVerticalLiftSystem(final F35VerticalLiftSystemComponent vls);
+    void setVerticalLiftSystem(final F135VerticalLiftSystemComponent vls);
 }
