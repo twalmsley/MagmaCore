@@ -1,278 +1,278 @@
 @startuml
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.Constants {
-	{field} {static} +F135_ENGINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+interface Constants {
+	{field} {static} +F135_ENGINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F135_ENGINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +F135_ENGINE_SYSTEM_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +F135_ENGINE_SYSTEM_TYPE_NAME : String
-	{field} {static} +F135_ENGINE_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_ENGINE_TYPE_IRI : IRI
 	{field} {static} +F135_ENGINE_TYPE_NAME : String
-	{field} {static} +F135_TURBINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_TURBINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F135_TURBINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +F135_TURBINE_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_TURBINE_TYPE_IRI : IRI
 	{field} {static} +F135_TURBINE_TYPE_NAME : String
-	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME : String
-	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +F135_VERTICAL_LIFT_SYSTEM_TYPE_NAME : String
-	{field} {static} +F35_AIRCRAFT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_AIRCRAFT_TYPE_IRI : IRI
 	{field} {static} +F35_AIRCRAFT_TYPE_NAME : String
-	{field} {static} +F35_AIRFRAME_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_AIRFRAME_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F35_AIRFRAME_COMPONENT_TYPE_NAME : String
-	{field} {static} +F35_AIRFRAME_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_AIRFRAME_TYPE_IRI : IRI
 	{field} {static} +F35_AIRFRAME_TYPE_NAME : String
-	{field} {static} +F35_EJECTION_SEAT_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_EJECTION_SEAT_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F35_EJECTION_SEAT_COMPONENT_TYPE_NAME : String
-	{field} {static} +F35_ENGINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_ENGINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F35_ENGINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +F35_TURBINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_TURBINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F35_TURBINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME : String
-	{field} {static} +INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
-	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
-	{field} {static} +STATE_OF_F135_ENGINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +STATE_OF_F135_ENGINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_ENGINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +STATE_OF_F135_ENGINE_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +STATE_OF_F135_ENGINE_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_ENGINE_TYPE_NAME : String
-	{field} {static} +STATE_OF_F135_TURBINE_COMPONENT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +STATE_OF_F135_TURBINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME : String
-	{field} {static} +STATE_OF_F135_TURBINE_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +STATE_OF_F135_TURBINE_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_TURBINE_TYPE_NAME : String
-	{field} {static} +US16E_EJECTION_SEAT_TYPE_IRI : uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI
+	{field} {static} +US16E_EJECTION_SEAT_TYPE_IRI : IRI
 	{field} {static} +US16E_EJECTION_SEAT_TYPE_NAME : String
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Engine {
+interface F135Engine {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent {
+interface F135EngineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponentImpl {
+class F135EngineComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineImpl {
+class F135EngineImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystem {
-	{method}  {abstract} +getEngine () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent
-	{method}  {abstract} +getTurbine () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent
-	{method}  {abstract} +getVls () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent
-	{method}  {abstract} +setEngine ( paramF135EngineComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent ) : void
-	{method}  {abstract} +setTurbine ( paramF135TurbineComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent ) : void
-	{method}  {abstract} +setVerticalLiftSystem ( paramF135VerticalLiftSystemComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent ) : void
+interface F135EngineSystem {
+	{method}  {abstract} +getEngine () : F135EngineComponent
+	{method}  {abstract} +getTurbine () : F135TurbineComponent
+	{method}  {abstract} +getVls () : F135VerticalLiftSystemComponent
+	{method}  {abstract} +setEngine ( paramF135EngineComponent1 : F135EngineComponent ) : void
+	{method}  {abstract} +setTurbine ( paramF135TurbineComponent1 : F135TurbineComponent ) : void
+	{method}  {abstract} +setVerticalLiftSystem ( paramF135VerticalLiftSystemComponent1 : F135VerticalLiftSystemComponent ) : void
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl {
-	{method} +setVerticalLiftSystem ( paramF135VerticalLiftSystemComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent ) : void
+class F135EngineSystemImpl {
+	{method} +setVerticalLiftSystem ( paramF135VerticalLiftSystemComponent1 : F135VerticalLiftSystemComponent ) : void
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Turbine {
+interface F135Turbine {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent {
+interface F135TurbineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponentImpl {
+class F135TurbineComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineImpl {
+class F135TurbineImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystem {
+interface F135VerticalLiftSystem {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent {
+interface F135VerticalLiftSystemComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponentImpl {
+class F135VerticalLiftSystemComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemImpl {
+class F135VerticalLiftSystemImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35Aircraft {
-	{method}  {abstract} +getAirframe () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponent
-	{method}  {abstract} +getEjectionSeat () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponent
-	{method}  {abstract} +getEngine () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent
-	{method}  {abstract} +getTurbine () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent
-	{method}  {abstract} +getVls () : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent
-	{method}  {abstract} +setAirframe ( paramF35AirframeComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponent ) : void
-	{method}  {abstract} +setEjectionSeat ( paramF35EjectionSeatComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponent ) : void
-	{method}  {abstract} +setEngine ( paramF35EngineComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent ) : void
-	{method}  {abstract} +setTurbine ( paramF35TurbineComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent ) : void
-	{method}  {abstract} +setVerticalLiftSystem ( paramF35VerticalLiftSystemComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent ) : void
+interface F35Aircraft {
+	{method}  {abstract} +getAirframe () : F35AirframeComponent
+	{method}  {abstract} +getEjectionSeat () : F35EjectionSeatComponent
+	{method}  {abstract} +getEngine () : F35EngineComponent
+	{method}  {abstract} +getTurbine () : F35TurbineComponent
+	{method}  {abstract} +getVls () : F35VerticalLiftSystemComponent
+	{method}  {abstract} +setAirframe ( paramF35AirframeComponent1 : F35AirframeComponent ) : void
+	{method}  {abstract} +setEjectionSeat ( paramF35EjectionSeatComponent1 : F35EjectionSeatComponent ) : void
+	{method}  {abstract} +setEngine ( paramF35EngineComponent1 : F35EngineComponent ) : void
+	{method}  {abstract} +setTurbine ( paramF35TurbineComponent1 : F35TurbineComponent ) : void
+	{method}  {abstract} +setVerticalLiftSystem ( paramF35VerticalLiftSystemComponent1 : F35VerticalLiftSystemComponent ) : void
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl {
-	{method} +setVerticalLiftSystem ( paramF35VerticalLiftSystemComponent1 : uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent ) : void
+class F35AircraftImpl {
+	{method} +setVerticalLiftSystem ( paramF35VerticalLiftSystemComponent1 : F35VerticalLiftSystemComponent ) : void
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35Airframe {
+interface F35Airframe {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponent {
+interface F35AirframeComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponentImpl {
+class F35AirframeComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeImpl {
+class F35AirframeImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponent {
+interface F35EjectionSeatComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponentImpl {
+class F35EjectionSeatComponentImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent {
+interface F35EngineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponentImpl {
+class F35EngineComponentImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent {
+interface F35TurbineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponentImpl {
+class F35TurbineComponentImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent {
+interface F35VerticalLiftSystemComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponentImpl {
+class F35VerticalLiftSystemComponentImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem {
+interface InstalledF135EngineInF135EngineSystem {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystemImpl {
+class InstalledF135EngineInF135EngineSystemImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem {
+interface InstalledF135TurbineInF135EngineSystem {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystemImpl {
+class InstalledF135TurbineInF135EngineSystemImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Engine {
+interface StateOfF135Engine {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponent {
+interface StateOfF135EngineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponentImpl {
+class StateOfF135EngineComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineImpl {
+class StateOfF135EngineImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Turbine {
+interface StateOfF135Turbine {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponent {
+interface StateOfF135TurbineComponent {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponentImpl {
+class StateOfF135TurbineComponentImpl {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineImpl {
+class StateOfF135TurbineImpl {
 }
 
 
-interface uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat {
+interface US16EEjectionSeat {
 }
 
 
-class uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeatImpl {
+class US16EEjectionSeatImpl {
 }
 
 
 
 
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Engine ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponent : engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent : turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent : vls
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystem
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Turbine ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135TurbineImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135Turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystemImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F135VerticalLiftSystem
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponent : airframe
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponent : ejectionSeat
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent : engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent : turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl -->  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent : vls
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AircraftImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35Aircraft
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35AirframeImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35Airframe
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystemImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystemImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem
-uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Engine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponentImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponent
-uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135Turbine
-uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeatImpl ..|>  uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat
+F135Engine ..|>  StateOfF135Engine
+F135EngineComponent ..|>  StateOfF135EngineComponent
+F135EngineComponentImpl ..|>  F135EngineComponent
+F135EngineImpl ..|>  F135Engine
+F135EngineSystemImpl -->  F135EngineComponent : engine
+F135EngineSystemImpl -->  F135TurbineComponent : turbine
+F135EngineSystemImpl -->  F135VerticalLiftSystemComponent : vls
+F135EngineSystemImpl ..|>  F135EngineSystem
+F135Turbine ..|>  StateOfF135Turbine
+F135TurbineComponent ..|>  StateOfF135TurbineComponent
+F135TurbineComponentImpl ..|>  F135TurbineComponent
+F135TurbineImpl ..|>  F135Turbine
+F135VerticalLiftSystemComponentImpl ..|>  F135VerticalLiftSystemComponent
+F135VerticalLiftSystemImpl ..|>  F135VerticalLiftSystem
+F35AircraftImpl -->  F35AirframeComponent : airframe
+F35AircraftImpl -->  F35EjectionSeatComponent : ejectionSeat
+F35AircraftImpl -->  F35EngineComponent : engine
+F35AircraftImpl -->  F35TurbineComponent : turbine
+F35AircraftImpl -->  F35VerticalLiftSystemComponent : vls
+F35AircraftImpl ..|>  F35Aircraft
+F35AirframeComponentImpl ..|>  F35AirframeComponent
+F35AirframeImpl ..|>  F35Airframe
+F35EjectionSeatComponentImpl ..|>  F35EjectionSeatComponent
+F35EngineComponentImpl ..|>  F35EngineComponent
+F35TurbineComponentImpl ..|>  F35TurbineComponent
+F35VerticalLiftSystemComponentImpl ..|>  F35VerticalLiftSystemComponent
+InstalledF135EngineInF135EngineSystem ..|>  StateOfF135Engine
+InstalledF135EngineInF135EngineSystem ..|>  StateOfF135EngineComponent
+InstalledF135EngineInF135EngineSystemImpl ..|>  InstalledF135EngineInF135EngineSystem
+InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135Turbine
+InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135TurbineComponent
+InstalledF135TurbineInF135EngineSystemImpl ..|>  InstalledF135TurbineInF135EngineSystem
+StateOfF135EngineComponentImpl ..|>  StateOfF135EngineComponent
+StateOfF135EngineImpl ..|>  StateOfF135Engine
+StateOfF135TurbineComponentImpl ..|>  StateOfF135TurbineComponent
+StateOfF135TurbineImpl ..|>  StateOfF135Turbine
+US16EEjectionSeatImpl ..|>  US16EEjectionSeat
 
 hide methods
-hide uk.gov.gchq.magmacore.examples.extensions.f35.model.Constants
+hide Constants
 
 @enduml
