@@ -56,4 +56,21 @@ public interface Constants {
 
     public static final IRI F35_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_TURBINE_COMPONENT_TYPE_NAME);
 
+    public static final String F135_ENGINE_SYSTEM_TYPE_NAME = "F135EngineSystem";
+
+    public static final IRI F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, F135_ENGINE_SYSTEM_TYPE_NAME);
+
+    public static final String F135_ENGINE_COMPONENT_TYPE_NAME = "F135EngineComponent";
+
+    public static final IRI F135_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F135_ENGINE_COMPONENT_TYPE_NAME);
+
+    public static final String F135_TURBINE_COMPONENT_TYPE_NAME = "F135TurbineComponent";
+
+    public static final IRI F135_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F135_TURBINE_COMPONENT_TYPE_NAME);
+
+    public static final String F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME = "F135VerticalLiftSystemComponent";
+
+    public static final IRI F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI = 
+        new HqdmIri(HQDM, F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME);
+
 }

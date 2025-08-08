@@ -1,7 +1,11 @@
 package uk.gov.gchq.magmacore.examples.extensions.ext;
 
+import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_ENGINE_COMPONENT_TYPE_NAME;
+import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_ENGINE_SYSTEM_TYPE_NAME;
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_ENGINE_TYPE_NAME;
+import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_TURBINE_COMPONENT_TYPE_NAME;
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_TURBINE_TYPE_NAME;
+import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME;
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F135_VERTICAL_LIFT_SYSTEM_TYPE_NAME;
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F35_AIRCRAFT_TYPE_NAME;
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F35_AIRFRAME_COMPONENT_TYPE_NAME;
@@ -13,12 +17,16 @@ import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.F35_VERT
 import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.US16E_EJECTION_SEAT_TYPE_NAME;
 
 import uk.gov.gchq.magmacore.examples.extensions.model.F135EngineImpl;
+import uk.gov.gchq.magmacore.examples.extensions.model.F135EngineSystemImpl;
+import uk.gov.gchq.magmacore.examples.extensions.model.F135TurbineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F135TurbineImpl;
+import uk.gov.gchq.magmacore.examples.extensions.model.F135VerticalLiftSystemComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F135VerticalLiftSystemImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35AirframeComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35AirframeImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35EjectionSeatComponentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.model.F35EngineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35TurbineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.F35VerticalLiftSystemComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.model.US16EEjectionSeatImpl;
@@ -39,11 +47,23 @@ public class F35ExtensionService implements ExtensionService {
     public <T extends Thing> T createEntity(final String typeName, final IRI iri) {
 
         switch (typeName) {
+            case F135_ENGINE_COMPONENT_TYPE_NAME:
+                return (T) new F35EngineComponentImpl(iri);
+
+            case F135_ENGINE_SYSTEM_TYPE_NAME:
+                return (T) new F135EngineSystemImpl(iri);
+
             case F135_ENGINE_TYPE_NAME:
                 return (T) new F135EngineImpl(iri);
 
+            case F135_TURBINE_COMPONENT_TYPE_NAME:
+                return (T) new F135TurbineComponentImpl(iri);
+
             case F135_TURBINE_TYPE_NAME:
                 return (T) new F135TurbineImpl(iri);
+
+            case F135_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME:
+                return (T) new F135VerticalLiftSystemComponentImpl(iri);
 
             case F135_VERTICAL_LIFT_SYSTEM_TYPE_NAME:
                 return (T) new F135VerticalLiftSystemImpl(iri);

@@ -3,22 +3,15 @@ package uk.gov.gchq.magmacore.examples.extensions.model;
 import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystem;
 
 /**
- * F35 Aircraft System.
+ * F135 Engine System.
  */
-public interface F35Aircraft extends FunctionalSystem {
-    public F35AirframeComponent getAirframe();
-
-    public F35EjectionSeatComponent getEjectionSeat();
+public interface F135EngineSystem extends FunctionalSystem {
 
     public F35EngineComponent getEngine();
 
     public F35TurbineComponent getTurbine();
 
     public F35VerticalLiftSystemComponent getVls();
-
-    void setAirframe(final F35AirframeComponent airframe);
-
-    void setEjectionSeat(final F35EjectionSeatComponent ejectionSeat);
 
     void setEngine(final F35EngineComponent engine);
 
