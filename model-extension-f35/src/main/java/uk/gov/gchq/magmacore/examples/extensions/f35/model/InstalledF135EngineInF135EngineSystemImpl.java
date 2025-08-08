@@ -1,6 +1,5 @@
 package uk.gov.gchq.magmacore.examples.extensions.f35.model;
 
-import uk.gov.gchq.magmacore.hqdm.model.InstalledFunctionalSystemComponent;
 import uk.gov.gchq.magmacore.hqdm.pojo.HqdmObject;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.RDFS;
@@ -8,7 +7,7 @@ import uk.gov.gchq.magmacore.hqdm.rdf.iri.RDFS;
 /**
  * An InstalledF135EngineInF135EngineSystemImpl.
  */
-public class InstalledF135EngineInF135EngineSystemImpl extends HqdmObject implements InstalledFunctionalSystemComponent, StateOfF135Engine, StateOfF135EngineComponent {
+public class InstalledF135EngineInF135EngineSystemImpl extends HqdmObject implements InstalledF135EngineInF135EngineSystem {
 
     /**
      * Constructor.

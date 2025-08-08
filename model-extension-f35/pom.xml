@@ -27,4 +27,38 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.release>17</maven.compiler.release>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>plantuml-generator-maven-plugin</artifactId>
+                <groupId>de.elnarion.maven</groupId>
+                <version>2.4.1</version>
+                <executions>
+                    <execution>
+                        <id>generate-simple-diagram</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <outputDirectory>./diagrams</outputDirectory>
+                            <outputFilename>uml.txt</outputFilename>
+                            <scanPackages>
+                                <scanPackage>
+				uk.gov.gchq.magmacore.examples.extensions.f35.model
+                                </scanPackage>
+                            </scanPackages>
+                            <hideFields>false</hideFields>
+                            <hideMethods>true</hideMethods>
+                            <hideClasses>
+                                <hideClass>
+				uk.gov.gchq.magmacore.examples.extensions.f35.model.Constants
+                                </hideClass>
+                            </hideClasses>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
