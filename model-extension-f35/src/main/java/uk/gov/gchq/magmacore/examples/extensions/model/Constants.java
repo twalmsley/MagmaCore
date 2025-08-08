@@ -29,4 +29,31 @@ public interface Constants {
     public static final String F135_TURBINE_TYPE_NAME = "F135Turbine";
 
     public static final IRI F135_TURBINE_TYPE_IRI = new HqdmIri(HQDM, F135_TURBINE_TYPE_NAME);
+
+    public static final String F35_AIRCRAFT_TYPE_NAME = "F35Aircraft";
+
+    public static final IRI F35_AIRCRAFT_TYPE_IRI = new HqdmIri(HQDM, F35_AIRCRAFT_TYPE_NAME);
+
+    public static final String F35_AIRFRAME_COMPONENT_TYPE_NAME = "F35AirframeComponent";
+
+    public static final IRI F35_AIRFRAME_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_AIRFRAME_COMPONENT_TYPE_NAME);
+
+    public static final String F35_EJECTION_SEAT_COMPONENT_TYPE_NAME = "F35EjectionSeatComponent";
+
+    public static final IRI F35_EJECTION_SEAT_COMPONENT_TYPE_IRI = 
+        new HqdmIri(HQDM, F35_EJECTION_SEAT_COMPONENT_TYPE_NAME);
+
+    public static final String F35_ENGINE_COMPONENT_TYPE_NAME = "F35EngineComponent";
+
+    public static final IRI F35_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_ENGINE_COMPONENT_TYPE_NAME);
+
+    public static final String F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME = "F35VerticalLiftSystemComponent";
+
+    public static final IRI F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI = 
+        new HqdmIri(HQDM, F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME);
+
+    public static final String F35_TURBINE_COMPONENT_TYPE_NAME = "F35TurbineComponent";
+
+    public static final IRI F35_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_TURBINE_COMPONENT_TYPE_NAME);
+
 }
