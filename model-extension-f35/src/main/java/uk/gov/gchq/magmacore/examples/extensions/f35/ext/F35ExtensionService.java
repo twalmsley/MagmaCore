@@ -21,13 +21,16 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineIn
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystemImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystemImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35AircraftImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledUS16EEjectionSeatInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135TurbineImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135VLSComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135VLSImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35EjectionSeatComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35EngineComponentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfUS16EEjectionSeatImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeatImpl;
 import uk.gov.gchq.magmacore.hqdm.extensions.ExtensionService;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
@@ -103,6 +106,9 @@ public class F35ExtensionService implements ExtensionService {
             case INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME:
                 return (T) new InstalledF135EngineInF35AircraftImpl(iri);
 
+            case INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME:
+                return (T) new InstalledUS16EEjectionSeatInF35AircraftImpl(iri);
+
             case US16E_EJECTION_SEAT_TYPE_NAME:
                 return (T) new US16EEjectionSeatImpl(iri);
 
@@ -124,8 +130,14 @@ public class F35ExtensionService implements ExtensionService {
             case STATE_OF_F135_VLS_TYPE_NAME:
                 return (T) new StateOfF135VLSImpl(iri);
 
+            case STATE_OF_F35_EJECTION_SEAT_COMPONENT_TYPE_NAME:
+                return (T) new StateOfF35EjectionSeatComponentImpl(iri);
+
             case STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME:
                 return (T) new StateOfF35EngineComponentImpl(iri);
+
+            case STATE_OF_US16E_EJECTION_SEAT_TYPE_NAME:
+                return (T) new StateOfUS16EEjectionSeatImpl(iri);
 
             default:
                 // Or null if it's not a class from this extension package.

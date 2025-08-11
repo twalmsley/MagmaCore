@@ -9,6 +9,7 @@ import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
  * Define some useful Constants.
  */
 public interface Constants {
+
     public static final String F135_ENGINE_COMPONENT_TYPE_NAME = "F135EngineComponent";
     public static final String F135_ENGINE_SYSTEM_TYPE_NAME = "F135EngineSystem";
     public static final String F135_ENGINE_TYPE_NAME = "F135Engine";
@@ -28,6 +29,7 @@ public interface Constants {
     public static final String INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135TurbineInF135EngineSystem";
     public static final String INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135VLSInF135System";
     public static final String INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME = "InstalledF35AirframeInF35Aircraft";
+    public static final String INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME = "InstalledUS16EEjectionSeatInF35Aircraft";
     public static final String STATE_OF_F135_ENGINE_COMPONENT_TYPE_NAME = "StateOfF135EngineComponent";
     public static final String STATE_OF_F135_ENGINE_TYPE_NAME = "StateOfF135Engine";
     public static final String STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME = "StateOfF135TurbineComponent";
@@ -35,8 +37,10 @@ public interface Constants {
     public static final String STATE_OF_F135_VLS_COMPONENT_TYPE_NAME = "StateOfF135VLSComponent";
     public static final String STATE_OF_F135_VLS_TYPE_NAME = "StateOfF135VLS";
     public static final String STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_NAME = "StateOfF35AirframeComponent";
-    public static final String STATE_OF_F35_AIRFRAME_TYPE_NAME =  "StateOfF35Airframe";
+    public static final String STATE_OF_F35_AIRFRAME_TYPE_NAME = "StateOfF35Airframe";
+    public static final String STATE_OF_F35_EJECTION_SEAT_COMPONENT_TYPE_NAME = "StateOfF35EjectionSeatComponent";
     public static final String STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME = "StateOfF35EngineComponent";
+    public static final String STATE_OF_US16E_EJECTION_SEAT_TYPE_NAME = "StateOfUS16EEjectionSeat";
     public static final String US16E_EJECTION_SEAT_TYPE_NAME = "US16EEjectionSeat";
 
     public static final IRI F135_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F135_ENGINE_COMPONENT_TYPE_NAME);
@@ -58,6 +62,7 @@ public interface Constants {
     public static final IRI INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
     public static final IRI INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
     public static final IRI INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_IRI = new HqdmIri(HQDM, INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME);
+    public static final IRI INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_IRI = new HqdmIri(HQDM, INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME);
     public static final IRI STATE_OF_F135_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_ENGINE_COMPONENT_TYPE_NAME);
     public static final IRI STATE_OF_F135_ENGINE_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_ENGINE_TYPE_NAME);
     public static final IRI STATE_OF_F135_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME);
@@ -66,6 +71,9 @@ public interface Constants {
     public static final IRI STATE_OF_F135_VLS_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_VLS_TYPE_NAME);
     public static final IRI STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_NAME);
     public static final IRI STATE_OF_F35_AIRFRAME_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_AIRFRAME_TYPE_NAME);
+    public static final IRI STATE_OF_F35_EJECTION_SEAT_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_EJECTION_SEAT_COMPONENT_TYPE_NAME);
     public static final IRI STATE_OF_F35_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME);
+    public static final IRI STATE_OF_US16E_EJECTION_SEAT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_US16E_EJECTION_SEAT_TYPE_NAME);
     public static final IRI US16E_EJECTION_SEAT_TYPE_IRI = new HqdmIri(HQDM, US16E_EJECTION_SEAT_TYPE_NAME);
+
 }

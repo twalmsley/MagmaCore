@@ -24,6 +24,7 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineIn
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35Aircraft;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledUS16EEjectionSeatInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat;
 import uk.gov.gchq.magmacore.hqdm.model.Event;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
@@ -224,6 +225,17 @@ public class F35ModelExtensionTest {
         engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, engineIri);
         engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EngineComponentIri);
 
+        // Install the ejection seat in the aircraft.
+        final var ejectionSeatInAircraftIri = iri();
+        final InstalledUS16EEjectionSeatInF35Aircraft ejectionSeatInAircraft = 
+            f35.createEntity(Constants.INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME, ejectionSeatInAircraftIri);
+
+        final var ejectionSeatInAircraftBeginningIri = iri();
+        final var ejectionSeatInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(ejectionSeatInAircraftBeginningIri);
+        ejectionSeatInAircraft.addValue(HQDM.BEGINNING, ejectionSeatInAircraftBeginningIri);
+        ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, ejectionSeatIri);
+        ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EjectionSeatComponentIri);
+
         // ------------------------------------------------------------------------------------------------
         // return all the entities.
         // ------------------------------------------------------------------------------------------------
@@ -253,7 +265,9 @@ public class F35ModelExtensionTest {
                 airframeInstalledInF35Aircraft,
                 airframeInstalledInF35AircraftBeginningEvent,
                 engineInAircraft,
-                engineInAircraftBeginningEvent
+                engineInAircraftBeginningEvent,
+                ejectionSeatInAircraft,
+                ejectionSeatInAircraftBeginningEvent
                 );
     }
 
