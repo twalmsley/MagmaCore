@@ -20,6 +20,7 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35Aircraft;
@@ -202,6 +203,7 @@ public class F35ModelExtensionTest {
         // Install the parts of the Aircraft System.
         // ------------------------------------------------------------------------------------------------
         
+        // Install the airframe in the aircraft
         final var airframeInstalledInF35AircraftIri = iri();
         final InstalledF35AirframeInF35Aircraft airframeInstalledInF35Aircraft = 
             f35.createEntity(Constants.INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME, airframeInstalledInF35AircraftIri);
@@ -211,6 +213,17 @@ public class F35ModelExtensionTest {
         airframeInstalledInF35Aircraft.addValue(HQDM.BEGINNING, airframeInstalledInF35AircraftBeginningIri);
         airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, airframeIri);
         airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, f35AirframeComponentIri);
+
+        // Install the engine in the aircraft.
+        final var engineInAircraftIri = iri();
+        final InstalledF135EngineInF35Aircraft engineInAircraft = f35.createEntity(Constants.INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME, engineInAircraftIri);
+        
+        final var engineInAircraftBeginningIri = iri();
+        final var engineInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(engineInAircraftBeginningIri);
+        engineInAircraft.addValue(HQDM.BEGINNING, engineInAircraftBeginningIri);
+        engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, engineIri);
+        engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EngineComponentIri);
+
         // ------------------------------------------------------------------------------------------------
         // return all the entities.
         // ------------------------------------------------------------------------------------------------
@@ -238,7 +251,9 @@ public class F35ModelExtensionTest {
                 vlsInstalledInEngineSystem,
                 vlsInstalledInEngineSystemEvent,
                 airframeInstalledInF35Aircraft,
-                airframeInstalledInF35AircraftBeginningEvent
+                airframeInstalledInF35AircraftBeginningEvent,
+                engineInAircraft,
+                engineInAircraftBeginningEvent
                 );
     }
 

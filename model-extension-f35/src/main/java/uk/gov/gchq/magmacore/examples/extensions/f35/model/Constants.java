@@ -24,6 +24,7 @@ public interface Constants {
     public static final String F35_TURBINE_COMPONENT_TYPE_NAME = "F35TurbineComponent";
     public static final String F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME = "F35VerticalLiftSystemComponent";
     public static final String INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135EngineInF135EngineSystem";
+    public static final String INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME = "InstalledF135EngineInF35Aircraft";
     public static final String INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135TurbineInF135EngineSystem";
     public static final String INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135VLSInF135System";
     public static final String INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME = "InstalledF35AirframeInF35Aircraft";
@@ -35,6 +36,7 @@ public interface Constants {
     public static final String STATE_OF_F135_VLS_TYPE_NAME = "StateOfF135VLS";
     public static final String STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_NAME = "StateOfF35AirframeComponent";
     public static final String STATE_OF_F35_AIRFRAME_TYPE_NAME =  "StateOfF35Airframe";
+    public static final String STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME = "StateOfF35EngineComponent";
     public static final String US16E_EJECTION_SEAT_TYPE_NAME = "US16EEjectionSeat";
 
     public static final IRI F135_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F135_ENGINE_COMPONENT_TYPE_NAME);
@@ -52,6 +54,7 @@ public interface Constants {
     public static final IRI F35_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_TURBINE_COMPONENT_TYPE_NAME);
     public static final IRI F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, F35_VERTICAL_LIFT_SYSTEM_COMPONENT_TYPE_NAME);
     public static final IRI INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
+    public static final IRI INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_IRI = new HqdmIri(HQDM, INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME);
     public static final IRI INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
     public static final IRI INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
     public static final IRI INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_IRI = new HqdmIri(HQDM, INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME);
@@ -63,5 +66,6 @@ public interface Constants {
     public static final IRI STATE_OF_F135_VLS_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_VLS_TYPE_NAME);
     public static final IRI STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_AIRFRAME_COMPONENT_TYPE_NAME);
     public static final IRI STATE_OF_F35_AIRFRAME_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_AIRFRAME_TYPE_NAME);
+    public static final IRI STATE_OF_F35_ENGINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME);
     public static final IRI US16E_EJECTION_SEAT_TYPE_IRI = new HqdmIri(HQDM, US16E_EJECTION_SEAT_TYPE_NAME);
 }
