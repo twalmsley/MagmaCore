@@ -22,6 +22,7 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystem
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat;
 import uk.gov.gchq.magmacore.hqdm.model.Event;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
@@ -161,7 +162,7 @@ public class F35ModelExtensionTest {
         aircraft2101.setVerticalLiftSystem(f35VerticalLiftSystemComponent);
 
         // ------------------------------------------------------------------------------------------------
-        // TODO: Install the parts.
+        // Install the parts of the engine system.
         // ------------------------------------------------------------------------------------------------
 
         // Install the engine in the engine system
@@ -198,6 +199,19 @@ public class F35ModelExtensionTest {
         vlsInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, vlsComponentIri);
 
         // ------------------------------------------------------------------------------------------------
+        // Install the parts of the Aircraft System.
+        // ------------------------------------------------------------------------------------------------
+        
+        final var airframeInstalledInF35AircraftIri = iri();
+        final InstalledF35AirframeInF35Aircraft airframeInstalledInF35Aircraft = 
+            f35.createEntity(Constants.INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME, airframeInstalledInF35AircraftIri);
+
+        final var airframeInstalledInF35AircraftBeginningIri = iri();
+        final var airframeInstalledInF35AircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(airframeInstalledInF35AircraftBeginningIri);
+        airframeInstalledInF35Aircraft.addValue(HQDM.BEGINNING, airframeInstalledInF35AircraftBeginningIri);
+        airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, airframeIri);
+        airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, f35AirframeComponentIri);
+        // ------------------------------------------------------------------------------------------------
         // return all the entities.
         // ------------------------------------------------------------------------------------------------
         
@@ -222,7 +236,9 @@ public class F35ModelExtensionTest {
                 turbineInF135EngineSystem,
                 turbineInstalledInEngineSystemEvent,
                 vlsInstalledInEngineSystem,
-                vlsInstalledInEngineSystemEvent
+                vlsInstalledInEngineSystemEvent,
+                airframeInstalledInF35Aircraft,
+                airframeInstalledInF35AircraftBeginningEvent
                 );
     }
 
