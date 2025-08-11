@@ -1,5 +1,6 @@
 package uk.gov.gchq.magmacore.examples.extensions;
 
+import java.util.List;
 import java.util.UUID;
 
 import uk.gov.gchq.magmacore.examples.extensions.f35.ext.F35ExtensionService;
@@ -18,10 +19,16 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EjectionSeatCompon
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35EngineComponent;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35TurbineComponent;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystemComponent;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat;
+import uk.gov.gchq.magmacore.hqdm.model.Event;
+import uk.gov.gchq.magmacore.hqdm.model.Thing;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IriBase;
+import uk.gov.gchq.magmacore.hqdm.services.SpatioTemporalExtentServices;
 import uk.gov.gchq.magmacore.service.MagmaCoreServiceFactory;
 
 /**
@@ -59,9 +66,14 @@ public class F35ModelExtensionTest {
 
         // Persist the entity in the database.
         mcs.runInWriteTransaction(svc -> {
-            svc.create(aircraft);
+            final var entities = run();
+            entities.stream().forEach(e -> {
+                svc.create(e);
+            });
             return svc;
         });
+
+        mcs.exportTtl(System.out);
 
         // Read the entity back and assert that it matches the original.
         mcs.runInReadTransaction(svc -> {
@@ -74,8 +86,10 @@ public class F35ModelExtensionTest {
 
     /**
      * Build an F35.
+     *
+     * @return A List of FunctionalObject.
      */
-    private static void run() {
+    private static List<Thing> run() {
         // ------------------------------------------------------------------------------------------------
         // Create the OrdinaryFunctionalObjects that will be installed in an aircraft
         // ------------------------------------------------------------------------------------------------
@@ -97,8 +111,8 @@ public class F35ModelExtensionTest {
         final US16EEjectionSeat ejectionSeat = f35.createEntity(Constants.US16E_EJECTION_SEAT_TYPE_NAME, ejectionSeatIri);
 
         // Manufacture an Airframe
-        final var airframIri = iri();
-        final F35Airframe airframe = f35.createEntity(Constants.F35_AIRFRAME_TYPE_NAME, airframIri);
+        final var airframeIri = iri();
+        final F35Airframe airframe = f35.createEntity(Constants.F35_AIRFRAME_TYPE_NAME, airframeIri);
 
         // ------------------------------------------------------------------------------------------------
         // Create the engine Functional System.
@@ -149,6 +163,67 @@ public class F35ModelExtensionTest {
         // ------------------------------------------------------------------------------------------------
         // TODO: Install the parts.
         // ------------------------------------------------------------------------------------------------
+
+        // Install the engine in the engine system
+        final var engineInstalledEngineSystemIri = iri();
+        final InstalledF135EngineInF135EngineSystem engineInstalledInEngineSystem = 
+            f35.createEntity(Constants.INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME, engineInstalledEngineSystemIri);
+
+        final var engineInstalledEngineSystemBeginningIri = iri();
+        final Event engineInstalledEngineSystemBeginningEvent = SpatioTemporalExtentServices.createEvent(engineInstalledEngineSystemBeginningIri);
+        engineInstalledInEngineSystem.addValue(HQDM.BEGINNING, engineInstalledEngineSystemBeginningIri);
+        engineInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, engineIri);
+        engineInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, engineComponentIri);
+
+        // Install the turbine in the engine system.
+        final var turbineInstalledInEngineSystemIri = iri();
+        final InstalledF135TurbineInF135EngineSystem turbineInF135EngineSystem = 
+            f35.createEntity(Constants.INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME, turbineInstalledInEngineSystemIri);
+
+        final var turbineInstalledInEngineSystemBeginningIri = iri();
+        final Event turbineInstalledInEngineSystemEvent = SpatioTemporalExtentServices.createEvent(turbineInstalledInEngineSystemBeginningIri);
+        turbineInF135EngineSystem.addValue(HQDM.BEGINNING, turbineInstalledInEngineSystemBeginningIri);
+        turbineInF135EngineSystem.addValue(HQDM.TEMPORAL_PART_OF, turbineIri);
+        turbineInF135EngineSystem.addValue(HQDM.TEMPORAL_PART_OF, turbineComponentIri);
+
+        // Install the vls in the engine system.
+        final var vlsInstalledInEngineSystemIri = iri();
+        final InstalledF135VLSInF135EngineSystem vlsInstalledInEngineSystem =
+            f35.createEntity(Constants.INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME, vlsInstalledInEngineSystemIri);
+
+        final var vlsInstalledInEngineSystemBeginningIri = iri();
+        final Event vlsInstalledInEngineSystemEvent = SpatioTemporalExtentServices.createEvent(vlsInstalledInEngineSystemBeginningIri);
+        vlsInstalledInEngineSystem.addValue(HQDM.BEGINNING, vlsInstalledInEngineSystemBeginningIri);
+        vlsInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, vlsIri);
+        vlsInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, vlsComponentIri);
+
+        // ------------------------------------------------------------------------------------------------
+        // return all the entities.
+        // ------------------------------------------------------------------------------------------------
+        
+        return List.of(
+                vls,
+                turbine,
+                engine,
+                ejectionSeat,
+                airframe,
+                engineComponent,
+                turbineComponent,
+                vlsComponent,
+                engineSystem1,
+                aircraft2101,
+                f35AirframeComponent,
+                f35EngineComponent,
+                f35EjectionSeatComponent,
+                f35VerticalLiftSystemComponent,
+                f35TurbineComponent,
+                engineInstalledInEngineSystem,
+                engineInstalledEngineSystemBeginningEvent,
+                turbineInF135EngineSystem,
+                turbineInstalledInEngineSystemEvent,
+                vlsInstalledInEngineSystem,
+                vlsInstalledInEngineSystemEvent
+                );
     }
 
     private static IRI iri() {

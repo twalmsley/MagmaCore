@@ -33,6 +33,8 @@ interface Constants {
 	{field} {static} +INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
 	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
+	{field} {static} +INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
+	{field} {static} +INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
 	{field} {static} +STATE_OF_F135_ENGINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_ENGINE_COMPONENT_TYPE_NAME : String
 	{field} {static} +STATE_OF_F135_ENGINE_TYPE_IRI : IRI
@@ -41,6 +43,10 @@ interface Constants {
 	{field} {static} +STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME : String
 	{field} {static} +STATE_OF_F135_TURBINE_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F135_TURBINE_TYPE_NAME : String
+	{field} {static} +STATE_OF_F135_VLS_COMPONENT_TYPE_IRI : IRI
+	{field} {static} +STATE_OF_F135_VLS_COMPONENT_TYPE_NAME : String
+	{field} {static} +STATE_OF_F135_VLS_TYPE_IRI : IRI
+	{field} {static} +STATE_OF_F135_VLS_TYPE_NAME : String
 	{field} {static} +US16E_EJECTION_SEAT_TYPE_IRI : IRI
 	{field} {static} +US16E_EJECTION_SEAT_TYPE_NAME : String
 }
@@ -192,6 +198,14 @@ class InstalledF135TurbineInF135EngineSystemImpl {
 }
 
 
+interface InstalledF135VLSInF135EngineSystem {
+}
+
+
+class InstalledF135VLSInF135EngineSystemImpl {
+}
+
+
 interface StateOfF135Engine {
 }
 
@@ -221,6 +235,22 @@ class StateOfF135TurbineComponentImpl {
 
 
 class StateOfF135TurbineImpl {
+}
+
+
+interface StateOfF135VLS {
+}
+
+
+interface StateOfF135VLSComponent {
+}
+
+
+class StateOfF135VLSComponentImpl {
+}
+
+
+class StateOfF135VLSImpl {
 }
 
 
@@ -266,10 +296,15 @@ InstalledF135EngineInF135EngineSystemImpl ..|>  InstalledF135EngineInF135EngineS
 InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135Turbine
 InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135TurbineComponent
 InstalledF135TurbineInF135EngineSystemImpl ..|>  InstalledF135TurbineInF135EngineSystem
+InstalledF135VLSInF135EngineSystem ..|>  StateOfF135VLS
+InstalledF135VLSInF135EngineSystem ..|>  StateOfF135VLSComponent
+InstalledF135VLSInF135EngineSystemImpl ..|>  InstalledF135VLSInF135EngineSystem
 StateOfF135EngineComponentImpl ..|>  StateOfF135EngineComponent
 StateOfF135EngineImpl ..|>  StateOfF135Engine
 StateOfF135TurbineComponentImpl ..|>  StateOfF135TurbineComponent
 StateOfF135TurbineImpl ..|>  StateOfF135Turbine
+StateOfF135VLSComponentImpl ..|>  StateOfF135VLSComponent
+StateOfF135VLSImpl ..|>  StateOfF135VLS
 US16EEjectionSeatImpl ..|>  US16EEjectionSeat
 
 hide methods

@@ -97,4 +97,16 @@ public interface Constants {
 
     public static final IRI STATE_OF_F135_TURBINE_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_TURBINE_COMPONENT_TYPE_NAME);
 
+    public static final String STATE_OF_F135_VLS_TYPE_NAME = "StateOfF135VLS";
+
+    public static final IRI STATE_OF_F135_VLS_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_VLS_TYPE_NAME);
+
+    public static final String STATE_OF_F135_VLS_COMPONENT_TYPE_NAME = "StateOfF135VLSComponent";
+
+    public static final IRI STATE_OF_F135_VLS_COMPONENT_TYPE_IRI = new HqdmIri(HQDM, STATE_OF_F135_VLS_COMPONENT_TYPE_NAME);
+
+    public static final String INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135VLSInF135System";
+
+    public static final IRI INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_IRI = new HqdmIri(HQDM, INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME);
+
 }
