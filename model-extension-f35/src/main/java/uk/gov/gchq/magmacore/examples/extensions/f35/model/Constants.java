@@ -28,7 +28,7 @@ public interface Constants {
     public static final String INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME = "InstalledF135EngineInF35Aircraft";
     public static final String INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135TurbineInF135EngineSystem";
     public static final String INSTALLED_F135_TURBINE_IN_F35_AIRCRAFT_TYPE_NAME = "InstalledF135TurbineInF35Aircraft";
-    public static final String INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135VLSInF135System";
+    public static final String INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME = "InstalledF135VLSInF135EngineSystem";
     public static final String INSTALLED_F135_VLS_IN_F35_AIRCRAFT_TYPE_NAME = "InstalledF135VLSInF35Aircraft";
     public static final String INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME = "InstalledF35AirframeInF35Aircraft";
     public static final String INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME = "InstalledUS16EEjectionSeatInF35Aircraft";

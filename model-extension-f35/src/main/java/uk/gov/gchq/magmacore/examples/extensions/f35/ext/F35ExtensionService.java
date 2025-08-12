@@ -2,6 +2,8 @@ package uk.gov.gchq.magmacore.examples.extensions.f35.ext;
 
 import static uk.gov.gchq.magmacore.examples.extensions.f35.model.Constants.*;
 
+import java.io.InputStream;
+
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.F135EngineSystemImpl;
@@ -45,6 +47,9 @@ import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
  * MagmaCore.
  */
 public class F35ExtensionService implements ExtensionService {
+
+    private static InputStream ttl = null;
+
     /**
      * {@inheritDoc}
      */
@@ -159,5 +164,13 @@ public class F35ExtensionService implements ExtensionService {
                 // Or null if it's not a class from this extension package.
                 return null;
         }
+    }
+
+    @Override
+    public InputStream getDomainTtl() {
+        if (ttl == null) {
+            ttl = F35ExtensionService.class.getResourceAsStream("/f35-model.ttl");
+        }
+        return ttl;
     }
 }

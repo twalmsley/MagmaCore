@@ -1,7 +1,6 @@
 package uk.gov.gchq.magmacore.examples.extensions;
 
 import java.util.List;
-import java.util.UUID;
 
 import uk.gov.gchq.magmacore.examples.extensions.f35.ext.F35ExtensionService;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.Constants;
@@ -60,6 +59,7 @@ public class F35ModelExtensionTest {
     public static void main(final String[] args) {
         // Create a MagmaCoreService with an in-memory Apache Jena database.
         final var mcs = MagmaCoreServiceFactory.createWithJenaDatabase();
+        mcs.loadTtl(f35.getDomainTtl());
 
         // Persist the entity in the database.
         mcs.runInWriteTransaction(svc -> {

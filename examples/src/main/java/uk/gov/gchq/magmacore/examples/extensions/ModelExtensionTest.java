@@ -2,6 +2,7 @@ package uk.gov.gchq.magmacore.examples.extensions;
 
 import java.util.UUID;
 
+import uk.gov.gchq.magmacore.examples.extensions.ext.HqdmExtensionService;
 import uk.gov.gchq.magmacore.examples.extensions.model.Constants;
 import uk.gov.gchq.magmacore.examples.extensions.model.UkLimitedCompany;
 import uk.gov.gchq.magmacore.examples.extensions.model.UkLimitedCompanyImpl;
@@ -25,6 +26,8 @@ public class ModelExtensionTest {
     // Declare an IRI base for the data to be created.
     private static final IriBase TEST_BASE = new IriBase("test", "http://example.com/test#");
 
+    private static final HqdmExtensionService EXT = new HqdmExtensionService();
+
     /**
      * Main entry point.
      *
@@ -33,6 +36,7 @@ public class ModelExtensionTest {
     public static void main(final String[] args) {
         // Create a MagmaCoreService with an in-memory Apache Jena database.
         final var mcs = MagmaCoreServiceFactory.createWithJenaDatabase();
+        mcs.loadTtl(EXT.getDomainTtl());
 
         // The entity will be a part of a dummy possible_world, we just use the IRI
         // rather than creating the possible_world for this example.
