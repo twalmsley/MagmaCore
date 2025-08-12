@@ -79,9 +79,9 @@ public class F35ModelExtensionTest {
      * @return A List of FunctionalObject.
      */
     private static List<Thing> run() {
-        // The entities will be a part of a dummy possible_world, we just use the IRI
-        // rather than creating the possible_world for this example.
+        // Create a PossibleWorld.
         final var possibleWorldIri = iri();
+        final var possibleWorld = SpatioTemporalExtentServices.createPossibleWorld(possibleWorldIri);
 
         // ------------------------------------------------------------------------------------------------
         // Create the OrdinaryFunctionalObjects that will be installed in an aircraft
@@ -282,6 +282,7 @@ public class F35ModelExtensionTest {
         // ------------------------------------------------------------------------------------------------
         
         return List.of(
+                possibleWorld,
                 vls,
                 turbine,
                 engine,
