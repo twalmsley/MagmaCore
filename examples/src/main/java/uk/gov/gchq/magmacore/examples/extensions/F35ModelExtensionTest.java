@@ -316,7 +316,9 @@ public class F35ModelExtensionTest {
                 );
     }
 
+    private static long id = 0;
+
     private static IRI iri() {
-        return new IRI(TEST_BASE, UUID.randomUUID().toString());
+        return new IRI(TEST_BASE, Long.toString(id++));
     }
 }
