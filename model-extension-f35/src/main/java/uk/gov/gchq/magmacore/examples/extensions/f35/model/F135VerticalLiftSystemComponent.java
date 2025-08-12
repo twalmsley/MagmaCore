@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystemComponent;
 /**
  * F135 Vertical Lift System Component.
  */
-public interface F135VerticalLiftSystemComponent extends FunctionalSystemComponent {
+public interface F135VerticalLiftSystemComponent extends FunctionalSystemComponent, StateOfF135VLSComponent {
 }

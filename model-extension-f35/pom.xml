@@ -53,7 +53,10 @@
                             <useShortClassNames>true</useShortClassNames>
                             <hideClasses>
                                 <hideClass>
-				Constants
+                                    Constants
+                                </hideClass>
+                                <hideClass>
+                                    *Impl
                                 </hideClass>
                             </hideClasses>
                         </configuration>

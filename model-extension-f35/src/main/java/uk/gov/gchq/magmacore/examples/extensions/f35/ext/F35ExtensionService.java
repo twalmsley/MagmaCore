@@ -19,7 +19,9 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystem
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystemImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystemImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystemImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledUS16EEjectionSeatInF35AircraftImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135EngineComponentImpl;
@@ -30,6 +32,8 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135VLSCompone
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF135VLSImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35EjectionSeatComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35EngineComponentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35TurbineComponentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfF35VerticalLiftSystemComponentImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.StateOfUS16EEjectionSeatImpl;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeatImpl;
 import uk.gov.gchq.magmacore.hqdm.extensions.ExtensionService;
@@ -94,6 +98,9 @@ public class F35ExtensionService implements ExtensionService {
             case INSTALLED_F135_ENGINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME:
                 return (T) new InstalledF135EngineInF135EngineSystemImpl(iri);
 
+            case INSTALLED_F135_TURBINE_IN_F35_AIRCRAFT_TYPE_NAME:
+                return (T) new InstalledF135TurbineInF35AircraftImpl(iri);
+
             case INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME:
                 return (T) new InstalledF135TurbineInF135EngineSystemImpl(iri);
 
@@ -105,6 +112,9 @@ public class F35ExtensionService implements ExtensionService {
 
             case INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME:
                 return (T) new InstalledF135EngineInF35AircraftImpl(iri);
+
+            case INSTALLED_F135_VLS_IN_F35_AIRCRAFT_TYPE_NAME:
+                return (T) new InstalledF135VLSInF35AircraftImpl(iri);
 
             case INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_NAME:
                 return (T) new InstalledUS16EEjectionSeatInF35AircraftImpl(iri);
@@ -135,6 +145,12 @@ public class F35ExtensionService implements ExtensionService {
 
             case STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME:
                 return (T) new StateOfF35EngineComponentImpl(iri);
+
+            case STATE_OF_F35_TURBINE_COMPONENT_TYPE_NAME:
+                return (T) new StateOfF35TurbineComponentImpl(iri);
+
+            case STATE_OF_F35_VLS_COMPONENT_TYPE_NAME:
+                return (T) new StateOfF35VerticalLiftSystemComponentImpl(iri);
 
             case STATE_OF_US16E_EJECTION_SEAT_TYPE_NAME:
                 return (T) new StateOfUS16EEjectionSeatImpl(iri);

@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.OrdinaryFunctionalObject;
 /**
  * US16E Ejection Seat.
  */
-public interface US16EEjectionSeat extends OrdinaryFunctionalObject {
+public interface US16EEjectionSeat extends OrdinaryFunctionalObject, StateOfUS16EEjectionSeat {
 }

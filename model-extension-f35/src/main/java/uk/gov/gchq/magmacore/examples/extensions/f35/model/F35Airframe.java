@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.OrdinaryFunctionalObject;
 /**
  * An F35 Air Frame.
  */
-public interface F35Airframe extends OrdinaryFunctionalObject {
+public interface F35Airframe extends OrdinaryFunctionalObject, StateOfF35Airframe {
 }

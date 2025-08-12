@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystemComponent;
 /**
  * F35 Turbine Component.
  */
-public interface F35TurbineComponent extends FunctionalSystemComponent {
+public interface F35TurbineComponent extends FunctionalSystemComponent, StateOfF35TurbineComponent {
 }

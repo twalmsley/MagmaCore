@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystemComponent;
 /**
  * F35 Ejection Seat Component.
  */
-public interface F35EjectionSeatComponent extends FunctionalSystemComponent {
+public interface F35EjectionSeatComponent extends FunctionalSystemComponent, StateOfF35EjectionSeatComponent {
 }

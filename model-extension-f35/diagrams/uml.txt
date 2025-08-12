@@ -35,8 +35,12 @@ interface Constants {
 	{field} {static} +INSTALLED_F135_ENGINE_IN_F35_AIRCRAFT_NAME : String
 	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +INSTALLED_F135_TURBINE_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
+	{field} {static} +INSTALLED_F135_TURBINE_IN_F35_AIRCRAFT_TYPE_IRI : IRI
+	{field} {static} +INSTALLED_F135_TURBINE_IN_F35_AIRCRAFT_TYPE_NAME : String
 	{field} {static} +INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_IRI : IRI
 	{field} {static} +INSTALLED_F135_VLS_IN_F135_ENGINE_SYSTEM_TYPE_NAME : String
+	{field} {static} +INSTALLED_F135_VLS_IN_F35_AIRCRAFT_TYPE_IRI : IRI
+	{field} {static} +INSTALLED_F135_VLS_IN_F35_AIRCRAFT_TYPE_NAME : String
 	{field} {static} +INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_IRI : IRI
 	{field} {static} +INSTALLED_F35_AIRFRAME_IN_F35_AIRCRAFT_NAME : String
 	{field} {static} +INSTALLED_US16E_EJECTION_SEAT_IN_F35_AIRCRAFT_IRI : IRI
@@ -61,6 +65,10 @@ interface Constants {
 	{field} {static} +STATE_OF_F35_EJECTION_SEAT_COMPONENT_TYPE_NAME : String
 	{field} {static} +STATE_OF_F35_ENGINE_COMPONENT_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_F35_ENGINE_COMPONENT_TYPE_NAME : String
+	{field} {static} +STATE_OF_F35_TURBINE_COMPONENT_TYPE_IRI : IRI
+	{field} {static} +STATE_OF_F35_TURBINE_COMPONENT_TYPE_NAME : String
+	{field} {static} +STATE_OF_F35_VLS_COMPONENT_TYPE_IRI : IRI
+	{field} {static} +STATE_OF_F35_VLS_COMPONENT_TYPE_NAME : String
 	{field} {static} +STATE_OF_US16E_EJECTION_SEAT_TYPE_IRI : IRI
 	{field} {static} +STATE_OF_US16E_EJECTION_SEAT_TYPE_NAME : String
 	{field} {static} +US16E_EJECTION_SEAT_TYPE_IRI : IRI
@@ -222,11 +230,27 @@ class InstalledF135TurbineInF135EngineSystemImpl {
 }
 
 
+interface InstalledF135TurbineInF35Aircraft {
+}
+
+
+class InstalledF135TurbineInF35AircraftImpl {
+}
+
+
 interface InstalledF135VLSInF135EngineSystem {
 }
 
 
 class InstalledF135VLSInF135EngineSystemImpl {
+}
+
+
+interface InstalledF135VLSInF35Aircraft {
+}
+
+
+class InstalledF135VLSInF35AircraftImpl {
 }
 
 
@@ -326,6 +350,22 @@ class StateOfF35EngineComponentImpl {
 }
 
 
+interface StateOfF35TurbineComponent {
+}
+
+
+class StateOfF35TurbineComponentImpl {
+}
+
+
+interface StateOfF35VerticalLiftSystemComponent {
+}
+
+
+class StateOfF35VerticalLiftSystemComponentImpl {
+}
+
+
 interface StateOfUS16EEjectionSeat {
 }
 
@@ -356,6 +396,8 @@ F135Turbine ..|>  StateOfF135Turbine
 F135TurbineComponent ..|>  StateOfF135TurbineComponent
 F135TurbineComponentImpl ..|>  F135TurbineComponent
 F135TurbineImpl ..|>  F135Turbine
+F135VerticalLiftSystem ..|>  StateOfF135VLS
+F135VerticalLiftSystemComponent ..|>  StateOfF135VLSComponent
 F135VerticalLiftSystemComponentImpl ..|>  F135VerticalLiftSystemComponent
 F135VerticalLiftSystemImpl ..|>  F135VerticalLiftSystem
 F35AircraftImpl -->  F35AirframeComponent : airframe
@@ -364,11 +406,17 @@ F35AircraftImpl -->  F35EngineComponent : engine
 F35AircraftImpl -->  F35TurbineComponent : turbine
 F35AircraftImpl -->  F35VerticalLiftSystemComponent : vls
 F35AircraftImpl ..|>  F35Aircraft
+F35Airframe ..|>  StateOfF35Airframe
+F35AirframeComponent ..|>  StateOfF35AirframeComponent
 F35AirframeComponentImpl ..|>  F35AirframeComponent
 F35AirframeImpl ..|>  F35Airframe
+F35EjectionSeatComponent ..|>  StateOfF35EjectionSeatComponent
 F35EjectionSeatComponentImpl ..|>  F35EjectionSeatComponent
+F35EngineComponent ..|>  StateOfF35EngineComponent
 F35EngineComponentImpl ..|>  F35EngineComponent
+F35TurbineComponent ..|>  StateOfF35TurbineComponent
 F35TurbineComponentImpl ..|>  F35TurbineComponent
+F35VerticalLiftSystemComponent ..|>  StateOfF35VerticalLiftSystemComponent
 F35VerticalLiftSystemComponentImpl ..|>  F35VerticalLiftSystemComponent
 InstalledF135EngineInF135EngineSystem ..|>  StateOfF135Engine
 InstalledF135EngineInF135EngineSystem ..|>  StateOfF135EngineComponent
@@ -379,9 +427,15 @@ InstalledF135EngineInF35AircraftImpl ..|>  InstalledF135EngineInF35Aircraft
 InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135Turbine
 InstalledF135TurbineInF135EngineSystem ..|>  StateOfF135TurbineComponent
 InstalledF135TurbineInF135EngineSystemImpl ..|>  InstalledF135TurbineInF135EngineSystem
+InstalledF135TurbineInF35Aircraft ..|>  StateOfF135Turbine
+InstalledF135TurbineInF35Aircraft ..|>  StateOfF35TurbineComponent
+InstalledF135TurbineInF35AircraftImpl ..|>  InstalledF135TurbineInF35Aircraft
 InstalledF135VLSInF135EngineSystem ..|>  StateOfF135VLS
 InstalledF135VLSInF135EngineSystem ..|>  StateOfF135VLSComponent
 InstalledF135VLSInF135EngineSystemImpl ..|>  InstalledF135VLSInF135EngineSystem
+InstalledF135VLSInF35Aircraft ..|>  StateOfF135VLS
+InstalledF135VLSInF35Aircraft ..|>  StateOfF35VerticalLiftSystemComponent
+InstalledF135VLSInF35AircraftImpl ..|>  InstalledF135VLSInF35Aircraft
 InstalledF35AirframeInF35Aircraft ..|>  StateOfF35Airframe
 InstalledF35AirframeInF35Aircraft ..|>  StateOfF35AirframeComponent
 InstalledF35AirframeInF35AircraftImpl ..|>  InstalledF35AirframeInF35Aircraft
@@ -398,10 +452,14 @@ StateOfF35AirframeComponentImpl ..|>  StateOfF35AirframeComponent
 StateOfF35AirframeImpl ..|>  StateOfF35Airframe
 StateOfF35EjectionSeatComponentImpl ..|>  StateOfF35EjectionSeatComponent
 StateOfF35EngineComponentImpl ..|>  StateOfF35EngineComponent
+StateOfF35TurbineComponentImpl ..|>  StateOfF35TurbineComponent
+StateOfF35VerticalLiftSystemComponentImpl ..|>  StateOfF35VerticalLiftSystemComponent
 StateOfUS16EEjectionSeatImpl ..|>  StateOfUS16EEjectionSeat
+US16EEjectionSeat ..|>  StateOfUS16EEjectionSeat
 US16EEjectionSeatImpl ..|>  US16EEjectionSeat
 
 hide methods
 hide Constants
+hide *Impl
 
 @enduml

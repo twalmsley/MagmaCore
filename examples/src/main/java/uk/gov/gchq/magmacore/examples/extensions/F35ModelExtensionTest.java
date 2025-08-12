@@ -22,7 +22,9 @@ import uk.gov.gchq.magmacore.examples.extensions.f35.model.F35VerticalLiftSystem
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF135EngineSystem;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135EngineInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135TurbineInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF135EngineSystem;
+import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF135VLSInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledF35AirframeInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.InstalledUS16EEjectionSeatInF35Aircraft;
 import uk.gov.gchq.magmacore.examples.extensions.f35.model.US16EEjectionSeat;
@@ -236,6 +238,25 @@ public class F35ModelExtensionTest {
         ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, ejectionSeatIri);
         ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EjectionSeatComponentIri);
 
+        // Install the VLS in the aircraft.
+        final var vlsInAircraftIri = iri();
+        final InstalledF135VLSInF35Aircraft vlsInAircraft = f35.createEntity(Constants.INSTALLED_F135_VLS_IN_F35_AIRCRAFT_TYPE_NAME, vlsInAircraftIri);
+
+        final var vlsInAircraftBeginningIri = iri();
+        final var vlsInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(vlsInAircraftBeginningIri);
+        vlsInAircraft.addValue(HQDM.BEGINNING, vlsInAircraftBeginningIri);
+        vlsInAircraft.addValue(HQDM.TEMPORAL_PART_OF, vlsIri);
+        vlsInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35VerticalLiftSystemComponentIri);
+
+        // Install the turbine in the aircraft.
+        final var turbineInAircraftIri = iri();
+        final InstalledF135TurbineInF35Aircraft turbineInAircraft = f35.createEntity(Constants.INSTALLED_F135_TURBINE_IN_F35_AIRCRAFT_TYPE_NAME, turbineInAircraftIri);
+
+        final var turbineInAircraftBeginningIri = iri();
+        final var turbineInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(turbineInAircraftBeginningIri);
+        turbineInAircraft.addValue(HQDM.BEGINNING, turbineInAircraftBeginningIri);
+        turbineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, turbineIri);
+        turbineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35TurbineComponentIri);
         // ------------------------------------------------------------------------------------------------
         // return all the entities.
         // ------------------------------------------------------------------------------------------------
@@ -267,7 +288,11 @@ public class F35ModelExtensionTest {
                 engineInAircraft,
                 engineInAircraftBeginningEvent,
                 ejectionSeatInAircraft,
-                ejectionSeatInAircraftBeginningEvent
+                ejectionSeatInAircraftBeginningEvent,
+                vlsInAircraft,
+                vlsInAircraftBeginningEvent,
+                turbineInAircraft,
+                turbineInAircraftBeginningEvent
                 );
     }
 

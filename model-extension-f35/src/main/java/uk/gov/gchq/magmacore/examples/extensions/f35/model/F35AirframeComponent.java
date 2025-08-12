@@ -5,5 +5,5 @@ import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystemComponent;
 /**
  * F35 Airframe Component.
  */
-public interface F35AirframeComponent extends FunctionalSystemComponent {
+public interface F35AirframeComponent extends FunctionalSystemComponent, StateOfF35AirframeComponent {
 }
