@@ -65,13 +65,9 @@ public class F35ModelExtensionTest {
         // rather than creating the possible_world for this example.
         final var possibleWorldIri = iri();
 
-        final var aircraftIri = new IRI(TEST_BASE, UUID.randomUUID().toString());
-        final F35Aircraft aircraft = f35.createEntity(Constants.F35_AIRCRAFT_TYPE_NAME, aircraftIri);
-        aircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
-
         // Persist the entity in the database.
         mcs.runInWriteTransaction(svc -> {
-            final var entities = run();
+            final var entities = run(possibleWorldIri);
             entities.stream().forEach(e -> {
                 svc.create(e);
             });
@@ -79,14 +75,6 @@ public class F35ModelExtensionTest {
         });
 
         mcs.exportTtl(System.out);
-
-        // Read the entity back and assert that it matches the original.
-        mcs.runInReadTransaction(svc -> {
-            // TODO: Implement this.
-            return svc;
-        });
-        
-        run();
     }
 
     /**
@@ -94,7 +82,7 @@ public class F35ModelExtensionTest {
      *
      * @return A List of FunctionalObject.
      */
-    private static List<Thing> run() {
+    private static List<Thing> run(final IRI possibleWorldIri) {
         // ------------------------------------------------------------------------------------------------
         // Create the OrdinaryFunctionalObjects that will be installed in an aircraft
         // ------------------------------------------------------------------------------------------------
@@ -102,22 +90,27 @@ public class F35ModelExtensionTest {
         // Manufacture a VLS
         final var vlsIri = iri();
         final F135VerticalLiftSystem vls = f35.createEntity(Constants.F135_VERTICAL_LIFT_SYSTEM_TYPE_NAME, vlsIri);
+        vls.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
 
         // Manufacture a Turbine
         final var turbineIri = iri();
         final F135Turbine turbine = f35.createEntity(Constants.F135_TURBINE_TYPE_NAME, turbineIri);
+        turbine.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
 
         // Manufacture an Engine
         final var engineIri = iri();
         final F135Engine engine = f35.createEntity(Constants.F135_ENGINE_TYPE_NAME, engineIri);
+        engine.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
 
         // Manufacture an Ejection Seat
         final var ejectionSeatIri = iri();
         final US16EEjectionSeat ejectionSeat = f35.createEntity(Constants.US16E_EJECTION_SEAT_TYPE_NAME, ejectionSeatIri);
+        ejectionSeat.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
 
         // Manufacture an Airframe
         final var airframeIri = iri();
         final F35Airframe airframe = f35.createEntity(Constants.F35_AIRFRAME_TYPE_NAME, airframeIri);
+        airframe.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
 
         // ------------------------------------------------------------------------------------------------
         // Create the engine Functional System.
@@ -138,6 +131,10 @@ public class F35ModelExtensionTest {
         engineSystem1.setTurbine(turbineComponent);
         engineSystem1.setVerticalLiftSystem(vlsComponent);
 
+        engineSystem1.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        engineComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        turbineComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        vlsComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         // ------------------------------------------------------------------------------------------------
         // Create the Aircraft Functional System
         // ------------------------------------------------------------------------------------------------
@@ -165,6 +162,13 @@ public class F35ModelExtensionTest {
         aircraft2101.setEjectionSeat(f35EjectionSeatComponent);
         aircraft2101.setVerticalLiftSystem(f35VerticalLiftSystemComponent);
 
+        aircraft2101.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        f35AirframeComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        f35EngineComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        f35EjectionSeatComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        f35VerticalLiftSystemComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        f35TurbineComponent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+
         // ------------------------------------------------------------------------------------------------
         // Install the parts of the engine system.
         // ------------------------------------------------------------------------------------------------
@@ -176,6 +180,8 @@ public class F35ModelExtensionTest {
 
         final var engineInstalledEngineSystemBeginningIri = iri();
         final Event engineInstalledEngineSystemBeginningEvent = SpatioTemporalExtentServices.createEvent(engineInstalledEngineSystemBeginningIri);
+        engineInstalledEngineSystemBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        engineInstalledInEngineSystem.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         engineInstalledInEngineSystem.addValue(HQDM.BEGINNING, engineInstalledEngineSystemBeginningIri);
         engineInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, engineIri);
         engineInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, engineComponentIri);
@@ -187,6 +193,8 @@ public class F35ModelExtensionTest {
 
         final var turbineInstalledInEngineSystemBeginningIri = iri();
         final Event turbineInstalledInEngineSystemEvent = SpatioTemporalExtentServices.createEvent(turbineInstalledInEngineSystemBeginningIri);
+        turbineInstalledInEngineSystemEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        turbineInF135EngineSystem.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         turbineInF135EngineSystem.addValue(HQDM.BEGINNING, turbineInstalledInEngineSystemBeginningIri);
         turbineInF135EngineSystem.addValue(HQDM.TEMPORAL_PART_OF, turbineIri);
         turbineInF135EngineSystem.addValue(HQDM.TEMPORAL_PART_OF, turbineComponentIri);
@@ -198,6 +206,8 @@ public class F35ModelExtensionTest {
 
         final var vlsInstalledInEngineSystemBeginningIri = iri();
         final Event vlsInstalledInEngineSystemEvent = SpatioTemporalExtentServices.createEvent(vlsInstalledInEngineSystemBeginningIri);
+        vlsInstalledInEngineSystemEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        vlsInstalledInEngineSystem.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         vlsInstalledInEngineSystem.addValue(HQDM.BEGINNING, vlsInstalledInEngineSystemBeginningIri);
         vlsInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, vlsIri);
         vlsInstalledInEngineSystem.addValue(HQDM.TEMPORAL_PART_OF, vlsComponentIri);
@@ -213,6 +223,8 @@ public class F35ModelExtensionTest {
 
         final var airframeInstalledInF35AircraftBeginningIri = iri();
         final var airframeInstalledInF35AircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(airframeInstalledInF35AircraftBeginningIri);
+        airframeInstalledInF35AircraftBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        airframeInstalledInF35Aircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         airframeInstalledInF35Aircraft.addValue(HQDM.BEGINNING, airframeInstalledInF35AircraftBeginningIri);
         airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, airframeIri);
         airframeInstalledInF35Aircraft.addValue(HQDM.TEMPORAL_PART_OF, f35AirframeComponentIri);
@@ -223,6 +235,8 @@ public class F35ModelExtensionTest {
         
         final var engineInAircraftBeginningIri = iri();
         final var engineInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(engineInAircraftBeginningIri);
+        engineInAircraftBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        engineInAircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         engineInAircraft.addValue(HQDM.BEGINNING, engineInAircraftBeginningIri);
         engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, engineIri);
         engineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EngineComponentIri);
@@ -234,6 +248,8 @@ public class F35ModelExtensionTest {
 
         final var ejectionSeatInAircraftBeginningIri = iri();
         final var ejectionSeatInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(ejectionSeatInAircraftBeginningIri);
+        ejectionSeatInAircraftBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        ejectionSeatInAircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         ejectionSeatInAircraft.addValue(HQDM.BEGINNING, ejectionSeatInAircraftBeginningIri);
         ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, ejectionSeatIri);
         ejectionSeatInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35EjectionSeatComponentIri);
@@ -244,6 +260,8 @@ public class F35ModelExtensionTest {
 
         final var vlsInAircraftBeginningIri = iri();
         final var vlsInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(vlsInAircraftBeginningIri);
+        vlsInAircraftBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        vlsInAircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         vlsInAircraft.addValue(HQDM.BEGINNING, vlsInAircraftBeginningIri);
         vlsInAircraft.addValue(HQDM.TEMPORAL_PART_OF, vlsIri);
         vlsInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35VerticalLiftSystemComponentIri);
@@ -254,6 +272,8 @@ public class F35ModelExtensionTest {
 
         final var turbineInAircraftBeginningIri = iri();
         final var turbineInAircraftBeginningEvent = SpatioTemporalExtentServices.createEvent(turbineInAircraftBeginningIri);
+        turbineInAircraftBeginningEvent.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
+        turbineInAircraft.addValue(HQDM.PART_OF_POSSIBLE_WORLD, possibleWorldIri);
         turbineInAircraft.addValue(HQDM.BEGINNING, turbineInAircraftBeginningIri);
         turbineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, turbineIri);
         turbineInAircraft.addValue(HQDM.TEMPORAL_PART_OF, f35TurbineComponentIri);
