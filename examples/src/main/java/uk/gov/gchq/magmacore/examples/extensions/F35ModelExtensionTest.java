@@ -61,13 +61,9 @@ public class F35ModelExtensionTest {
         // Create a MagmaCoreService with an in-memory Apache Jena database.
         final var mcs = MagmaCoreServiceFactory.createWithJenaDatabase();
 
-        // The entity will be a part of a dummy possible_world, we just use the IRI
-        // rather than creating the possible_world for this example.
-        final var possibleWorldIri = iri();
-
         // Persist the entity in the database.
         mcs.runInWriteTransaction(svc -> {
-            final var entities = run(possibleWorldIri);
+            final var entities = run();
             entities.stream().forEach(e -> {
                 svc.create(e);
             });
@@ -82,7 +78,11 @@ public class F35ModelExtensionTest {
      *
      * @return A List of FunctionalObject.
      */
-    private static List<Thing> run(final IRI possibleWorldIri) {
+    private static List<Thing> run() {
+        // The entities will be a part of a dummy possible_world, we just use the IRI
+        // rather than creating the possible_world for this example.
+        final var possibleWorldIri = iri();
+
         // ------------------------------------------------------------------------------------------------
         // Create the OrdinaryFunctionalObjects that will be installed in an aircraft
         // ------------------------------------------------------------------------------------------------
