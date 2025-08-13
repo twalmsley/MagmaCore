@@ -5,7 +5,6 @@ import java.util.UUID;
 import uk.gov.gchq.magmacore.examples.extensions.ext.HqdmExtensionService;
 import uk.gov.gchq.magmacore.examples.extensions.model.Constants;
 import uk.gov.gchq.magmacore.examples.extensions.model.UkLimitedCompany;
-import uk.gov.gchq.magmacore.examples.extensions.model.UkLimitedCompanyImpl;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.HQDM;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
@@ -44,7 +43,7 @@ public class ModelExtensionTest {
 
         // Create an IRI for the entity we want to create, then create the entity.
         final var entityIri = new IRI(TEST_BASE, UUID.randomUUID().toString());
-        final Thing entity = new UkLimitedCompanyImpl(entityIri);
+        final Thing entity = EXT.createEntity(Constants.UK_LIMITED_COMPANY_TYPE_NAME, entityIri);
 
         // Set the RDF_TYPE and add the entity as a `part_of_possible_world`.
         entity.addValue(RDFS.RDF_TYPE, Constants.UK_LIMITED_COMPANY_IRI);

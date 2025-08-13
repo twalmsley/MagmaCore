@@ -8,11 +8,11 @@ import static uk.gov.gchq.magmacore.examples.extensions.model.Constants.UK_SOFTW
 
 import java.io.InputStream;
 
-import uk.gov.gchq.magmacore.examples.extensions.model.ChildImpl;
-import uk.gov.gchq.magmacore.examples.extensions.model.ParentChildAssociationImpl;
-import uk.gov.gchq.magmacore.examples.extensions.model.ParentImpl;
-import uk.gov.gchq.magmacore.examples.extensions.model.UkLimitedCompanyImpl;
-import uk.gov.gchq.magmacore.examples.extensions.model.UkSoftwareDevelopmentCompanyImpl;
+import uk.gov.gchq.magmacore.examples.extensions.impl.ChildImpl;
+import uk.gov.gchq.magmacore.examples.extensions.impl.ParentChildAssociationImpl;
+import uk.gov.gchq.magmacore.examples.extensions.impl.ParentImpl;
+import uk.gov.gchq.magmacore.examples.extensions.impl.UkLimitedCompanyImpl;
+import uk.gov.gchq.magmacore.examples.extensions.impl.UkSoftwareDevelopmentCompanyImpl;
 import uk.gov.gchq.magmacore.hqdm.extensions.ExtensionService;
 import uk.gov.gchq.magmacore.hqdm.model.Thing;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
