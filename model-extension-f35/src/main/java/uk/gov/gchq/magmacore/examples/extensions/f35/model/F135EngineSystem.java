@@ -1,11 +1,14 @@
 package uk.gov.gchq.magmacore.examples.extensions.f35.model;
 
 import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystem;
+import uk.gov.gchq.magmacore.hqdm.model.Role;
 
 /**
  * F135 Engine System.
  */
 public interface F135EngineSystem extends FunctionalSystem {
+
+    static Role intendedRole = IntendedRoles.F135EngineIntendedRole;
 
     public F135EngineComponent getEngine();
 

@@ -77,14 +77,17 @@ interface Constants {
 
 
 interface F135Engine {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F135EngineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F135EngineSystem {
+	{field} {static} +intendedRole : Role
 	{method}  {abstract} +getEngine () : F135EngineComponent
 	{method}  {abstract} +getTurbine () : F135TurbineComponent
 	{method}  {abstract} +getVls () : F135VerticalLiftSystemComponent
@@ -95,22 +98,27 @@ interface F135EngineSystem {
 
 
 interface F135Turbine {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F135TurbineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F135VerticalLiftSystem {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F135VerticalLiftSystemComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35Aircraft {
+	{field} {static} +intendedRole : Role
 	{method}  {abstract} +getAirframe () : F35AirframeComponent
 	{method}  {abstract} +getEjectionSeat () : F35EjectionSeatComponent
 	{method}  {abstract} +getEngine () : F35EngineComponent
@@ -125,114 +133,152 @@ interface F35Aircraft {
 
 
 interface F35Airframe {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35AirframeComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35EjectionSeatComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35EngineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35TurbineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface F35VerticalLiftSystemComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135EngineInF135EngineSystem {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135EngineInF35Aircraft {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135TurbineInF135EngineSystem {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135TurbineInF35Aircraft {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135VLSInF135EngineSystem {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF135VLSInF35Aircraft {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledF35AirframeInF35Aircraft {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface InstalledUS16EEjectionSeatInF35Aircraft {
+	{field} {static} +intendedRole : Role
+}
+
+
+class IntendedRoles {
+	{field} {static} +F135EngineIntendedRole : Role
+	{field} {static} +F135TurbineIntendedRole : Role
+	{field} {static} +F135VerticalLiftSystemIntendedRole : Role
+	{field} {static} +F35AircraftIntendedRole : Role
+	{field} {static} +F35AirframeIntendedRole : Role
+	{field} {static} +US16EEjectionSeatIntendedRole : Role
 }
 
 
 interface StateOfF135Engine {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF135EngineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF135Turbine {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF135TurbineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF135VLS {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF135VLSComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35Airframe {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35AirframeComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35EjectionSeatComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35EngineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35TurbineComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfF35VerticalLiftSystemComponent {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface StateOfUS16EEjectionSeat {
+	{field} {static} +intendedRole : Role
 }
 
 
 interface US16EEjectionSeat {
+	{field} {static} +intendedRole : Role
 }
 
 

@@ -1,11 +1,15 @@
 package uk.gov.gchq.magmacore.examples.extensions.f35.model;
 
 import uk.gov.gchq.magmacore.hqdm.model.FunctionalSystem;
+import uk.gov.gchq.magmacore.hqdm.model.Role;
 
 /**
  * F35 Aircraft System.
  */
 public interface F35Aircraft extends FunctionalSystem {
+
+    static Role intendedRole = IntendedRoles.F35AircraftIntendedRole;
+
     public F35AirframeComponent getAirframe();
 
     public F35EjectionSeatComponent getEjectionSeat();
