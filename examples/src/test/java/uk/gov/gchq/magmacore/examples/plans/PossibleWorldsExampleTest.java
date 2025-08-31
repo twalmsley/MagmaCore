@@ -20,8 +20,8 @@ import uk.gov.gchq.magmacore.hqdm.rdf.iri.IRI;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.IriBase;
 import uk.gov.gchq.magmacore.hqdm.rdf.iri.RDFS;
 import uk.gov.gchq.magmacore.hqdm.rdfbuilders.ClassOfStateBuilder;
-import uk.gov.gchq.magmacore.hqdm.rdfbuilders.EventBuilder;
 import uk.gov.gchq.magmacore.hqdm.rdfbuilders.PlanBuilder;
+import uk.gov.gchq.magmacore.hqdm.rdfbuilders.PointInTimeBuilder;
 import uk.gov.gchq.magmacore.hqdm.rdfbuilders.RequirementBuilder;
 import uk.gov.gchq.magmacore.hqdm.rdfbuilders.RequirementSpecificationBuilder;
 import uk.gov.gchq.magmacore.hqdm.services.SpatioTemporalExtentServices;
@@ -34,6 +34,7 @@ public class PossibleWorldsExampleTest {
 
     private static final String PREFIXES = """
         @prefix tst: <https://example.com/test#> .
+        @prefix date: <https://example.com/date#> .
         @prefix h: <https://hqdmtop.github.io/hqdmOntology/1.0.0#> .
         @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
         @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -41,7 +42,8 @@ public class PossibleWorldsExampleTest {
                 """;
 
     private static final IriBase BASE = new IriBase("tst", "https://example.com/test#");
-
+    private static final IriBase DATE_BASE = new IriBase("date", "https://example.com/date#");
+    private static final Instant START = Instant.now();
     private static long nextIri = 0L;
 
     private static String nextIri() {
@@ -51,7 +53,7 @@ public class PossibleWorldsExampleTest {
     @Test
     public void testPlans() {
         final var objects = new HashMap<IRI, Thing>();
-        
+
         final var possibleWorld = getTheRealWorld();
         objects.put(possibleWorld.getId(), possibleWorld);
 
@@ -72,7 +74,13 @@ public class PossibleWorldsExampleTest {
         final var carRequirementSpecification = getServicedCarRequirementSpecification(servicedCarClassOfState);
         objects.put(carRequirementSpecification.getId(), carRequirementSpecification);
 
-        final var carRequirement = getCarRequirement(possibleWorld, plan, carRequirementSpecification);
+        final var carRequirementStartEvent = getCarRequirementStartEvent(possibleWorld);
+        objects.put(carRequirementStartEvent.getId(), carRequirementStartEvent);
+
+        final var carRequirementEndEvent = getCarRequirementEndEvent(possibleWorld);
+        objects.put(carRequirementEndEvent.getId(), carRequirementEndEvent);
+
+        final var carRequirement = getCarRequirement(possibleWorld, plan, carRequirementSpecification, carRequirementStartEvent, carRequirementEndEvent);
         objects.put(carRequirement.getId(), carRequirement);
 
         final var mcs = MagmaCoreServiceFactory.createWithJenaDatabase();
@@ -85,6 +93,26 @@ public class PossibleWorldsExampleTest {
         System.out.println(PREFIXES);
         mcs.exportTtl(System.out);
         System.out.println();
+    }
+
+    private Event getCarRequirementEndEvent(final PossibleWorld possibleWorld) {
+        final var date = START.plus(365, ChronoUnit.DAYS);
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
+            .part_Of_Possible_World_M(possibleWorld)
+            .build();
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
+    }
+
+    private Event getCarRequirementStartEvent(final PossibleWorld possibleWorld) {
+        final var date = START.plus(300, ChronoUnit.DAYS);
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
+            .part_Of_Possible_World_M(possibleWorld)
+            .build();
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
     }
 
     private ClassOfState[] getServicedCarClassOfState() {
@@ -105,15 +133,19 @@ public class PossibleWorldsExampleTest {
     }
 
     private Requirement getCarRequirement(
-            final PossibleWorld possibleWorld, 
-            final Plan plan, 
-            final RequirementSpecification carRequirementSpecification) {
+        final PossibleWorld possibleWorld,
+        final Plan plan,
+        final RequirementSpecification carRequirementSpecification,
+        final Event beginning,
+        final Event ending) {
 
         final var iri = new IRI(BASE, nextIri());
         final var req = new RequirementBuilder(iri)
             .part_Of_Plan_M(plan)
             .part_Of_Possible_World_M(possibleWorld)
             .defined_By_M(carRequirementSpecification)
+            .beginning(beginning)
+            .ending(ending)
             .build();
         req.addStringValue(HQDM.SKOS_DEFINITION, "Car with 50k mile service requirement.");
 
@@ -153,23 +185,23 @@ public class PossibleWorldsExampleTest {
     }
 
     private Event getPlanEndEvent(final PossibleWorld possibleWorld) {
-        final var date = Instant.now();
-        final var endEventIri = new IRI(BASE, nextIri());
-        final var endEvent = new EventBuilder(endEventIri)
+        final var date = START.plus(365, ChronoUnit.DAYS);
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
             .part_Of_Possible_World_M(possibleWorld)
             .build();
-        endEvent.addStringValue(HQDM.SKOS_DEFINITION, date.plus(365, ChronoUnit.DAYS).toString());
-        return endEvent;
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
     }
 
     private Event getPlanStartEvent(final PossibleWorld possibleWorld) {
-        final var date = Instant.now();
-        final var startEventIri = new IRI(BASE, nextIri());
-        final var startEvent = new EventBuilder(startEventIri)
+        final var date = START;
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
             .part_Of_Possible_World_M(possibleWorld)
             .build();
-        startEvent.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
-        return startEvent;
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
     }
 
     private PossibleWorld getTheRealWorld() {
@@ -177,5 +209,9 @@ public class PossibleWorldsExampleTest {
         final var possibleWorld = SpatioTemporalExtentServices.createPossibleWorld(possibleWorldIri);
         possibleWorld.addStringValue(HQDM.SKOS_DEFINITION, "The Real World");
         return possibleWorld;
+    }
+
+    private static String instantToString(final Instant when) {
+        return Long.toString(when.getEpochSecond()) + Long.toString(when.getNano());
     }
 }
