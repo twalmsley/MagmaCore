@@ -29,9 +29,9 @@ import uk.gov.gchq.magmacore.hqdm.services.SpatioTemporalExtentServices;
 import uk.gov.gchq.magmacore.service.MagmaCoreServiceFactory;
 
 /**
- * An example of plans using Possible Worlds.
+ * An example of plans and requirements.
  */
-public class PossibleWorldsExampleTest {
+public class PlanAndRequirementsExample {
 
     private static final String PREFIXES = """
         @prefix tst: <https://example.com/test#> .
