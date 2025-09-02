@@ -55,6 +55,9 @@ public class PossibleWorldsExampleTest {
     public void testPlans() {
         final var objects = new HashMap<IRI, Thing>();
 
+        //
+        // Create the plan in the real world.
+        //
         final var realWorld = getTheRealWorld();
         objects.put(realWorld.getId(), realWorld);
 
@@ -67,6 +70,9 @@ public class PossibleWorldsExampleTest {
         final var carServicePlan = getCarServicePlan(realWorld, planStartEvent, planEndEvent);
         objects.put(carServicePlan.getId(), carServicePlan);
 
+        //
+        // Create the serviced car requirement.
+        //
         final var servicedCarClassOfState = getServicedCarClassOfState();
         Arrays.stream(servicedCarClassOfState).forEach(cos -> {
             objects.put(cos.getId(), cos);
@@ -85,6 +91,29 @@ public class PossibleWorldsExampleTest {
             servicedCarRequirementStartEvent, servicedCarRequirementEndEvent);
         objects.put(servicedCarRequirement.getId(), servicedCarRequirement);
 
+        //
+        // Create the car service activity requirement.
+        //
+        final var serviceActivityClassOfState = getCarServiceActivityClassOfState();
+        Arrays.stream(serviceActivityClassOfState).forEach(cos -> {
+            objects.put(cos.getId(), cos);
+        });
+
+        final var serviceActivityRequirementsSpec = getServiceActivityRequirementsSpec(serviceActivityClassOfState);
+        objects.put(serviceActivityRequirementsSpec.getId(), serviceActivityRequirementsSpec);
+
+        final var serviceActivityStartEvent = getServiceActivityStartEvent(realWorld);
+        objects.put(serviceActivityStartEvent.getId(), serviceActivityStartEvent);
+
+        final var serviceActivityEndEvent = getServiceActivityEndEvent(realWorld);
+        objects.put(serviceActivityEndEvent.getId(), serviceActivityEndEvent);
+
+        final var serviceActivityRequirement = getServiceActivityRequirement(realWorld, carServicePlan, serviceActivityRequirementsSpec, 
+                serviceActivityStartEvent, serviceActivityEndEvent, servicedCarRequirementStartEvent);
+        objects.put(serviceActivityRequirement.getId(), serviceActivityRequirement);
+        //
+        // Create evertying in the database.
+        //
         final var mcs = MagmaCoreServiceFactory.createWithJenaDatabase();
         mcs.runInWriteTransaction(svc -> {
             objects.values().stream().forEach(svc::create);
@@ -95,6 +124,69 @@ public class PossibleWorldsExampleTest {
         System.out.println(PREFIXES);
         mcs.exportTtl(System.out);
         System.out.println();
+    }
+
+    private Requirement getServiceActivityRequirement(final PossibleWorld realWorld, final Plan plan, final RequirementSpecification serviceActivityRequirementsSpec,
+        final Event beginning, final Event ending, final Event servicedCarStartEvent) {
+
+        final var iri = new IRI(BASE, nextIri());
+        final var req = new RequirementBuilder(iri)
+            .part_Of_Plan_M(plan)
+            .part_Of_Possible_World_M(realWorld)
+            .defined_By_M(serviceActivityRequirementsSpec)
+            .beginning(beginning)
+            .ending(ending)
+            .build();
+        req.addStringValue(HQDM.SKOS_DEFINITION, "Car 50k mile service activity");
+        req.addValue(HQDM.CAUSES, servicedCarStartEvent.getId());
+
+        return req;
+    }
+
+    private Event getServiceActivityEndEvent(final PossibleWorld realWorld) {
+        final var date = START.plus(300, ChronoUnit.DAYS).plus(4, ChronoUnit.HOURS);
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
+            .part_Of_Possible_World_M(realWorld)
+            .build();
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
+    }
+
+    private Event getServiceActivityStartEvent(final PossibleWorld realWorld) {
+        final var date = START.plus(300, ChronoUnit.DAYS);
+        final var eventIri = new IRI(DATE_BASE, instantToString(date));
+        final var event = new PointInTimeBuilder(eventIri)
+            .part_Of_Possible_World_M(realWorld)
+            .build();
+        event.addStringValue(HQDM.SKOS_DEFINITION, date.toString());
+        return event;
+    }
+
+    private RequirementSpecification getServiceActivityRequirementsSpec(final ClassOfState[] classOfState) {
+        if (classOfState.length == 0) {
+            throw new InvalidParameterException("Need at  least one classOfState");
+        }
+        final var iri = new IRI(BASE, nextIri());
+        final var spec = new RequirementSpecificationBuilder(iri)
+            .intersection_Of_M(classOfState[0])
+            .build();
+        spec.addStringValue(HQDM.SKOS_DEFINITION, "50k mile car service activity specification");
+        if (classOfState.length > 1) {
+            for (int i = 1; i < classOfState.length; i++) {
+                spec.addValue(HQDM.INTERSECTION_OF, classOfState[i].getId());
+            }
+        }
+        return spec;
+    }
+
+    private ClassOfState[] getCarServiceActivityClassOfState() {
+        final var iri = new IRI(BASE, nextIri());
+        final var classOfState = new ClassOfStateBuilder(iri).build();
+        classOfState.addStringValue(HQDM.SKOS_DEFINITION, "Car 50K mile service activity class of state");
+        return new ClassOfState[] {
+            classOfState
+        };
     }
 
     private Event getServicedCarRequirementEndEvent(final PossibleWorld realWorld) {
@@ -108,7 +200,7 @@ public class PossibleWorldsExampleTest {
     }
 
     private Event getServicedCarRequirementStartEvent(final PossibleWorld realWorld) {
-        final var date = START.plus(300, ChronoUnit.DAYS);
+        final var date = START.plus(300, ChronoUnit.DAYS).plus(4, ChronoUnit.HOURS);
         final var eventIri = new IRI(DATE_BASE, instantToString(date));
         final var event = new PointInTimeBuilder(eventIri)
             .part_Of_Possible_World_M(realWorld)
@@ -125,7 +217,7 @@ public class PossibleWorldsExampleTest {
         final var serviceState = new ClassOfStateOfFunctionalObjectBuilder(serviceStateIri).build();
         final var workingState = new ClassOfStateBuilder(workingStateIri).build();
         carState.addStringValue(HQDM.SKOS_DEFINITION, "State Of Car");
-        serviceState.addStringValue(HQDM.SKOS_DEFINITION, "Car without 50k mile service");
+        serviceState.addStringValue(HQDM.SKOS_DEFINITION, "Car with 50k mile service");
         workingState.addStringValue(HQDM.SKOS_DEFINITION, "Functioning Car");
         return new ClassOfState[] {
             carState,
@@ -149,7 +241,7 @@ public class PossibleWorldsExampleTest {
             .beginning(beginning)
             .ending(ending)
             .build();
-        req.addStringValue(HQDM.SKOS_DEFINITION, "Car without 50k mile service");
+        req.addStringValue(HQDM.SKOS_DEFINITION, "Car with 50k mile service");
 
         return req;
     }
@@ -162,7 +254,7 @@ public class PossibleWorldsExampleTest {
         final var spec = new RequirementSpecificationBuilder(iri)
             .intersection_Of_M(classOfState[0])
             .build();
-        spec.addStringValue(HQDM.SKOS_DEFINITION, "Car without 50k mile service");
+        spec.addStringValue(HQDM.SKOS_DEFINITION, "Car with 50k mile service");
         if (classOfState.length > 1) {
             for (int i = 1; i < classOfState.length; i++) {
                 spec.addValue(HQDM.INTERSECTION_OF, classOfState[i].getId());
