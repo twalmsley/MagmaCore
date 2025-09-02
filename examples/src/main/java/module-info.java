@@ -21,5 +21,6 @@ module uk.gov.gchq.magmacore.examples {
     requires uk.gov.gchq.magmacore;
     requires uk.gov.gchq.magmacore.examples.extensions;
     requires uk.gov.gchq.magmacore.examples.extensions.f35;
+    requires uk.gov.gchq.magmacore.hqdm.canonical;
     exports uk.gov.gchq.magmacore.examples.service;
 }
